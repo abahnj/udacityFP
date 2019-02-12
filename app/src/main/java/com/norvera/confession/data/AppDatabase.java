@@ -3,15 +3,31 @@ package com.norvera.confession.data;
 import android.content.Context;
 import android.util.Log;
 
+import com.norvera.confession.data.dao.CommandmentDao;
 import com.norvera.confession.data.dao.SinDao;
-import com.norvera.confession.data.models.Sin;
+import com.norvera.confession.data.models.CommandmentEntry;
+import com.norvera.confession.data.models.GuideEntry;
+import com.norvera.confession.data.models.InspirationEntry;
+import com.norvera.confession.data.models.PersonToSinEntry;
+import com.norvera.confession.data.models.PrayersEntry;
+import com.norvera.confession.data.models.SinActiveEntry;
+import com.norvera.confession.data.models.SinEntry;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities={Sin.class}, version=1)
-abstract class AppDatabase extends RoomDatabase {
+@Database(entities = {
+                SinEntry.class,
+                CommandmentEntry.class,
+                GuideEntry.class,
+                InspirationEntry.class,
+                PersonToSinEntry.class,
+                PrayersEntry.class,
+                SinActiveEntry.class
+        },
+        version = 1, exportSchema = false)
+public abstract class AppDatabase extends RoomDatabase {
 
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
     private static final Object LOCK = new Object();
@@ -20,25 +36,26 @@ abstract class AppDatabase extends RoomDatabase {
 
     // DAO
     public abstract SinDao sinDao();
+    public abstract CommandmentDao commandmentDao();
 
 
     public static AppDatabase getInstance(Context context) {
-        if (sInstance==null) {
+        if (sInstance == null) {
             synchronized (LOCK) {
                 Log.d(LOG_TAG, "Creating new database instance");
-                sInstance=create(context);
+                sInstance = create(context);
             }
         }
         Log.d(LOG_TAG, "Getting the database instance");
-        return(sInstance);
+        return (sInstance);
     }
 
     static AppDatabase create(Context context) {
-        RoomDatabase.Builder<AppDatabase> b=
+        RoomDatabase.Builder<AppDatabase> b =
                 Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,
                         DATABASE_NAME);
 
-        return(b.openHelperFactory(new androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory()).build());
+        return (b.openHelperFactory(new androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory()).build());
     }
 }
 

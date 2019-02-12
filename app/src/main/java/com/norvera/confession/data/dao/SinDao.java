@@ -1,4 +1,7 @@
 package com.norvera.confession.data.dao;
 
-public class SinDao {
+import androidx.room.Dao;
+
+@Dao
+public abstract class SinDao {
 }

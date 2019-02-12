@@ -4,13 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "SIN")
-public class Sin {
+@Entity
+public class PrayersEntry {
     @PrimaryKey
     @NonNull
     public final String _id;
 
-    public Sin(@NonNull String _id) {
-        this._id = _id;
+    public PrayersEntry(@NonNull String id) {
+        _id = id;
     }
 }
