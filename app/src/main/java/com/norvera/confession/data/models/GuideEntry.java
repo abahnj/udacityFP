@@ -7,10 +7,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class GuideEntry {
     @PrimaryKey
-    @NonNull
-    public final String _id;
+    public final long _id;
 
-    public GuideEntry(@NonNull String id) {
+    public GuideEntry(@NonNull long id) {
         _id = id;
     }
 }

@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class PersonToSinEntry {
 
-    public PersonToSinEntry(@NonNull String id, String PERSON_ID,
+    public PersonToSinEntry(@NonNull long id, String PERSON_ID,
                             String SINS_ID,
                             String COUNT,
                             String EDITED,
@@ -21,8 +21,7 @@ public class PersonToSinEntry {
         this.DELETED = DELETED;
     }
     @PrimaryKey
-    @NonNull
-    public final String _id;
+    public final long _id;
 
     @ColumnInfo(name="PERSON_ID")
     public final String PERSON_ID;

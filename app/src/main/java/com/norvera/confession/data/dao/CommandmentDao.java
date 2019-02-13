@@ -12,12 +12,12 @@ import androidx.room.Query;
 @Dao
 public abstract class CommandmentDao {
 
-    @Query("SELECT * FROM commandments")
+    @Query("SELECT * FROM COMMANDMENTS")
     public abstract LiveData<List<CommandmentEntry>> selectAll();
 
     @Query("SELECT * FROM COMMANDMENTS WHERE _id = :id")
     public abstract LiveData<CommandmentEntry> selectCommandmentById(long id);
 
     @Insert
-    public abstract Integer addCommandment(CommandmentEntry commandmentEntry);
+    public abstract void addCommandment(CommandmentEntry commandmentEntry);
 }

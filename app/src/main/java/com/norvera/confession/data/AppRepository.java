@@ -6,7 +6,6 @@ import com.norvera.confession.utils.AppExecutor;
 import java.util.List;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
 
 public class AppRepository {
@@ -26,10 +25,8 @@ public class AppRepository {
         return appDatabase.commandmentDao().selectCommandmentById(id);
     }
 
-    public LiveData<Integer> add(CommandmentEntry commandmentEntry) {
-        MutableLiveData<Integer> liveData = new MutableLiveData<>();
-        executor.diskIO().execute(() -> liveData.postValue(appDatabase.commandmentDao().addCommandment(commandmentEntry)));
-        return liveData;
+    public void addCommandment(CommandmentEntry commandmentEntry) {
+        executor.diskIO().execute(() -> appDatabase.commandmentDao().addCommandment(commandmentEntry));
     }
 
 

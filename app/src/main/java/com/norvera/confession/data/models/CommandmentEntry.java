@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 public class CommandmentEntry {
     // column names commandment table's columns
 
-    public CommandmentEntry(@NonNull String id, String number, String text, String category, String commandment,
+    public CommandmentEntry(@NonNull long id, String number, String text, String category, String commandment,
                             String customId) {
         _id = id;
         this.number = number;
@@ -19,8 +19,8 @@ public class CommandmentEntry {
         this.customId = customId;
     }
 
-    @PrimaryKey @NonNull
-    public final String _id;
+    @PrimaryKey
+    public final long _id;
 
 
     @ColumnInfo(name = "NUMBER")

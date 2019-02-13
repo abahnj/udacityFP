@@ -7,10 +7,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class InspirationEntry {
     @PrimaryKey
-    @NonNull
-    public final String _id;
+    public final long _id;
 
-    public InspirationEntry(@NonNull String id) {
+    public InspirationEntry(@NonNull long id) {
         _id = id;
     }
 }

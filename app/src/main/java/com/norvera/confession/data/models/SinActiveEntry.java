@@ -5,7 +5,7 @@ import androidx.room.Entity;
 
 @Entity(tableName = "SIN_ACTIVE")
 public class SinActiveEntry extends SinEntry {
-    public SinActiveEntry(@NonNull String _id,
+    public SinActiveEntry(@NonNull long _id,
                           String commandmentId,
                           String adult,
                           String single,

@@ -3,19 +3,16 @@ package com.norvera.confession.data.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Objects;
-
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "SIN")
 public class SinEntry implements Parcelable {
-    @PrimaryKey @NonNull
-    public final String _id;
+    @PrimaryKey
+    public final long _id;
 
-    public SinEntry(@NonNull String _id,
+    public SinEntry(long _id,
                     String commandmentId,
                     String adult,
                     String single,
@@ -81,7 +78,7 @@ public class SinEntry implements Parcelable {
 
 
     protected SinEntry(Parcel in) {
-        _id = Objects.requireNonNull(in.readString());
+        _id = in.readLong();
         commandmentId = in.readString();
         adult = in.readString();
         single = in.readString();
@@ -115,7 +112,7 @@ public class SinEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(_id);
+        dest.writeLong(_id);
         dest.writeString(commandmentId);
         dest.writeString(adult);
         dest.writeString(single);

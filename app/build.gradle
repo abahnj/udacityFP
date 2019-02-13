@@ -46,6 +46,11 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
     // For Kotlin use kapt instead of annotationProcessor
 
+    implementation "com.ibm.icu:icu4j:63.1"
+
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+
     testImplementation 'junit:junit:' + rootProject.junit_version
     androidTestImplementation 'androidx.test:runner:' + rootProject.runner_version
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espresso_version

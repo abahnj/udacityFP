@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import butterknife.ButterKnife;
 
 public class MainFragment extends Fragment {
 
@@ -29,15 +30,19 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.main_fragment, container, false);
 
-        return inflater.inflate(R.layout.main_fragment, container, false);
+        ButterKnife.bind(this, view);
+
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mViewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity())).get(MainViewModel.class);
+        MainViewModelFactory factory = MainViewModelFactory.getInstance(getActivity());
+        mViewModel = ViewModelProviders.of(Objects.requireNonNull(getActivity()), factory).get(MainViewModel.class);
         mViewModel.allCommandments().observe( this, commandmentEntries -> this.commandmentEntries = commandmentEntries);
         // TODO: Use the ViewModel
     }

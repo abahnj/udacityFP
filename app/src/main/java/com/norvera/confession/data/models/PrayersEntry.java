@@ -1,16 +1,14 @@
 package com.norvera.confession.data.models;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class PrayersEntry {
     @PrimaryKey
-    @NonNull
-    public final String _id;
+    public final long _id;
 
-    public PrayersEntry(@NonNull String id) {
+    public PrayersEntry( long id) {
         _id = id;
     }
 }
