@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.norvera.confession.data.AppRepository;
 import com.norvera.confession.data.models.CommandmentEntry;
+import com.norvera.confession.data.models.ExaminationEntry;
 
 import java.util.List;
 
@@ -22,5 +23,9 @@ public class MainViewModel extends ViewModel {
 
     public LiveData<List<CommandmentEntry>> allCommandments() {
        return appRepository.loadAllCommandments();
+    }
+
+    public LiveData<List<ExaminationEntry>> allExaminationsForCommandment(long commandmentId) {
+        return appRepository.loadAllExaminationsForCommandment(commandmentId);
     }
 }

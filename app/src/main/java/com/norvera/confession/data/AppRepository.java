@@ -1,6 +1,7 @@
 package com.norvera.confession.data;
 
 import com.norvera.confession.data.models.CommandmentEntry;
+import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.utils.AppExecutor;
 
 import java.util.List;
@@ -30,5 +31,7 @@ public class AppRepository {
     }
 
 
-
+    public LiveData<List<ExaminationEntry>> loadAllExaminationsForCommandment(long commandmentId) {
+        return appDatabase.examinationDao().loadAllExaminationsForCommandment(commandmentId);
+    }
 }

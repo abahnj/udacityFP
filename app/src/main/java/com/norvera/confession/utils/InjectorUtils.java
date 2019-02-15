@@ -4,12 +4,13 @@ import android.content.Context;
 
 import com.norvera.confession.data.AppDatabase;
 import com.norvera.confession.data.AppRepository;
-import com.norvera.confession.data.dao.SinDao;
+import com.norvera.confession.data.dao.ExaminationDao;
+import com.norvera.confession.ui.main.MainViewModelFactory;
 
 import java.util.concurrent.Executors;
 
 
-public class Factory {
+public class InjectorUtils {
 
     //  REPOSITORY
     public static AppRepository provideAppRepository(AppDatabase appDatabase, AppExecutor executor) {
@@ -26,10 +27,16 @@ public class Factory {
        return AppDatabase.getInstance(context);
     }
 
-    public static SinDao provideSinDao(Context context) {
-        return provideDatabase(context).sinDao();
+    public static ExaminationDao provideExaminationDao(Context context) {
+        return provideDatabase(context).examinationDao();
+    }
+
+    public static ExaminationDao provideCommandmentDao(Context context) {
+        return provideDatabase(context).examinationDao();
     }
 
 
-
+    public static MainViewModelFactory provideViewModelFactory(Context context) {
+        return MainViewModelFactory.getInstance(context);
+    }
 }

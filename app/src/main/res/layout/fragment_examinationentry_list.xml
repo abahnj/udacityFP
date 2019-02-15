@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <data>
+        <variable
+            name="viewModel"
+            type="com.norvera.confession.ui.main.MainViewModel"/>
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/examination_of_conscience"
         tools:context=".ui.main.MainFragment">
-
         <TextView
             android:id="@+id/fragmentTitle"
             android:layout_width="wrap_content"
@@ -19,28 +23,29 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="@string/examination_of_conscience"
             android:textAppearance="?attr/textAppearanceHeadline5"
+            android:text="@string/examination_of_conscience"
             app:layout_constraintBottom_toTopOf="@id/rv_commandments"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_commandments"
-            android:name="com.norvera.confession.ui.main.CommandmentsFragment"
+            android:id="@+id/rv_examination"
+            android:name="com.norvera.confession.ui.examination.ExaminationFragment"
+            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
             android:clipToPadding="false"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
             android:paddingStart="@dimen/margin_normal"
             android:paddingEnd="@dimen/margin_normal"
-            android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
-            tools:listitem="@layout/fragment_commandments" />
+            tools:context=".ui.examination.ExaminationFragment"
+            tools:listitem="@layout/fragment_examinationentry" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

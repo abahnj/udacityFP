@@ -1,37 +1,25 @@
 package com.norvera.confession.ui.commandment;
 
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import com.norvera.confession.R;
 import com.norvera.confession.data.models.CommandmentEntry;
-import com.norvera.confession.ui.main.dummy.DummyContent.DummyItem;
+import com.norvera.confession.databinding.FragmentCommandmentsBinding;
+import com.norvera.confession.interfaces.ClickListeners;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link CommandmentsFragment.CommandmentClickListener}.
- * TODO: Replace the implementation with code for your data type.
+ * {@link RecyclerView.Adapter} that can display a {@link CommandmentEntry} and makes a call to the
+ * specified {@link ClickListeners.CommandmentClickListener}.
  */
 public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, CommandmentsAdapter.ViewHolder> {
-
-    private final CommandmentsFragment.CommandmentClickListener mListener;
-
-    /*public CommandmentsAdapter(List<DummyItem> items, CommandmentClickListener listener) {
-        super(DIFF_CALLBACK);
-        mValues = items;
-        mListener = listener;
-    }*/
 
     private static final DiffUtil.ItemCallback<CommandmentEntry> DIFF_CALLBACK =
             new DiffUtil.ItemCallback<CommandmentEntry>() {
@@ -47,72 +35,52 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
             };
 
 
-    protected CommandmentsAdapter(CommandmentsFragment.CommandmentClickListener listener) {
+    CommandmentsAdapter() {
         super(DIFF_CALLBACK);
-        mListener = listener;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_commandments, parent, false);
-        return new ViewHolder(view);
+        FragmentCommandmentsBinding binding = FragmentCommandmentsBinding.inflate(
+                LayoutInflater.from(parent.getContext()), parent, false);
+
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
-        holder.onBind(position);
+        CommandmentEntry commandmentEntry = getItem(position);
+        holder.onBind(createOnClickListener(commandmentEntry._id), commandmentEntry);
     }
 
 
-    public static String getNumberOrdinal(Number number) {
-        if (number == null) {
-            return null;
-        }
+    private View.OnClickListener createOnClickListener(long commandmentId) {
 
-        //todo move to string resource
-        String format = "Sins against the {0,ordinal} commandment";
+        return view -> {
+            Toast.makeText(view.getContext(), (Long.toString(commandmentId)), Toast.LENGTH_SHORT).show();
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return android.icu.text.MessageFormat.format(format, number);
-        } else {
-            return com.ibm.icu.text.MessageFormat.format(format, number);
-        }
+            CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
+                    CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
+            Navigation.findNavController(view).navigate(commandmentsFragmentDirections);
+        };
+
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.tv_commandment_title)
-        TextView mTvCommandmentTitle;
+        FragmentCommandmentsBinding binding;
 
-        @BindView(R.id.tv_commandment_description)
-        TextView mTvCommandmentDescription;
-
-        ViewHolder(View view) {
-            super(view);
-            ButterKnife.bind(this, view);
+        ViewHolder(FragmentCommandmentsBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
 
-        void onBind(final int position) {
-
-            final CommandmentEntry commandmentEntry = getItem(position);
-
-            if (commandmentEntry.commandment != null ) {
-                if (commandmentEntry._id < 11)
-                    mTvCommandmentDescription.setText(commandmentEntry.text);
-                else
-                    mTvCommandmentDescription.setText(commandmentEntry.commandment);
-            }
-
-            mTvCommandmentTitle.setText(getNumberOrdinal((commandmentEntry._id)));
-
-
-        }
-
-        @OnClick
-        void onClick(View view) {
-            if (mListener != null)
-                mListener.onListFragmentInteraction(getItem(getAdapterPosition()));
+        void onBind(View.OnClickListener clickListener, CommandmentEntry item) {
+            itemView.setTag(item);
+            binding.setClickListener(clickListener);
+            binding.setCommandmentEntry(item);
+            binding.executePendingBindings();
         }
     }
 

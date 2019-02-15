@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.norvera.confession.data.AppRepository;
-import com.norvera.confession.utils.Factory;
+import com.norvera.confession.utils.InjectorUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -24,7 +24,7 @@ public class MainViewModelFactory extends ViewModelProvider.NewInstanceFactory{
             synchronized (MainViewModelFactory.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new MainViewModelFactory(
-                            Factory.provideAppRepository( Factory.provideDatabase(context), Factory.provideAppExecutor()));
+                            InjectorUtils.provideAppRepository( InjectorUtils.provideDatabase(context), InjectorUtils.provideAppExecutor()));
                 }
             }
         }

@@ -8,23 +8,23 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "SIN")
-public class SinEntry implements Parcelable {
+public class ExaminationEntry implements Parcelable {
     @PrimaryKey
     public final long _id;
 
-    public SinEntry(long _id,
-                    String commandmentId,
-                    String adult,
-                    String single,
-                    String married,
-                    String religious,
-                    String priest,
-                    String teen,
-                    String female,
-                    String male,
-                    String child,
-                    String customId,
-                    String description) {
+    public ExaminationEntry(long _id,
+                            String commandmentId,
+                            String adult,
+                            String single,
+                            String married,
+                            String religious,
+                            String priest,
+                            String teen,
+                            String female,
+                            String male,
+                            String child,
+                            String customId,
+                            String description) {
         this._id = _id;
         this.commandmentId = commandmentId;
         this.adult = adult;
@@ -77,7 +77,7 @@ public class SinEntry implements Parcelable {
     public final String description;
 
 
-    protected SinEntry(Parcel in) {
+    protected ExaminationEntry(Parcel in) {
         _id = in.readLong();
         commandmentId = in.readString();
         adult = in.readString();
@@ -93,15 +93,15 @@ public class SinEntry implements Parcelable {
         description = in.readString();
     }
 
-    public static final Creator<SinEntry> CREATOR = new Creator<SinEntry>() {
+    public static final Creator<ExaminationEntry> CREATOR = new Creator<ExaminationEntry>() {
         @Override
-        public SinEntry createFromParcel(Parcel in) {
-            return new SinEntry(in);
+        public ExaminationEntry createFromParcel(Parcel in) {
+            return new ExaminationEntry(in);
         }
 
         @Override
-        public SinEntry[] newArray(int size) {
-            return new SinEntry[size];
+        public ExaminationEntry[] newArray(int size) {
+            return new ExaminationEntry[size];
         }
     };
 

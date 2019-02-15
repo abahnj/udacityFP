@@ -4,27 +4,27 @@ import android.content.Context;
 import android.util.Log;
 
 import com.norvera.confession.data.dao.CommandmentDao;
-import com.norvera.confession.data.dao.SinDao;
+import com.norvera.confession.data.dao.ExaminationDao;
 import com.norvera.confession.data.models.CommandmentEntry;
 import com.norvera.confession.data.models.GuideEntry;
 import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PersonToSinEntry;
 import com.norvera.confession.data.models.PrayersEntry;
-import com.norvera.confession.data.models.SinActiveEntry;
-import com.norvera.confession.data.models.SinEntry;
+import com.norvera.confession.data.models.ExaminationActiveEntry;
+import com.norvera.confession.data.models.ExaminationEntry;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {
-                SinEntry.class,
+                ExaminationEntry.class,
                 CommandmentEntry.class,
                 GuideEntry.class,
                 InspirationEntry.class,
                 PersonToSinEntry.class,
                 PrayersEntry.class,
-                SinActiveEntry.class
+                ExaminationActiveEntry.class
         },
         version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
@@ -35,7 +35,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase sInstance;
 
     // DAO
-    public abstract SinDao sinDao();
+    public abstract ExaminationDao examinationDao();
     public abstract CommandmentDao commandmentDao();
 
 
