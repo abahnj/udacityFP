@@ -1,0 +1,181 @@
+1,11,0,1,0,0,0,0,1,1,1,NULL,Have I not been praying every day?
+2,11,0,1,0,0,0,0,1,1,1,NULL,Have I not prayed my morning and night prayers?
+3,11,0,1,0,0,0,0,1,1,1,NULL,Have I not prayed with my parents and family?
+4,11,0,1,0,0,0,0,1,1,1,NULL,Have I been moody and rebellious about praying and going to church on Sunday?
+5,11,0,1,0,0,0,0,1,1,1,NULL,Have I not asked the Holy Spirit to help me whenever I have been tempted to sin?
+6,11,0,1,0,0,0,0,1,1,1,NULL,Have I not asked the Holy Spirit to help me do what is right?
+7,14,0,1,0,0,0,0,1,1,1,NULL,Have I not been obedient and respectful to my parents?
+8,14,0,1,0,0,0,0,1,1,1,NULL,Have I lied or been deceitful to them or to others?
+9,14,0,1,0,0,0,0,1,1,1,NULL,"Have I been arrogant, stubborn, or rebellious?"
+10,14,0,1,0,0,0,0,1,1,1,NULL,"Have I talked back to parents, teachers, or other adults?"
+11,14,0,1,0,0,0,0,1,1,1,NULL,Have I pouted and been moody?
+12,14,0,1,0,0,0,0,1,1,1,NULL,"Have I been selfish toward my parents, brothers and sisters, teachers, or my friends?"
+13,14,0,1,0,0,0,0,1,1,1,NULL,Have I hit anyone?
+14,14,0,1,0,0,0,0,1,1,1,NULL,Have I held grudges or not forgiven others?
+15,14,0,1,0,0,0,0,1,1,1,NULL,Have I treated other children with respect or have I made fun of them and called them names?
+16,14,0,1,0,0,0,0,1,1,1,NULL,Have I used bad language?
+17,14,0,1,0,0,0,0,1,1,1,NULL,Have I stolen anything? Have I returned it?
+18,14,0,1,0,0,0,0,1,1,1,NULL,Have I not performed my responsibilities: Have I not done my homework? Done my household chores? Have I not tidied up my room and my toys when asked?
+19,14,0,1,0,0,0,0,1,1,1,NULL,Have I not been helpful and affectionate toward my family?
+20,14,0,1,0,0,0,0,1,1,1,NULL,Have I not been kind and generous with my friends?
+21,1,0,1,0,0,0,1,1,1,0,NULL,Do I not give time every day to God in prayer?
+22,1,0,1,0,0,0,1,1,1,0,NULL,"Do I put trust in superstitions, good luck charms, rather than God alone?"
+23,1,0,1,0,0,0,1,1,1,0,NULL,Have I rejected any Church teaching or denied that I was a Catholic?
+24,2,0,1,0,0,0,1,1,1,0,NULL,"Have I used the words ""God or ""Jesus"" in anger or irreverently?"
+25,2,0,1,0,0,0,1,1,1,0,NULL,Have I used foul or ugly language?
+26,2,0,1,0,0,0,1,1,1,0,NULL,Have I wished evil on another?
+27,3,0,1,0,0,0,1,1,1,0,NULL,Have I missed Mass on Sunday or any holy day of obligation?
+28,3,0,1,0,0,0,1,1,1,0,NULL,Do I arrive at church late or leave early?
+29,3,0,1,0,0,0,1,1,1,0,NULL,Do I try to avoid being reverent by not paying attention during Mass?
+30,3,0,1,0,0,0,1,1,1,0,NULL,Do I continue to labor and not avoid unnecessary work on Sunday?
+31,3,0,1,0,0,0,1,1,1,0,NULL,Do I avoid making Sunday a day of prayer or rest?
+32,4,0,1,0,0,0,1,1,1,0,NULL,Do I not respect and obey my parents?
+33,4,0,1,0,0,0,1,1,1,0,NULL,Have I dishonored or mistreated them by word or deed?
+34,4,0,1,0,0,0,1,1,1,0,NULL,Am I willing to help around the house or must I be nagged a hundred times?
+35,4,0,1,0,0,0,1,1,1,0,NULL,Do I try to not get along with my brothers and sisters?
+36,4,0,1,0,0,0,1,1,1,0,NULL,Am I a tattletale or bully?
+37,4,0,1,0,0,0,1,1,1,0,NULL,"Do I not give a good example, especially to younger siblings?"
+38,4,0,1,0,0,0,1,1,1,0,NULL,"Do I not respect others in authority: priests, nuns, police, old people, teachers?"
+39,5,0,1,0,0,0,1,1,1,0,NULL,Do I beat up others or hurt their bodies?
+40,5,0,1,0,0,0,1,1,1,0,NULL,"Do I say cruel things, or make fun of others to hurt their feelings?"
+41,5,0,1,0,0,0,1,1,1,0,NULL,Do I say mean things about others behind their backs?
+42,5,0,1,0,0,0,1,1,1,0,NULL,Have I stopped speaking to anyone?
+43,5,0,1,0,0,0,1,1,1,0,NULL,Do I encourage others to do bad things?
+44,5,0,1,0,0,0,1,1,1,0,NULL,"Do I try to not love all people, born and unborn?"
+45,6,0,1,0,0,0,1,1,1,0,NULL,Do I not treat my body and other people's bodies with purity and respect?
+46,6,0,1,0,0,0,1,1,1,0,NULL,"Do I look at television shows, movies, or pictures that are bad?"
+47,6,0,1,0,0,0,1,1,1,0,NULL,Am I not modest in my speech and the clothes I wear?
+48,7,0,1,0,0,0,1,1,1,0,NULL,Have I taken things that were not mine a store or another person?
+49,7,0,1,0,0,0,1,1,1,0,NULL,Have I destroyed or misused another persons property for fun?
+50,7,0,1,0,0,0,1,1,1,0,NULL,Do I not return things that I borrow? In bad condition?
+51,8,0,1,0,0,0,1,1,1,0,NULL,Am I not honest in my school work?
+52,8,0,1,0,0,0,1,1,1,0,NULL,Do I tell lies to make myself look good?
+53,8,0,1,0,0,0,1,1,1,0,NULL,Do I tell lies to protect myself from punishment?
+54,8,0,1,0,0,0,1,1,1,0,NULL,Do I tell lies that make another person look bad or get them in trouble?
+55,9,0,1,0,0,0,1,1,1,0,NULL,"Do I allow my parents to spend time with one another, or do I get jealous and want to them to pay attention to me?"
+56,9,0,1,0,0,0,1,1,1,0,NULL,Do I get mad when I have to share my friends?
+57,9,0,1,0,0,0,1,1,1,0,NULL,Are there kids I will not play with or be mean to because they look different?
+58,10,0,1,0,0,0,1,1,1,0,NULL,Am I jealous or envious of the things or abilities that others have?
+59,10,0,1,0,0,0,1,1,1,0,NULL,Am I not thankful to God and my parents for what they have given me?
+60,10,0,1,0,0,0,1,1,1,0,NULL,"Do I not share the things I have with my family, friends and poor people?"
+61,1,1,1,1,0,0,0,1,1,0,NULL,Do I not give God time every day in prayer?
+62,1,1,1,1,0,0,0,1,1,0,NULL,Do I not seek to love Him with my whole heart?
+63,1,1,1,1,0,0,0,1,1,0,NULL,Have I been involved with superstitious practices or have I been involved with the occult?
+64,1,1,1,1,0,0,0,1,1,0,NULL,Do I not seek to surrender myself to God's Word as taught by the Church?
+65,1,1,1,1,0,0,0,1,1,0,NULL,Have I ever received Communion in a state of mortal sin?
+66,1,1,1,1,0,0,0,1,1,0,NULL,Have I ever deliberately told a lie in confession or have I withheld a mortal sin from the priest in confession?
+67,2,1,1,1,0,0,0,1,1,0,NULL,Have I used God's name in vain: lightly or carelessly?
+68,2,1,1,1,0,0,0,1,1,0,NULL,Have I been angry with God?
+69,2,1,1,1,0,0,0,1,1,0,NULL,Have I wished evil upon another person?
+70,2,1,1,1,0,0,0,1,1,0,NULL,Have I insulted a sacred person or abused a sacred object?
+71,3,1,1,1,0,0,0,1,1,0,NULL,Have I deliberately missed Mass on Sundays or holy days of obligation?
+72,3,1,1,1,0,0,0,1,1,0,NULL,Have I not tried to observe Sunday as a family day and a day of rest?
+73,3,1,1,1,0,0,0,1,1,0,NULL,Do I do needless work on Sunday?
+74,4,1,0,1,0,0,0,0,1,0,NULL,Have I neglected my duties to my wife and children?
+75,4,1,0,1,0,0,0,1,0,0,NULL,Have I neglected my duties to my husband and children?
+76,4,1,1,1,0,0,0,1,1,0,NULL,Have I not given my family good religious example?
+77,4,1,1,1,0,0,0,1,1,0,NULL,Do I try not to bring peace into my home life?
+78,4,1,1,1,0,0,0,1,1,0,NULL,Do I not care for my aged and infirm relatives?
+79,5,1,1,1,0,0,0,1,0,0,NULL,Have I had an abortion or encouraged anyone to have an abortion?
+80,5,1,1,1,0,0,0,0,1,0,NULL,Have I encouraged anyone to have an abortion?
+81,5,1,1,1,0,0,0,1,1,0,NULL,Have I physically harmed anyone?
+82,5,1,1,1,0,0,0,1,1,0,NULL,Have I abused alcohol or drugs?
+83,5,1,1,1,0,0,0,1,1,0,NULL,"Did I give scandal to anyone, thereby leading them into sin?"
+84,5,1,1,1,0,0,0,1,1,0,NULL,Have I been angry or resentful?
+85,5,1,1,1,0,0,0,1,1,0,NULL,Have I harbored hatred in my heart?
+86,5,1,1,1,0,0,0,1,1,0,NULL,Have I mutilated myself through any form of sterilization?
+87,5,1,1,1,0,0,0,1,1,0,NULL,Have I encouraged or condoned sterilization?
+88,6,1,0,1,0,0,0,1,1,0,NULL,Have I been faithful to my marriage vows in thought and action?
+89,6,1,1,0,0,0,0,1,1,0,NULL,Have I engaged in any sexual activity outside of marriage?
+90,6,1,0,1,0,0,0,1,1,0,NULL,Have I used any method of contraception or artificial birth control in my marriage?
+91,6,1,0,1,0,0,0,1,1,0,NULL,Has the sexual acts in my marriage not been open to the transmission of new life?
+92,6,1,1,1,0,0,0,1,1,0,NULL,Have I been guilty of masturbation?
+93,6,1,1,1,0,0,0,1,1,0,NULL,Have I not sought to control my thoughts?
+94,6,1,1,1,0,0,0,1,1,0,NULL,"Have I not respected all members of the opposite sex, or have I thought of other people as objects?"
+95,6,1,1,1,0,0,0,1,1,0,NULL,Have I been guilty of any homosexual activity?
+96,6,1,1,1,0,0,0,1,1,0,NULL,"Do I not seek to be chaste in my thoughts, words and actions?"
+97,6,1,1,1,0,0,0,1,1,0,NULL,Am I not careful to dress modestly?
+98,7,1,1,1,0,0,0,1,1,0,NULL,Have I stolen what is not mine?
+99,7,1,1,1,0,0,0,1,1,0,NULL,Have I not returned or avoided to make restitution for what I have stolen?
+100,7,1,1,1,0,0,0,1,1,0,NULL,"Do I waste time at work, school or at home?"
+101,7,1,1,1,0,0,0,1,1,0,NULL,"Do I gamble excessively, thereby denying my family of their needs?"
+102,7,1,1,1,0,0,0,1,1,0,NULL,Do I avoid paying my debts promptly?
+103,7,1,1,1,0,0,0,1,1,0,NULL,Do I not seek to share what I have with the poor?
+104,8,1,1,1,0,0,0,1,1,0,NULL,Have I lied?
+105,8,1,1,1,0,0,0,1,1,0,NULL,Have I gossiped?
+106,8,1,1,1,0,0,0,1,1,0,NULL,Have I spoken behind someone else's back?
+107,8,1,1,1,0,0,0,1,1,0,NULL,Am I insincere in my dealings with others?
+108,8,1,1,1,0,0,0,1,1,0,NULL,"Am I critical, negative or uncharitable in my thoughts of others?"
+109,8,1,1,1,0,0,0,1,1,0,NULL,Do I keep secret what should be kept confidential?
+110,9,1,1,1,0,0,0,1,1,0,NULL,Have I consented to impure thoughts?
+111,9,1,1,1,0,0,0,1,1,0,NULL,"Have I caused them by impure reading, movies, conversations or curiosity?"
+112,9,1,1,1,0,0,0,1,1,0,NULL,Do I allow myself to lose control my imagination?
+113,9,1,1,1,0,0,0,1,1,0,NULL,Do I avoid prayer to banish impure thoughts and temptations?
+114,10,1,1,1,0,0,0,1,1,0,NULL,Am I jealous of what other people have?
+115,10,1,1,1,0,0,0,1,1,0,NULL,Do I envy the families or possessions of others?
+116,10,1,1,1,0,0,0,1,1,0,NULL,Am I greedy or selfish?
+117,10,1,1,1,0,0,0,1,1,0,NULL,Are material possessions the purpose of my life?
+118,10,1,1,1,0,0,0,1,1,0,NULL,Do I not trust that God will care for all of my material and spiritual needs?
+119,11,1,0,0,1,1,0,1,1,0,NULL,Have I participated at Mass or have I daydreamed or been present with a blank mind?
+120,11,1,0,0,0,1,0,0,1,0,NULL,Have I said Mass without reverence and attention?
+121,11,1,0,0,1,1,0,1,1,0,NULL,Have I not been faithful in praying the Liturgy of the Hours?
+122,11,1,0,0,1,1,0,1,1,0,NULL,Have I not participated in community prayer and been unfaithful to daily personal prayer and meditation?
+123,11,1,0,0,1,1,0,1,1,0,NULL,Have I not been reading the Bible?
+124,11,1,0,0,1,1,0,1,1,0,NULL,Have I avoided studing the truths of our faith and not allowed them to become more part of the way I think and act?
+125,11,1,0,0,1,1,0,1,1,0,NULL,Have I not been reading spiritual books or religious literature?
+126,11,1,0,0,1,1,0,1,1,0,NULL,"Have I not told God that I want to love him with my whole heart, mind, and strength? "
+127,11,1,0,0,1,1,0,1,1,0,NULL,Do I hold any resentments toward God?
+128,11,1,0,0,1,1,0,1,1,0,NULL,Have I recognized my need for Jesus and his salvation?
+129,11,1,0,0,1,1,0,1,1,0,NULL,Have I not asked the Holy Spirit to empower me to live the Christian life?
+130,11,1,0,0,1,1,0,1,1,0,NULL,Have I held resentments toward the Church or Church authorities? Have I forgiven them?
+131,11,1,0,0,1,1,0,1,1,0,NULL,"Have I participated in anything that is of the occult (New Age): Ouija boards, fortune tellers, sé?,'s, channeling, astrology?"
+132,12,1,0,0,1,1,0,1,1,0,NULL,Have I been faithful to the promises and vows I have made to God?
+133,12,1,0,0,1,1,0,1,1,0,NULL,"Have I been rebellious, disobedient or disrespectful to those authority over me: the Pope, bishops, superiors? "
+134,12,1,0,0,1,1,0,1,1,0,NULL,Have I caused others to be disrespectful to those in authority?
+135,12,1,0,0,1,1,0,1,1,0,NULL,Have I not been faithful to the truth of the Gospel and the teaching of the magisterium?
+136,12,1,0,0,1,1,0,1,1,0,NULL,"Have I preached and witnessed to the Gospel, or have I compromised it in some manner? "
+137,12,1,0,0,1,1,0,1,1,0,NULL,Have I engaged in sexual fantasies?
+138,12,1,0,0,1,1,0,1,1,0,NULL,Have I looked at others lustfully?
+139,12,1,0,0,1,1,0,1,1,0,NULL,"Have I read pornographic literature or looked at pornographic pictures, shows or movies? "
+140,12,1,0,0,1,1,0,1,1,0,NULL,Have I masturbated?
+141,12,1,0,0,1,1,0,1,1,0,NULL,Have I flirted with anyone?
+142,12,1,0,0,1,1,0,1,1,0,NULL,Have I lustfully kissed or sexually touched someone?
+143,12,1,0,0,1,1,0,1,1,0,NULL,Have I had sexual intercourse?
+144,12,1,0,0,1,1,0,1,1,0,NULL,Have I allowed the things of this world to captivate my heart and mind?
+145,12,1,0,0,1,1,0,1,1,0,NULL,Have I used things or spent money not in keeping with Gospel poverty?
+146,12,1,0,0,1,1,0,1,1,0,NULL,Have I not witnessed to Gospel poverty in my ministry?
+147,12,1,0,0,1,1,0,1,1,0,NULL,Have I desired to identify with the rich rather than with the poor?
+148,12,1,0,0,1,1,0,1,1,0,NULL,"Does my life ( how I think, speak and act ) not bear witness to the reality and primacy of heaven and eternal life?"
+149,13,1,0,0,0,1,0,0,1,0,NULL,Have I not fulfilled my pastoral responsibilities with attention and care?
+150,13,1,0,0,1,1,0,1,1,0,NULL,"Have I been half-hearted, lazy or cynical in my ministry? "
+151,13,1,0,0,1,1,0,1,1,0,NULL,Have I been sarcastic and negative toward those with whom I work or with those that I serve?
+152,13,1,0,0,1,1,0,1,1,0,NULL,"Have I not been loving, patient, kind, gentle, and self-controlled? "
+153,13,1,0,0,1,1,0,1,1,0,NULL,"Do I not have a real care for God's people, desiring their salvation and eternal life? "
+154,13,1,0,0,1,1,0,1,1,0,NULL,"When my conscience directs me to do something in relation to my ministry, did I do it or did I ignore it?"
+155,13,1,0,0,1,1,0,1,1,0,NULL,Have I allowed business to control my life?
+156,13,1,0,0,1,1,0,1,1,0,NULL,"Have I overworked, not taking time for exercise, relaxation, prayer, and reading?"
+157,14,1,0,0,1,1,0,1,1,0,NULL,Have I lied to or deceived others?
+158,14,1,0,0,1,1,0,1,1,0,NULL,Have I been arrogant and stubborn?
+159,14,1,0,0,1,1,0,1,1,0,NULL,"Have I gotten angry, nurtured and held grudges and resentments? "
+160,14,1,0,0,1,1,0,1,1,0,NULL,Have I refused to forgive others?
+161,14,1,0,0,1,1,0,1,1,0,NULL,Have I cultivated hatred?
+162,14,1,0,0,1,1,0,1,1,0,NULL,Have I gossiped about others in my religious community or parish?
+163,14,1,0,0,1,1,0,1,1,0,NULL,Have I slandered anyone?
+164,14,1,0,0,1,1,0,1,1,0,NULL,Have I told lies about others?
+165,14,1,0,0,1,1,0,1,1,0,NULL,Have I mocked or made fun of others?
+166,14,1,0,0,1,1,0,1,1,0,NULL,Have I lied or cheated?
+167,14,1,0,0,1,1,0,1,1,0,NULL,Have I stolen anything? Have I paid it back?
+168,14,1,0,0,1,1,0,1,1,0,NULL,Have I been selfish or spiteful toward others?
+169,14,1,0,0,1,1,0,1,1,0,NULL,Have I been jealous?
+170,14,1,0,0,1,1,0,1,1,0,NULL,Have I gotten drunk or taken drugs?
+171,15,1,0,0,1,1,0,1,1,0,NULL,"Have I born witness, in word and deed, to the social implications of the Gospel? "
+172,15,1,0,0,1,1,0,1,1,0,NULL,Have I allowed the Gospel to influence my political and social opinions?
+173,15,1,0,0,1,1,0,1,1,0,NULL,Have I not had a proper Christian concern for the poor and needy?
+174,15,1,0,0,1,1,0,1,1,0,NULL,Have I been unethical in my business dealings? Have I stolen or lied?
+175,15,1,0,0,1,1,0,1,1,0,NULL,Have I not paid my taxes?
+176,15,1,0,0,1,1,0,1,1,0,NULL,"Have I fostered or nurtured hatred toward my social or political enemies either local, national or international? "
+177,15,1,0,0,1,1,0,1,1,0,NULL,"Have I been prejudiced toward others because of race, color, religious or social status?"
+178,2,1,1,1,0,0,1,1,1,0,NULL,"Have I spoken disrespectfully, hatefully, defiantly, or carelessly about the faith, or sacred persons, places and things or promoted it?"
+179,2,1,1,1,0,0,1,1,1,0,NULL,Have I sworn or made promises in God’s name to things that were untrue or of little importance even if they were true?
+180,3,1,0,1,0,0,0,1,1,0,NULL,Have I failed to bring my children to Holy Mass on Sundays and Holy Days without serious cause?
+181,3,1,1,1,0,0,1,1,1,0,NULL,Have I attended mass by arriving late or leaving early without serious cause?

@@ -34,4 +34,8 @@ public class AppRepository {
     public LiveData<List<ExaminationEntry>> loadAllExaminationsForCommandment(long commandmentId) {
         return appDatabase.examinationDao().loadAllExaminationsForCommandment(commandmentId);
     }
+
+    public void updateCountForEntry(ExaminationEntry examinationEntry) {
+        executor.diskIO().execute(() -> appDatabase.examinationDao().updateEntry(examinationEntry));
+    }
 }

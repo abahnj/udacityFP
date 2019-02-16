@@ -28,4 +28,8 @@ public class MainViewModel extends ViewModel {
     public LiveData<List<ExaminationEntry>> allExaminationsForCommandment(long commandmentId) {
         return appRepository.loadAllExaminationsForCommandment(commandmentId);
     }
+
+    public void updateCountForEntry(ExaminationEntry examinationEntry) {
+        appRepository.updateCountForEntry(examinationEntry);
+    }
 }

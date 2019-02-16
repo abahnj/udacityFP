@@ -28,7 +28,7 @@ public class ExaminationFragment extends Fragment {
 
     private MainViewModel mViewModel;
     private FragmentExaminationentryListBinding binding;
-    private long plantId;
+    private long commandmentId;
     private ExaminationEntryAdapter adapter;
 
 
@@ -43,13 +43,18 @@ public class ExaminationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        plantId = ExaminationFragmentArgs.fromBundle(getArguments()).getCommandmentId();
+        commandmentId = ExaminationFragmentArgs.fromBundle(getArguments()).getCommandmentId();
         binding = FragmentExaminationentryListBinding.inflate(inflater, container, false);
 
-        adapter = new ExaminationEntryAdapter();
+        // todo refactor
+        setupViewModel(requireActivity());
+
+        adapter = new ExaminationEntryAdapter(mViewModel);
         binding.rvExamination.setAdapter(adapter);
         DividerItemDecoration decoration = new DividerItemDecoration(getContext(), VERTICAL);
         binding.rvExamination.addItemDecoration(decoration);
+
+        subscribeUi(adapter, commandmentId);
 
         return binding.getRoot();
 
@@ -58,8 +63,7 @@ public class ExaminationFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        setupViewModel(requireActivity());
-        subscribeUi(adapter, plantId);
+
     }
 
     private void subscribeUi(ExaminationEntryAdapter adapter, long plantId) {

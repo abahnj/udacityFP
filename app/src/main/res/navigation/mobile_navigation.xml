@@ -29,5 +29,10 @@
             android:name="commandmentId"
             app:argType="long" />
     </fragment>
+    <fragment
+        android:id="@+id/confessionFragmentOne"
+        android:name="com.norvera.confession.ui.confession.ConfessionFragmentOne"
+        android:label="confession_fragment_one"
+        tools:layout="@layout/confession_fragment_one" />
 
 </navigation>

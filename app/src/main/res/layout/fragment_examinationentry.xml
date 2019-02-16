@@ -1,40 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="examinationEntry"
             type="com.norvera.confession.data.models.ExaminationEntry" />
     </data>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
         android:background="?attr/selectableItemBackground"
-        >
+        android:onClick="@{clickListener}">
 
         <TextView
             android:id="@+id/examination_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/margin_normal"
+            android:paddingEnd="@dimen/margin_normal"
             android:layout_margin="@dimen/text_margin"
+            android:gravity="center_vertical"
             android:text="@{examinationEntry.description}"
-            tools:text="Do I not give GOD time everyday in Prayer"
-            android:textAppearance="?attr/textAppearanceListItem" />
+            android:textAppearance="?attr/textAppearanceListItem"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/examination_count"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="I did not give God time everyday in prayer" />
 
         <TextView
             android:id="@+id/examination_count"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/text_margin"
-            android:gravity="center"
             android:drawableStart="@drawable/ic_menu"
-            android:text="12"
-            tools:text="23"
-            android:textAppearance="?attr/textAppearanceListItemSecondary" />
-    </LinearLayout>
+            android:gravity="center"
+            android:text="@{Integer.toString(examinationEntry.count)}"
+            android:textAppearance="?attr/textAppearanceListItemSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/examination_text"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="23" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -13,18 +13,18 @@ public class ExaminationEntry implements Parcelable {
     public final long _id;
 
     public ExaminationEntry(long _id,
-                            String commandmentId,
-                            String adult,
-                            String single,
-                            String married,
-                            String religious,
-                            String priest,
-                            String teen,
-                            String female,
-                            String male,
-                            String child,
-                            String customId,
-                            String description) {
+                            int commandmentId,
+                            int adult,
+                            int single,
+                            int married,
+                            int religious,
+                            int priest,
+                            int teen,
+                            int female,
+                            int male,
+                            int child,
+                            int customId,
+                            String description, int count) {
         this._id = _id;
         this.commandmentId = commandmentId;
         this.adult = adult;
@@ -38,59 +38,64 @@ public class ExaminationEntry implements Parcelable {
         this.child = child;
         this.customId = customId;
         this.description = description;
+        this.count = count;
     }
 
     @ColumnInfo(name="COMMANDMENT_ID")
-    public final String commandmentId;
+    public final int commandmentId;
     
     @ColumnInfo(name="ADULT")
-    public final String adult;
+    public final int adult;
 
     @ColumnInfo(name="SINGLE")
-    public final String single;
+    public final int single;
     
     @ColumnInfo(name="MARRIED")
-    public final String married;
+    public final int married;
 
     @ColumnInfo(name="RELIGIOUS")
-    public final String religious;
+    public final int religious;
 
     @ColumnInfo(name="PRIEST")
-    public final String priest;
+    public final int priest;
 
     @ColumnInfo(name="TEEN")
-    public final String teen;
+    public final int teen;
 
     @ColumnInfo(name="FEMALE")
-    public final String female;
+    public final int female;
 
     @ColumnInfo(name="MALE")
-    public final String male;
+    public final int male;
 
     @ColumnInfo(name="CHILD")
-    public final String child;
+    public final int child;
 
     @ColumnInfo(name="CUSTOM_ID")
-    public final String customId;
+    public final int customId;
 
     @ColumnInfo(name="DESCRIPTION")
     public final String description;
 
+    @ColumnInfo(name = "COUNT")
+    public int count;
+
 
     protected ExaminationEntry(Parcel in) {
         _id = in.readLong();
-        commandmentId = in.readString();
-        adult = in.readString();
-        single = in.readString();
-        married = in.readString();
-        religious = in.readString();
-        priest = in.readString();
-        teen = in.readString();
-        female = in.readString();
-        male = in.readString();
-        child = in.readString();
-        customId = in.readString();
+        commandmentId = in.readInt();
+        adult = in.readInt();
+        single = in.readInt();
+        married = in.readInt();
+        religious = in.readInt();
+        priest = in.readInt();
+        teen = in.readInt();
+        female = in.readInt();
+        male = in.readInt();
+        child = in.readInt();
+        customId = in.readInt();
         description = in.readString();
+        count = in.readInt();
     }
 
     public static final Creator<ExaminationEntry> CREATOR = new Creator<ExaminationEntry>() {
@@ -105,6 +110,7 @@ public class ExaminationEntry implements Parcelable {
         }
     };
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -113,17 +119,60 @@ public class ExaminationEntry implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(_id);
-        dest.writeString(commandmentId);
-        dest.writeString(adult);
-        dest.writeString(single);
-        dest.writeString(married);
-        dest.writeString(religious);
-        dest.writeString(priest);
-        dest.writeString(teen);
-        dest.writeString(female);
-        dest.writeString(male);
-        dest.writeString(child);
-        dest.writeString(customId);
+        dest.writeInt(commandmentId);
+        dest.writeInt(adult);
+        dest.writeInt(single);
+        dest.writeInt(married);
+        dest.writeInt(religious);
+        dest.writeInt(priest);
+        dest.writeInt(teen);
+        dest.writeInt(female);
+        dest.writeInt(male);
+        dest.writeInt(child);
+        dest.writeInt(customId);
         dest.writeString(description);
+        dest.writeInt(count);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ExaminationEntry that = (ExaminationEntry) o;
+
+        if (_id != that._id) return false;
+        if (commandmentId != that.commandmentId) return false;
+        if (adult != that.adult) return false;
+        if (single != that.single) return false;
+        if (married != that.married) return false;
+        if (religious != that.religious) return false;
+        if (priest != that.priest) return false;
+        if (teen != that.teen) return false;
+        if (female != that.female) return false;
+        if (male != that.male) return false;
+        if (child != that.child) return false;
+        if (customId != that.customId) return false;
+        if (count != that.count) return false;
+        return description.equals(that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = (int) (_id ^ (_id >>> 32));
+        result = 31 * result + commandmentId;
+        result = 31 * result + adult;
+        result = 31 * result + single;
+        result = 31 * result + married;
+        result = 31 * result + religious;
+        result = 31 * result + priest;
+        result = 31 * result + teen;
+        result = 31 * result + female;
+        result = 31 * result + male;
+        result = 31 * result + child;
+        result = 31 * result + customId;
+        result = 31 * result + description.hashCode();
+        result = 31 * result + count;
+        return result;
     }
 }

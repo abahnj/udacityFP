@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.databinding.FragmentExaminationentryBinding;
+import com.norvera.confession.ui.main.MainViewModel;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -33,9 +34,11 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
                     return examinationEntry.equals(t1);
                 }
             };
+    private final MainViewModel viewModel;
 
-    ExaminationEntryAdapter(){
+    ExaminationEntryAdapter(MainViewModel viewModel){
         super(DIFF_CALLBACK);
+        this.viewModel = viewModel;
     }
 
 
@@ -51,17 +54,19 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
     @Override
     public void onBindViewHolder(@NonNull final ExaminationEntryAdapter.ViewHolder holder, int position) {
         ExaminationEntry examinationEntry = getItem(position);
-        holder.onBind(createOnClickListener(examinationEntry._id), examinationEntry);
+        holder.onBind(createOnClickListener(examinationEntry._id, examinationEntry), examinationEntry);
     }
 
-    private View.OnClickListener createOnClickListener(long examinationId) {
+    private View.OnClickListener createOnClickListener(long examinationId, ExaminationEntry examinationEntry) {
 
         return view -> {
             Toast.makeText(view.getContext(), (Long.toString(examinationId)), Toast.LENGTH_SHORT).show();
-
+            examinationEntry.count += 1;
+            viewModel.updateCountForEntry(examinationEntry);
            /* CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
                     CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
-            Navigation.findNavController(view).navigate(commandmentsFragmentDirections);*/
+            Navigation.findNavController(view).navigate(commandmentsFragmentDirections);
+            */
         };
 
     }
