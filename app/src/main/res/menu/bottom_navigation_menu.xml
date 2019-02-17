@@ -8,7 +8,7 @@
     <item android:id="@+id/confessionFragmentOne"
         android:icon="@drawable/ic_menu"
         android:title="Confession" />
-    <item android:id="@+id/guides"
+    <item android:id="@+id/guideFragment"
         android:icon="@drawable/ic_menu"
         android:title="Guides"
         app:showAsAction="ifRoom"/>

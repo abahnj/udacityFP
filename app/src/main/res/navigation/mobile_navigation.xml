@@ -33,6 +33,29 @@
         android:id="@+id/confessionFragmentOne"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentOne"
         android:label="confession_fragment_one"
-        tools:layout="@layout/confession_fragment_one" />
+        tools:layout="@layout/confession_fragment_one" >
+        <action
+            android:id="@+id/action_confessionFragmentOne_to_confessionFragmentTwo"
+            app:destination="@id/confessionFragmentTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/confessionFragmentTwo"
+        android:name="com.norvera.confession.ui.confession.ConfessionFragmentTwo"
+        android:label="confession_fragment_two"
+        tools:layout="@layout/confession_fragment_two" >
+        <action
+            android:id="@+id/action_confessionFragmentTwo_to_confessionFragmentThree"
+            app:destination="@id/confessionFragmentThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/confessionFragmentThree"
+        android:name="com.norvera.confession.ui.confession.ConfessionFragmentThree"
+        android:label="fragment_confession_three"
+        tools:layout="@layout/fragment_confession_three" />
 
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.norvera.confession.ui.guide.GuideFragment"
+        android:label="Guide Fragment"
+        tools:layout="@layout/fragment_guide" />
 </navigation>
