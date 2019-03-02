@@ -10,6 +10,7 @@ import com.norvera.confession.databinding.FragmentCommandmentsBinding;
 import com.norvera.confession.interfaces.ClickListeners;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
@@ -25,7 +26,7 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
             new DiffUtil.ItemCallback<CommandmentEntry>() {
                 @Override
                 public boolean areItemsTheSame(@NonNull CommandmentEntry commandmentEntry, @NonNull CommandmentEntry t1) {
-                    return (commandmentEntry._id == t1._id);
+                    return (commandmentEntry.id == t1.id);
                 }
 
                 @Override
@@ -51,7 +52,7 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         CommandmentEntry commandmentEntry = getItem(position);
-        holder.onBind(createOnClickListener(commandmentEntry._id), commandmentEntry);
+        holder.onBind(createOnClickListener(commandmentEntry.id), commandmentEntry);
     }
 
 
@@ -60,7 +61,7 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
         return view -> {
             Toast.makeText(view.getContext(), (Long.toString(commandmentId)), Toast.LENGTH_SHORT).show();
 
-            CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
+            NavDirections commandmentsFragmentDirections =
                     CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
             Navigation.findNavController(view).navigate(commandmentsFragmentDirections);
         };

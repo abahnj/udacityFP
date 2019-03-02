@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class PersonToSinEntry {
 
-    public PersonToSinEntry(@NonNull long id, String PERSON_ID,
+    public PersonToSinEntry(long id, String PERSON_ID,
                             String SINS_ID,
                             String COUNT,
                             String EDITED,

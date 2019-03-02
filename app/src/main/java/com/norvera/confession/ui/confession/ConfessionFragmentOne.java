@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
+import com.norvera.confession.R;
 import com.norvera.confession.databinding.ConfessionFragmentOneBinding;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 public class ConfessionFragmentOne extends Fragment {
 
@@ -20,9 +20,8 @@ public class ConfessionFragmentOne extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         ConfessionFragmentOneBinding binding = ConfessionFragmentOneBinding.inflate(inflater, container, false);
 
-        binding.btnNext.setOnClickListener( view -> {
-            Toast.makeText(getContext(), ((Button) view).getText(), Toast.LENGTH_SHORT).show();
-        });
+        binding.btnNext.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.confessionFragmentTwo, null));
+
 
 
         return binding.getRoot();

@@ -11,7 +11,6 @@ import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
 import com.norvera.confession.utils.InjectorUtils;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -46,6 +45,7 @@ public class ExaminationFragment extends Fragment {
         commandmentId = ExaminationFragmentArgs.fromBundle(getArguments()).getCommandmentId();
         binding = FragmentExaminationentryListBinding.inflate(inflater, container, false);
 
+        binding.setLifecycleOwner(this);
         // todo refactor
         setupViewModel(requireActivity());
 
@@ -60,14 +60,11 @@ public class ExaminationFragment extends Fragment {
 
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-    }
-
-    private void subscribeUi(ExaminationEntryAdapter adapter, long plantId) {
-        mViewModel.allExaminationsForCommandment(plantId).observe(this, adapter::submitList);
+    private void subscribeUi(ExaminationEntryAdapter adapter, long commandmentId) {
+        mViewModel.allExaminationsForCommandment(commandmentId).observe(this, examinationEntries -> {
+            mViewModel.examinationEntries.set(examinationEntries);
+            adapter.submitList(mViewModel.examinationEntries.get());
+        });
     }
 
     private void setupViewModel(Context context) {

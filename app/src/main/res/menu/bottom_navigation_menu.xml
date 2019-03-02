@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_menu"
         android:title="Guides"
         app:showAsAction="ifRoom"/>
-    <item android:id="@+id/prayer"
+    <item android:id="@+id/prayerFragmentList"
         android:icon="@drawable/ic_menu"
         android:title="Prayers" />
 </menu>

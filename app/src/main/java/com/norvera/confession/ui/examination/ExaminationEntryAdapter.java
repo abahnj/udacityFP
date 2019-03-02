@@ -26,7 +26,7 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
             new DiffUtil.ItemCallback<ExaminationEntry>() {
                 @Override
                 public boolean areItemsTheSame(@NonNull ExaminationEntry examinationEntry, @NonNull ExaminationEntry t1) {
-                    return (examinationEntry._id == t1._id);
+                    return (examinationEntry.id == t1.id);
                 }
 
                 @Override
@@ -54,7 +54,7 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
     @Override
     public void onBindViewHolder(@NonNull final ExaminationEntryAdapter.ViewHolder holder, int position) {
         ExaminationEntry examinationEntry = getItem(position);
-        holder.onBind(createOnClickListener(examinationEntry._id, examinationEntry), examinationEntry);
+        holder.onBind(createOnClickListener(examinationEntry.id, examinationEntry), examinationEntry);
     }
 
     private View.OnClickListener createOnClickListener(long examinationId, ExaminationEntry examinationEntry) {
@@ -82,18 +82,19 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
 
         void onBind(View.OnClickListener clickListener, ExaminationEntry item) {
             itemView.setTag(item);
+            binding.executePendingBindings();
             binding.setClickListener(clickListener);
             binding.setExaminationEntry(item);
             binding.executePendingBindings();
 
             /*if (commandmentEntry.commandment != null ) {
-                if (commandmentEntry._id < 11)
+                if (commandmentEntry.id < 11)
                     mTvCommandmentDescription.setText(commandmentEntry.text);
                 else
                     mTvCommandmentDescription.setText(commandmentEntry.commandment);
             }
 
-            mTvCommandmentTitle.setText(getNumberOrdinal((commandmentEntry._id)));
+            mTvCommandmentTitle.setText(getNumberOrdinal((commandmentEntry.id)));
 
 */
         }

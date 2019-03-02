@@ -9,8 +9,6 @@
         android:layout_height="match_parent"
         android:background="@mipmap/examination_of_conscience"
         >
-
-
         <TextView
             android:id="@+id/fragmentTitle"
             android:layout_width="wrap_content"
@@ -34,10 +32,10 @@
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/in_the_name"
-            app:layout_constraintBottom_toTopOf="@+id/amen"
+            app:layout_constraintBottom_toTopOf="@id/amen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guidelineBegin" />
+            app:layout_constraintTop_toBottomOf="@id/guidelineBegin" />
 
         <TextView
             android:id="@+id/amen"
@@ -48,10 +46,10 @@
             android:layout_marginEnd="@dimen/margin_normal"
             android:layout_marginBottom="@dimen/margin_normal"
             android:text="@string/amen"
-            app:layout_constraintBottom_toTopOf="@+id/blessMe"
+            app:layout_constraintBottom_toTopOf="@id/blessMe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvInTheName" />
+            app:layout_constraintTop_toBottomOf="@id/tvInTheName" />
 
         <TextView
             android:id="@+id/blessMe"

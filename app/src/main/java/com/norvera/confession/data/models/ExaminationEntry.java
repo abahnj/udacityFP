@@ -5,14 +5,16 @@ import android.os.Parcelable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "SIN")
 public class ExaminationEntry implements Parcelable {
     @PrimaryKey
-    public final long _id;
+    @ColumnInfo(name = "_id")
+    public final long id;
 
-    public ExaminationEntry(long _id,
+    public ExaminationEntry(long id,
                             int commandmentId,
                             int adult,
                             int single,
@@ -25,7 +27,7 @@ public class ExaminationEntry implements Parcelable {
                             int child,
                             int customId,
                             String description, int count) {
-        this._id = _id;
+        this.id = id;
         this.commandmentId = commandmentId;
         this.adult = adult;
         this.single = single;
@@ -81,8 +83,9 @@ public class ExaminationEntry implements Parcelable {
     public int count;
 
 
+    @Ignore
     protected ExaminationEntry(Parcel in) {
-        _id = in.readLong();
+        id = in.readLong();
         commandmentId = in.readInt();
         adult = in.readInt();
         single = in.readInt();
@@ -118,7 +121,7 @@ public class ExaminationEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(_id);
+        dest.writeLong(id);
         dest.writeInt(commandmentId);
         dest.writeInt(adult);
         dest.writeInt(single);
@@ -141,7 +144,7 @@ public class ExaminationEntry implements Parcelable {
 
         ExaminationEntry that = (ExaminationEntry) o;
 
-        if (_id != that._id) return false;
+        if (id != that.id) return false;
         if (commandmentId != that.commandmentId) return false;
         if (adult != that.adult) return false;
         if (single != that.single) return false;
@@ -159,7 +162,7 @@ public class ExaminationEntry implements Parcelable {
 
     @Override
     public int hashCode() {
-        int result = (int) (_id ^ (_id >>> 32));
+        int result = (int) (id ^ (id >>> 32));
         result = 31 * result + commandmentId;
         result = 31 * result + adult;
         result = 31 * result + single;

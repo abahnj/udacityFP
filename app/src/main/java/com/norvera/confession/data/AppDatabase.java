@@ -5,17 +5,20 @@ import android.util.Log;
 
 import com.norvera.confession.data.dao.CommandmentDao;
 import com.norvera.confession.data.dao.ExaminationDao;
+import com.norvera.confession.data.dao.GuideDao;
+import com.norvera.confession.data.dao.PrayersDao;
 import com.norvera.confession.data.models.CommandmentEntry;
+import com.norvera.confession.data.models.ExaminationActiveEntry;
+import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.data.models.GuideEntry;
 import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PersonToSinEntry;
 import com.norvera.confession.data.models.PrayersEntry;
-import com.norvera.confession.data.models.ExaminationActiveEntry;
-import com.norvera.confession.data.models.ExaminationEntry;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory;
 
 @Database(entities = {
                 ExaminationEntry.class,
@@ -37,6 +40,8 @@ public abstract class AppDatabase extends RoomDatabase {
     // DAO
     public abstract ExaminationDao examinationDao();
     public abstract CommandmentDao commandmentDao();
+    public abstract GuideDao guideDao();
+    public abstract PrayersDao prayersDao();
 
 
     public static AppDatabase getInstance(Context context) {
@@ -55,7 +60,8 @@ public abstract class AppDatabase extends RoomDatabase {
                 Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,
                         DATABASE_NAME);
 
-        return (b.openHelperFactory(new androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory()).build());
+        return (b.openHelperFactory(new AssetSQLiteOpenHelperFactory()).build());
     }
+
 }
 

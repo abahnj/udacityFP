@@ -1,5 +1,6 @@
 package com.norvera.confession.data.dao;
 
+import com.norvera.confession.data.models.ExaminationActiveEntry;
 import com.norvera.confession.data.models.ExaminationEntry;
 
 import java.util.List;
@@ -17,4 +18,8 @@ public abstract class ExaminationDao {
 
     @Update
     public abstract void updateEntry(ExaminationEntry examinationEntry);
+
+    @Query("SELECT _id, DESCRIPTION FROM SIN_ACTIVE WHERE _id IN (SELECT _id FROM SIN WHERE COUNT > 0)")
+    public abstract LiveData<List<ExaminationActiveEntry>> loadAllExaminationsWithCount();
+
 }

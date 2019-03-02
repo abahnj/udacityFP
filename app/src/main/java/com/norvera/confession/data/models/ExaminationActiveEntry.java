@@ -1,24 +1,38 @@
 package com.norvera.confession.data.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "SIN_ACTIVE")
-public class ExaminationActiveEntry extends ExaminationEntry {
-    public ExaminationActiveEntry(@NonNull long _id,
-                                  int commandmentId,
-                                  int adult,
-                                  int single,
-                                  int married,
-                                  int religious,
-                                  int priest,
-                                  int teen,
-                                  int female,
-                                  int male,
-                                  int child,
-                                  int customId,
-                                  int count,
-                                  String description) {
-        super(_id, commandmentId, adult, single, married, religious, priest, teen, female, male, child, customId, description, count);
+public class ExaminationActiveEntry {
+
+    @PrimaryKey
+    @ColumnInfo(name = "_id")
+    private long id;
+
+    @ColumnInfo(name = "DESCRIPTION")
+    private String description;
+
+    public ExaminationActiveEntry(long id, String description) {
+        this.id = id;
+        this.description = description;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

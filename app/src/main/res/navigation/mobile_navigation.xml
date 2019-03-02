@@ -32,19 +32,23 @@
     <fragment
         android:id="@+id/confessionFragmentOne"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentOne"
-        android:label="confession_fragment_one"
-        tools:layout="@layout/confession_fragment_one" >
+        android:label="Confession"
+        tools:layout="@layout/confession_fragment_one">
         <action
-            android:id="@+id/action_confessionFragmentOne_to_confessionFragmentTwo"
-            app:destination="@id/confessionFragmentTwo" />
+            android:id="@+id/confessionFragmentOne_to_confessionFragmentTwo"
+            app:destination="@id/confessionFragmentTwo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/confessionFragmentTwo"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentTwo"
         android:label="confession_fragment_two"
-        tools:layout="@layout/confession_fragment_two" >
+        tools:layout="@layout/confession_fragment_two">
         <action
-            android:id="@+id/action_confessionFragmentTwo_to_confessionFragmentThree"
+            android:id="@+id/confessionFragmentTwo_to_confessionFragmentThree"
             app:destination="@id/confessionFragmentThree" />
     </fragment>
     <fragment
@@ -57,5 +61,62 @@
         android:id="@+id/guideFragment"
         android:name="com.norvera.confession.ui.guide.GuideFragment"
         android:label="Guide Fragment"
-        tools:layout="@layout/fragment_guide" />
+        tools:layout="@layout/fragment_guide">
+        <action
+            android:id="@+id/action_guideFragment_to_guideFragmentList"
+            app:destination="@id/guideFragmentList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/guideFragmentList"
+        android:name="com.norvera.confession.ui.guide.GuideListFragment"
+        android:label="Guide Fragment"
+        tools:layout="@layout/fragment_guide_list">
+        <action
+            android:id="@+id/action_guideFragmentList_to_guideFragmentDetail"
+            app:destination="@id/guideFragmentDetail" />
+        <argument
+            android:name="guideId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/guideFragmentDetail"
+        android:name="com.norvera.confession.ui.guide.GuideDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_guide_detail">
+        <argument
+            android:name="title"
+            android:defaultValue="Details"
+            app:argType="string" />
+        <argument
+            android:name="guideEntry"
+            app:argType="com.norvera.confession.data.models.GuideEntry" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/prayerFragmentList"
+        android:name="com.norvera.confession.ui.prayers.PrayerList"
+        android:label="Guide Fragment"
+        tools:layout="@layout/fragment_prayer_list">
+        <action
+            android:id="@+id/action_prayerFragmentList_to_prayerFragmentDetail"
+            app:destination="@id/prayerFragmentDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/prayerFragmentDetail"
+        android:name="com.norvera.confession.ui.prayers.PrayerDetail"
+        android:label="{title}"
+        tools:layout="@layout/fragment_prayer_detail">
+        <argument
+            android:name="title"
+            android:defaultValue="Details"
+            app:argType="string" />
+        <argument
+            android:name="prayerEntry"
+            app:argType="com.norvera.confession.data.models.PrayersEntry" />
+    </fragment>
+
 </navigation>

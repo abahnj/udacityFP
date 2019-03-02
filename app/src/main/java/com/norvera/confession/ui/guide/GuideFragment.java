@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.norvera.confession.databinding.FragmentGuideBinding;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +24,7 @@ public class GuideFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         FragmentGuideBinding binding =  FragmentGuideBinding.inflate(inflater, container, false);
@@ -36,9 +37,9 @@ public class GuideFragment extends Fragment {
     private View.OnClickListener createOnClickListener() {
 
         return view -> {
-            Toast.makeText(view.getContext(), Integer.toString(view.getId()), Toast.LENGTH_SHORT).show();
+            GuideFragmentDirections.ActionGuideFragmentToGuideFragmentList toGuideFragmentList = GuideFragmentDirections.actionGuideFragmentToGuideFragmentList(view.getId());
 
-
+            Navigation.findNavController(view).navigate(toGuideFragmentList);
            /* CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
                     CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
             Navigation.findNavController(view).navigate(commandmentsFragmentDirections);

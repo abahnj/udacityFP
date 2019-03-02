@@ -4,8 +4,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.norvera.confession.data.models.ExaminationActiveEntry;
-import com.norvera.confession.data.models.ExaminationEntry;
-import com.norvera.confession.databinding.FragmentExaminationentryBinding;
+import com.norvera.confession.databinding.FragmentConfessionEntryBinding;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -17,7 +16,7 @@ public class ConfessionAdapter extends ListAdapter<ExaminationActiveEntry, Confe
             new DiffUtil.ItemCallback<ExaminationActiveEntry>() {
                 @Override
                 public boolean areItemsTheSame(@NonNull ExaminationActiveEntry ExaminationActiveEntry, @NonNull ExaminationActiveEntry t1) {
-                    return (ExaminationActiveEntry._id == t1._id);
+                    return (ExaminationActiveEntry.getId() == t1.getId());
                 }
 
                 @Override
@@ -27,14 +26,14 @@ public class ConfessionAdapter extends ListAdapter<ExaminationActiveEntry, Confe
             };
 
 
-    protected ConfessionAdapter() {
+    ConfessionAdapter() {
         super(DIFF_CALLBACK);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        FragmentExaminationentryBinding binding = FragmentExaminationentryBinding.inflate(
+        FragmentConfessionEntryBinding binding = FragmentConfessionEntryBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false);
 
         return new ConfessionAdapter.ViewHolder(binding);
@@ -47,17 +46,16 @@ public class ConfessionAdapter extends ListAdapter<ExaminationActiveEntry, Confe
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private FragmentExaminationentryBinding binding;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        private FragmentConfessionEntryBinding binding;
 
-        public ViewHolder(@NonNull FragmentExaminationentryBinding binding) {
+        ViewHolder(@NonNull FragmentConfessionEntryBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
-        void onBind(ExaminationEntry item) {
+        void onBind(ExaminationActiveEntry item) {
             itemView.setTag(item);
-            binding.setClickListener(null);
             binding.setExaminationEntry(item);
             binding.executePendingBindings();
 

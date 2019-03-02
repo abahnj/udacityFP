@@ -13,7 +13,7 @@ public class BindingAdapters {
     @BindingAdapter("commandmentText")
     public static void commandmentText(TextView textView, CommandmentEntry commandmentEntry) {
         if (commandmentEntry.commandment != null ) {
-            if (commandmentEntry._id < 11)
+            if (commandmentEntry.id < 11)
                 textView.setText(commandmentEntry.text);
             else
                 textView.setText(commandmentEntry.commandment);
