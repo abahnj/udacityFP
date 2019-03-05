@@ -1,0 +1,63 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceCategory
+    app:key="profile_category"
+    app:title="Profile"
+    app:iconSpaceReserved="false"
+    >
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_gender_key"
+        android:entryValues="@array/pref_gender_values"
+        android:key="gender_list"
+        app:useSimpleSummaryProvider="true"
+        app:iconSpaceReserved="false"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="Gender" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_age_key"
+        android:entryValues="@array/pref_age_values"
+        android:key="age_list"
+        app:useSimpleSummaryProvider="true"
+        app:iconSpaceReserved="false"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="Age" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_vocation_key"
+        android:entryValues="@array/pref_vocation_values"
+        android:key="vocation_list"
+        app:iconSpaceReserved="false"
+        app:useSimpleSummaryProvider="true"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="Vocation" />
+
+</PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        app:key="restore_category"
+        android:title="Restore"
+        app:iconSpaceReserved="false"
+        >
+        <Preference
+            android:defaultValue="1"
+            android:entries="@array/pref_vocation_key"
+            android:entryValues="@array/pref_vocation_values"
+            android:summary="@string/restore_warning"
+            app:iconSpaceReserved="false"
+            android:key="restore_app"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="Restore App" />
+
+    </androidx.preference.PreferenceCategory>
+
+
+</androidx.preference.PreferenceScreen>

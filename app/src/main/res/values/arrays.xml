@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_gender_key">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+
+    <string-array name="pref_gender_values">
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="pref_age_key">
+        <item>@string/adult</item>
+        <item>@string/teen</item>
+        <item>@string/child</item>
+    </string-array>
+
+    <string-array name="pref_age_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pref_vocation_key">
+        <item>@string/single</item>
+        <item>@string/married</item>
+        <item>@string/priest</item>
+        <item>@string/religious</item>
+    </string-array>
+
+    <string-array name="pref_vocation_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>

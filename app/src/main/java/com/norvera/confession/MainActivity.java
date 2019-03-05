@@ -1,8 +1,14 @@
 package com.norvera.confession;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.norvera.confession.databinding.MainActivityBinding;
 import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
@@ -12,6 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
@@ -24,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private MainViewModel mViewModel;
     private MainActivityBinding mainActivityBinding;
     private NavController navController;
-
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavMenu(navController);
 
         setupViewModel();
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 
     private void setupBottomNavMenu(NavController navController) {
@@ -64,6 +74,41 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         return navController.navigateUp() || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            case R.id.action_share:
+                share();
+                return true;
+        }
+        return true;
+    }
+
+    private void openSettings() {
+        navController.navigate(R.id.settingsFragment);
+    }
+
+    private void share() {
+        Intent builder = ShareCompat.IntentBuilder.from(this)
+                .setText(getString(R.string.share_text))
+                .setType("text/plain")
+                .createChooserIntent()
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+
+        startActivity(builder);
     }
 
 

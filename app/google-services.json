@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "516795700126",
+    "firebase_url": "https://confession-1c8f8.firebaseio.com",
+    "project_id": "confession-1c8f8",
+    "storage_bucket": "confession-1c8f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516795700126:android:6daf11894dd07b27",
+        "android_client_info": {
+          "package_name": "com.norvera.confession"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516795700126-gh0rilsusdpefgscu8g58ql6rrgf5mpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.norvera.confession",
+            "certificate_hash": "59ea82d8c518ef332b62e399d2d0b63e0665b061"
+          }
+        },
+        {
+          "client_id": "516795700126-t4qb40r6e2cbgebjvaee59gkk8emcdso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Slnro9wZvapMIPJZQYBoaeWEw_xl97Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516795700126-t4qb40r6e2cbgebjvaee59gkk8emcdso.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

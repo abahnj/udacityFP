@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -17,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 
     dataBinding {
         enabled = true
@@ -50,9 +52,11 @@ dependencies {
     implementation "androidx.room:room-runtime:$rootProject.room_version"
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
 
+    implementation 'androidx.preference:preference:1.1.0-alpha03'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha02'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
     annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
     // For Kotlin use kapt instead of annotationProcessor
 

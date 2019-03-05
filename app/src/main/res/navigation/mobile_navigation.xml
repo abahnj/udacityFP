@@ -106,6 +106,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.norvera.confession.ui.settings.SettingsFragment"
+        android:label="Settings"
+        >
+    </fragment>
+
+    <fragment
         android:id="@+id/prayerFragmentDetail"
         android:name="com.norvera.confession.ui.prayers.PrayerDetail"
         android:label="{title}"
