@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/examination_of_conscience"
+        android:background="@drawable/guide_detail"
         >
 
         <TextView
@@ -28,7 +28,6 @@
             android:gravity="center"
             tools:text="@tools:sample/cities"
             android:text="@{guideEntry.guideTitle}"
-            app:layout_constraintBottom_toTopOf="@id/nestedScrollView"
             android:textAppearance="?attr/textAppearanceHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +36,7 @@
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_normal"
             app:layout_constraintEnd_toEndOf="parent"
             android:scrollbars="vertical"

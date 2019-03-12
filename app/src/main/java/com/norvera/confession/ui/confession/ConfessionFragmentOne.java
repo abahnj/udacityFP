@@ -22,8 +22,6 @@ public class ConfessionFragmentOne extends Fragment {
 
         binding.btnNext.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.confessionFragmentTwo, null));
 
-
-
         return binding.getRoot();
     }
 

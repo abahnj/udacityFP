@@ -38,12 +38,7 @@ public class GuideFragment extends Fragment {
 
         return view -> {
             GuideFragmentDirections.ActionGuideFragmentToGuideFragmentList toGuideFragmentList = GuideFragmentDirections.actionGuideFragmentToGuideFragmentList(view.getId());
-
             Navigation.findNavController(view).navigate(toGuideFragmentList);
-           /* CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
-                    CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
-            Navigation.findNavController(view).navigate(commandmentsFragmentDirections);
-            */
         };
 
     }

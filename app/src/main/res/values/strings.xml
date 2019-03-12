@@ -266,5 +266,13 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="date_of_next_confession">Date of next Confession</string>
+    <string name="absolution">Receive absolution and say Amen</string>
+    <string name="priest_saying">If the priest says \"Give thanks to the Lord for he is Good\" answer \"For His Mercy endures forever\"</string>
+    <string name="cd_background_image">background image</string>
+    <string name="finish_confession">Finish Confession</string>
 
 </resources>

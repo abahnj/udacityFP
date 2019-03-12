@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.norvera.confession.databinding.FragmentPrayerListBinding;
 import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
+import com.norvera.confession.utils.DividerDecoration;
 import com.norvera.confession.utils.InjectorUtils;
 
 import androidx.fragment.app.Fragment;
@@ -44,8 +45,7 @@ public class PrayerList extends Fragment {
 
         adapter = new SectionedAdapter();
         binding.rvPrayers.setAdapter(adapter);
-        DividerItemDecoration decoration = new DividerItemDecoration(getContext(), VERTICAL);
-        binding.rvPrayers.addItemDecoration(decoration);
+        binding.rvPrayers.addItemDecoration(new DividerDecoration(getContext()));
 
         subscribeUi(adapter);
 

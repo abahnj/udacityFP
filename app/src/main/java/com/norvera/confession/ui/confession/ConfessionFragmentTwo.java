@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.norvera.confession.R;
 import com.norvera.confession.databinding.ConfessionFragmentTwoBinding;
-import com.norvera.confession.databinding.FragmentExaminationentryListBinding;
-import com.norvera.confession.ui.examination.ExaminationEntryAdapter;
-import com.norvera.confession.ui.examination.ExaminationFragmentArgs;
 import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
 import com.norvera.confession.utils.InjectorUtils;
@@ -19,6 +16,7 @@ import com.norvera.confession.utils.InjectorUtils;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
 import static androidx.recyclerview.widget.DividerItemDecoration.VERTICAL;
@@ -43,6 +41,9 @@ public class ConfessionFragmentTwo extends Fragment {
         ConfessionFragmentTwoBinding binding = ConfessionFragmentTwoBinding.inflate(inflater, container, false);
 
         binding.setLifecycleOwner(this);
+
+        binding.btnNext.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.confessionFragmentThree, null));
+
         // todo refactor
         setupViewModel(requireActivity());
 

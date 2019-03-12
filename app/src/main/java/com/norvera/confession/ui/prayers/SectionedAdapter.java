@@ -26,6 +26,8 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
 
     private static final int[] HEADER_POSITION = new int[]{0, 7};
     private HeaderDataItem headerItem = new HeaderDataItem("Title");
+    public static final int HEADER_VIEW_TYPE = R.layout.list_header;
+    public static final int LIST_VIEW_TYPE = R.layout.fragment_prayer_item;
 
     // A class holding header data
     private class HeaderDataItem {
@@ -48,7 +50,7 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
                     return PrayersEntry.equals(t1);
                 }
             };
-    
+
     SectionedAdapter() {
         super(DIFF_CALLBACK);
     }
@@ -56,7 +58,7 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == R.layout.list_header) {
+        if (viewType == HEADER_VIEW_TYPE) {
             ListHeaderBinding binding = ListHeaderBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
             return new HeaderViewHolder(binding);
         } else {
@@ -68,15 +70,15 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
-            case R.layout.list_header: {
-                ((HeaderViewHolder)holder).onBind();
+            case HEADER_VIEW_TYPE: {
+                ((HeaderViewHolder) holder).onBind(position);
                 break;
             }
-            case R.layout.fragment_prayer_item: {
-                ((ViewHolder)holder).onBind(createOnClickListener(getItem(position)), getItem(position));
+            case LIST_VIEW_TYPE: {
+                ((ViewHolder) holder).onBind(createOnClickListener(getItem(position)), getItem(position));
                 break;
             }
-            default:{
+            default: {
 
             }
         }
@@ -87,15 +89,15 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
     public int getItemViewType(int position) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             if (IntStream.of(HEADER_POSITION).anyMatch(x -> x == position)) {
-                return R.layout.list_header;
+                return HEADER_VIEW_TYPE;
             } else {
-                return R.layout.fragment_prayer_item;
+                return LIST_VIEW_TYPE;
             }
         } else {
             if (Arrays.asList(HEADER_POSITION).contains(position)) {
-                return R.layout.list_header;
+                return HEADER_VIEW_TYPE;
             } else {
-                return R.layout.fragment_prayer_item;
+                return LIST_VIEW_TYPE;
             }
         }
     }
@@ -130,13 +132,14 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
     public class HeaderViewHolder extends RecyclerView.ViewHolder {
         private final ListHeaderBinding binding;
 
-        public HeaderViewHolder(@NonNull ListHeaderBinding binding) {
+        HeaderViewHolder(@NonNull ListHeaderBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
 
-        public void onBind() {
-            binding.sectionHeader.setText(headerItem.title);
+        void onBind(int position) {
+            //todo move to string resource
+            binding.sectionHeader.setText(position == 0 ? "Act of Contrition" : "Traditional Prayers");
             binding.executePendingBindings();
         }
     }
@@ -150,4 +153,4 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
         }
     }
 
-    }
+}

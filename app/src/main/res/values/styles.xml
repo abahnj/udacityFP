@@ -27,4 +27,8 @@
         <item name="android:textColorSecondary">@color/material_color_white</item>
         <item name="android:textColor">@color/material_color_white</item>
     </style>
+
+    <style name="AppTheme.Alpha">
+        <item name="android:alpha">.4</item>
+    </style>
 </resources>

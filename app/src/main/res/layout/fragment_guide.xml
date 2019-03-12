@@ -1,175 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.guide.GuideFragment">
 
     <data>
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/margin_normal"
-        android:paddingLeft="@dimen/margin_normal"
-        android:paddingRight="@dimen/margin_normal"
-        android:paddingTop="@dimen/margin_normal"
-        >
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_faq"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/margin_normal"
-            android:layout_weight=".2"
-            android:elevation="@dimen/cardview_default_elevation"
-            android:onClick="@{clickListener}"
-            app:cardCornerRadius="4dp">
+            android:layout_height="match_parent"
+            android:alpha=".1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/unknown_3" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/faq" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom"
-                android:alpha=".7"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="end|center_vertical"
-                android:padding="8dp"
-                style="@style/AppTheme.OverlineText"
-                android:text="@string/faq"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_asbp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/margin_normal"
-            android:layout_weight=".2"
-            android:elevation="@dimen/cardview_default_elevation"
-            android:onClick="@{clickListener}"
-            app:cardCornerRadius="4dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_faq"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/as_said_by_pope1" />
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_weight=".2"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:onClick="@{clickListener}"
+                app:cardCornerRadius="4dp">
 
-            <TextView
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/faq" />
+
+                <TextView
+                    style="@style/AppTheme.OverlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:alpha=".7"
+                    android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="end|center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/faq"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_asbp"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom"
-                android:alpha=".7"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="end|center_vertical"
-                android:padding="8dp"
-                android:text="@string/as_said_by_popes"
-                style="@style/AppTheme.OverlineText"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_weight=".2"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:onClick="@{clickListener}"
+                app:cardCornerRadius="4dp">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_effc"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/margin_normal"
-            android:layout_weight=".2"
-            android:elevation="@dimen/cardview_default_elevation"
-            android:onClick="@{clickListener}"
-            app:cardCornerRadius="@dimen/cardview_default_radius">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/as_said_by_pope1" />
 
-            <ImageView
+                <TextView
+                    style="@style/AppTheme.OverlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:alpha=".7"
+                    android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="end|center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/as_said_by_popes"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_effc"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/fulton_sheen" />
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_weight=".2"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:onClick="@{clickListener}"
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
-            <TextView
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/fulton_sheen" />
+
+                <TextView
+                    style="@style/AppTheme.OverlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:alpha=".7"
+                    android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="end|center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/extracts_fulton_sheen"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_ccc"
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom"
-                android:alpha=".7"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="end|center_vertical"
-                android:padding="8dp"
-                android:text="@string/extracts_fulton_sheen"
-                style="@style/AppTheme.OverlineText"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_weight=".2"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:onClick="@{clickListener}"
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_ccc"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/margin_normal"
-            android:layout_weight=".2"
-            android:elevation="@dimen/cardview_default_elevation"
-            android:onClick="@{clickListener}"
-            app:cardCornerRadius="@dimen/cardview_default_radius">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ccc2" />
 
-            <ImageView
+                <TextView
+                    style="@style/AppTheme.OverlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:alpha=".7"
+                    android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="end|center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/catechism_of_the_catholic_church"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_htmagc"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/ccc2" />
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_weight=".2"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:onClick="@{clickListener}"
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom"
-                android:alpha=".7"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="end|center_vertical"
-                android:padding="8dp"
-                android:text="@string/catechism_of_the_catholic_church"
-                style="@style/AppTheme.OverlineText"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/confession" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_htmagc"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="@dimen/margin_normal"
-            android:layout_weight=".2"
-            android:elevation="@dimen/cardview_default_elevation"
-            android:onClick="@{clickListener}"
-            app:cardCornerRadius="@dimen/cardview_default_radius">
+                <TextView
+                    style="@style/AppTheme.OverlineText"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="bottom"
+                    android:alpha=".7"
+                    android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="end|center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/how_to_make_a_good_confession"
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/confession" />
+        </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_gravity="bottom"
-                android:alpha=".7"
-                style="@style/AppTheme.OverlineText"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="end|center_vertical"
-                android:padding="8dp"
-                android:text="@string/how_to_make_a_good_confession"
-                android:textStyle="bold" />
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </layout>

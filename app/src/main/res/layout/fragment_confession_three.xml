@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.confession.ConfessionFragmentThree">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:alpha=".4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/confession_page_two"
+        android:contentDescription="@string/cd_background_image" />
 
-</FrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_act_of_contrition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingEnd="@dimen/margin_normal"
+                tools:text="@string/large_text" />
+
+            <TextView
+                android:id="@+id/tv_act_tv_absolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingEnd="@dimen/margin_normal"
+                android:text="@string/absolution"
+                android:gravity="center"
+                tools:text="Receive absolution and say Amen" />
+
+            <TextView
+                android:id="@+id/tv_act_priest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:paddingStart="@dimen/margin_normal"
+                android:paddingEnd="@dimen/margin_normal"
+                android:text="@string/priest_saying"
+                android:gravity="center"
+                tools:text="If the priest asks you to say the Act of Contrition, use this or what is it's local equivalent" />
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/finish_confession"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

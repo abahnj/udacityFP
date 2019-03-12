@@ -1,12 +1,20 @@
 package com.norvera.confession;
 
 import android.content.Intent;
-import android.os.Build;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.crashlytics.android.Crashlytics;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.norvera.confession.databinding.MainActivityBinding;
@@ -32,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private MainActivityBinding mainActivityBinding;
     private NavController navController;
     private FirebaseAnalytics mFirebaseAnalytics;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         menuId.add(R.id.prayerFragmentList);
 
 
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(menuId).build();
 
         setupActionBar(navController, appBarConfiguration);
@@ -55,10 +65,29 @@ public class MainActivity extends AppCompatActivity {
 
         setupViewModel();
 
+
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        mAdView = mainActivityBinding.adView;
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdSize adSize = new AdSize(displayWidthInDps(), 50);
+
+        mAdView.loadAd(adRequest);
     }
 
+
+
+    private int displayWidthInDps() {
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        float dpWidth = displayMetrics.widthPixels / displayMetrics.density;
+
+        Configuration configuration = getResources().getConfiguration();
+        int screenWidthDp = configuration.screenWidthDp; //The current width of the available screen space, in dp units, corresponding to screen width resource qualifier.
+        int smallestScreenWidthDp = configuration.smallestScreenWidthDp; //The smallest screen size an application will see in normal operation, corresponding to smallest screen width resource qualifier.
+
+        return screenWidthDp;
+    }
     private void setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNav = mainActivityBinding.bottomNavBar;
         NavigationUI.setupWithNavController(bottomNav, navController);
