@@ -22,21 +22,6 @@
             android:src="@drawable/examination"
             android:alpha=".1"
             android:scaleType="centerCrop"/>
-        <TextView
-            android:id="@+id/fragmentTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/material_app_bar_default_height"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="@string/examination_of_conscience"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintBottom_toTopOf="@id/rv_commandments"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_examination"
@@ -47,10 +32,10 @@
             android:paddingEnd="@dimen/margin_normal"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
             tools:context=".ui.examination.ExaminationFragment"
             tools:listitem="@layout/fragment_examinationentry" />
     </androidx.constraintlayout.widget.ConstraintLayout>

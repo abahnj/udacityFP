@@ -1,16 +1,16 @@
 package com.norvera.confession.ui.widget;
 
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.widget.RemoteViews;
 
 import com.norvera.confession.MainActivity;
 import com.norvera.confession.R;
-import com.norvera.confession.SettingsActivity;
+import com.norvera.confession.utils.Constants;
 
 /**
  * Implementation of App Widget functionality.
@@ -24,13 +24,11 @@ public class ConfessionWidget extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.confession_widget);
         //views.setTextViewText(R.id.appwidget_text, context.getResources().getString(R.string.date_of_next_confession));
 
-        Intent configIntent = new Intent(context, MainActivity.class);
-
-        PendingIntent configPendingIntent = PendingIntent.getActivity(context, 0, configIntent, 0);
         Intent settingIntent = new Intent(context, MainActivity.class);
-        settingIntent.putExtra("methodName","myMethod");
+        settingIntent.putExtra(Constants.WIDGET_EXTRA_KEY,Constants.WIDGET_SETTING_VALUE);
         settingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
+        settingIntent.setAction(Constants.WIDGET_EXTRA_KEY);
+        settingIntent.setData(Uri.parse(settingIntent.toUri(Intent.URI_INTENT_SCHEME)));
 
         PendingIntent settingPendingIntent = PendingIntent.getActivity(context, 0, settingIntent, 0);
         //views.setOnClickPendingIntent(R.id.container, configPendingIntent);

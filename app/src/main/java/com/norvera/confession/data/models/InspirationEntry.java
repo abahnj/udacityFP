@@ -1,15 +1,23 @@
 package com.norvera.confession.data.models;
 
-import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "INSPIRATION" )
 public class InspirationEntry {
     @PrimaryKey
-    public final long _id;
+    @ColumnInfo(name = "_id")
+    public final long id;
 
-    public InspirationEntry(@NonNull long id) {
-        _id = id;
+    @ColumnInfo(name="QUOTE")
+    public final String text;
+
+    @ColumnInfo(name="AUTHOR")
+    public final String author;
+    public InspirationEntry(long id, String text, String author) {
+        this.id = id;
+        this.text = text;
+        this.author = author;
     }
 }

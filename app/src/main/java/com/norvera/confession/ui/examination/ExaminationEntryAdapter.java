@@ -1,11 +1,17 @@
 package com.norvera.confession.ui.examination;
 
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
+import com.norvera.confession.R;
 import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.databinding.FragmentExaminationentryBinding;
 import com.norvera.confession.ui.main.MainViewModel;
@@ -36,7 +42,7 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
             };
     private final MainViewModel viewModel;
 
-    ExaminationEntryAdapter(MainViewModel viewModel){
+    ExaminationEntryAdapter(MainViewModel viewModel) {
         super(DIFF_CALLBACK);
         this.viewModel = viewModel;
     }
@@ -60,7 +66,6 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
     private View.OnClickListener createOnClickListener(long examinationId, ExaminationEntry examinationEntry) {
 
         return view -> {
-            Toast.makeText(view.getContext(), (Long.toString(examinationId)), Toast.LENGTH_SHORT).show();
             examinationEntry.count += 1;
             viewModel.updateCountForEntry(examinationEntry);
            /* CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
@@ -71,16 +76,21 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
 
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
-        FragmentExaminationentryBinding binding;
+        private FragmentExaminationentryBinding binding;
+        private ExaminationEntry examinationEntry;
+
 
         ViewHolder(FragmentExaminationentryBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            binding.getRoot().setOnCreateContextMenuListener(this); //Register OnCreate Menu Listener
+
         }
 
         void onBind(View.OnClickListener clickListener, ExaminationEntry item) {
+            this.examinationEntry = item;
             itemView.setTag(item);
             binding.executePendingBindings();
             binding.setClickListener(clickListener);
@@ -98,6 +108,46 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
 
 */
         }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+            MenuItem Decrement = menu.add(Menu.NONE, 1, 0, R.string.context_menu_count);
+            MenuItem Edit = menu.add(Menu.NONE, 2, 1, R.string.context_menu_edit);
+            MenuItem Delete = menu.add(Menu.NONE, 3, 2, R.string.context_menu_delete);
+            MenuItem ResetCount = menu.add(Menu.NONE, 4, 3, R.string.context_menu_restore);
+
+
+            Edit.setOnMenuItemClickListener(onMenuClick);
+            Delete.setOnMenuItemClickListener(onMenuClick);
+            Decrement.setOnMenuItemClickListener(onMenuClick);
+            ResetCount.setOnMenuItemClickListener(onMenuClick);
+
+        }
+
+        //Add an OnMenuItem Listener to execute commands OnClick of context menu task
+        private final MenuItem.OnMenuItemClickListener onMenuClick = item -> {
+
+            switch (item.getItemId()) {
+                case 1:
+                    if (examinationEntry.count > 0){
+                        examinationEntry.count--;
+                        viewModel.decrementCount(examinationEntry);
+                    }
+                    //Do stuff
+                    break;
+
+                case 2:
+                    //Do stuff
+
+                    break;
+            }
+            return true;
+        };
+
+
     }
 
 }
+
+

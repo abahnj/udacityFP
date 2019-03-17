@@ -7,11 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -20,9 +16,11 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.norvera.confession.databinding.MainActivityBinding;
 import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
+import com.norvera.confession.utils.Constants;
 import com.norvera.confession.utils.InjectorUtils;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +31,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         setSupportActionBar(mainActivityBinding.toolbar);
+
+        checkIntent();
         Set<Integer> menuId = new HashSet<>();
 
         menuId.add(R.id.commandment_fragment);
         menuId.add(R.id.confessionFragmentOne);
         menuId.add(R.id.guideFragment);
         menuId.add(R.id.prayerFragmentList);
-
-
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(menuId).build();
 
@@ -74,6 +73,22 @@ public class MainActivity extends AppCompatActivity {
         AdSize adSize = new AdSize(displayWidthInDps(), 50);
 
         mAdView.loadAd(adRequest);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        openSettings();
+    }
+
+    private void checkIntent() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            Timber.e(extras.toString());
+            if (Objects.equals(extras.getString(Constants.WIDGET_EXTRA_KEY), Constants.WIDGET_SETTING_VALUE)){
+                openSettings();
+            }
+        }
     }
 
 

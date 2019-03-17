@@ -59,8 +59,6 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
     private View.OnClickListener createOnClickListener(long commandmentId) {
 
         return view -> {
-            Toast.makeText(view.getContext(), (Long.toString(commandmentId)), Toast.LENGTH_SHORT).show();
-
             NavDirections commandmentsFragmentDirections =
                     CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
             Navigation.findNavController(view).navigate(commandmentsFragmentDirections);

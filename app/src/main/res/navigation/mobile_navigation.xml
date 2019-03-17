@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/confessionFragmentTwo"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentTwo"
-        android:label="confession_fragment_two"
+        android:label="Confession"
         tools:layout="@layout/confession_fragment_two">
         <action
             android:id="@+id/confessionFragmentTwo_to_confessionFragmentThree"
@@ -54,13 +54,13 @@
     <fragment
         android:id="@+id/confessionFragmentThree"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentThree"
-        android:label="fragment_confession_three"
+        android:label="Confession"
         tools:layout="@layout/fragment_confession_three" />
 
     <fragment
         android:id="@+id/guideFragment"
         android:name="com.norvera.confession.ui.guide.GuideFragment"
-        android:label="Guide Fragment"
+        android:label="Guide"
         tools:layout="@layout/fragment_guide">
         <action
             android:id="@+id/action_guideFragment_to_guideFragmentList"
@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/guideFragmentList"
         android:name="com.norvera.confession.ui.guide.GuideListFragment"
-        android:label="Guide Fragment"
+        android:label="{title}"
         tools:layout="@layout/fragment_guide_list">
         <action
             android:id="@+id/action_guideFragmentList_to_guideFragmentDetail"
@@ -78,6 +78,10 @@
         <argument
             android:name="guideId"
             app:argType="integer" />
+        <argument
+            android:name="title"
+            android:defaultValue="Details"
+            app:argType="string" />
     </fragment>
 
     <fragment

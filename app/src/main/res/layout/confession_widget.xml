@@ -26,9 +26,11 @@
         <TextView
             android:id="@+id/title"
             style="@style/AppTheme.OverlineText"
+            android:textSize="12sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="bottom"
             android:contentDescription="@string/appwidget_text"
             android:text="@string/date_of_next_confession"
             />
@@ -39,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/appwidget_text"
+            android:textColor="@color/widget_colour"
             android:text="Monday, March 14 2019"
              />
 

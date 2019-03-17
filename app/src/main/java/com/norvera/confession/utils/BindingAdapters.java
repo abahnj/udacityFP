@@ -27,17 +27,23 @@ public class BindingAdapters {
     }
 
     private static String getNumberOrdinal(Number number) {
+        String format;
         if (number == null) {
             return null;
         }
+        if (number.intValue() < 11){
+           format = "Sins against the {0,spellout,%spellout-ordinal} commandment";
+        } else {
+            format = "Sins against the Ministry";
+        }
+
 
         //todo move to string resource
-        String format = "Sins against the {0,spellout,%spellout-ordinal} commandment";
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return MessageFormat.format(format, number);
         } else {
-            return com.ibm.icu.text.MessageFormat.format(format, number);
+            return "com.ibm.icu.text.MessageFormat.format(format, number)";
         }
     }
 }

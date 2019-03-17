@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="BaseAppTheme" parent="Theme.MaterialComponents.NoActionBar">
@@ -18,10 +18,22 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents"/>
 
     <style name="AppTheme.OverlineText">
-        <item name="android:textColor">#FF001F</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textAppearance">?attr/textAppearanceOverline</item>
     </style>
 
+    <style name="Widget.Confession.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="backgroundTint">?attr/colorPrimaryDark</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/shr_next_button_state_list_anim
+        </item>
+    </style>
+    <style name="Widget.Confession.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/shr_next_button_state_list_anim
+        </item>
+    </style>
     <style name="AppTheme.Toolbar">
         <item name="android:textColorPrimary">@color/material_color_white</item>
         <item name="android:textColorSecondary">@color/material_color_white</item>
@@ -30,5 +42,18 @@
 
     <style name="AppTheme.Alpha">
         <item name="android:alpha">.4</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <!-- set the rounded drawable as background to your bottom sheet -->
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
     </style>
 </resources>

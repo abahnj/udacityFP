@@ -1,61 +1,68 @@
-<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<PreferenceCategory
-    app:key="profile_category"
-    app:title="Profile"
-    app:iconSpaceReserved="false"
-    >
-    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_gender_key"
-        android:entryValues="@array/pref_gender_values"
-        android:key="gender_list"
-        app:useSimpleSummaryProvider="true"
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
         app:iconSpaceReserved="false"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="Gender" />
-
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_age_key"
-        android:entryValues="@array/pref_age_values"
-        android:key="age_list"
-        app:useSimpleSummaryProvider="true"
-        app:iconSpaceReserved="false"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="Age" />
-
-    <ListPreference
-        android:defaultValue="1"
-        android:entries="@array/pref_vocation_key"
-        android:entryValues="@array/pref_vocation_values"
-        android:key="vocation_list"
-        app:iconSpaceReserved="false"
-        app:useSimpleSummaryProvider="true"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="Vocation" />
-
-</PreferenceCategory>
-
-    <androidx.preference.PreferenceCategory
-        app:key="restore_category"
-        android:title="Restore"
-        app:iconSpaceReserved="false"
-        >
-        <Preference
-            android:defaultValue="1"
-            android:entries="@array/pref_vocation_key"
-            android:entryValues="@array/pref_vocation_values"
-            android:summary="@string/restore_warning"
-            app:iconSpaceReserved="false"
-            android:key="restore_app"
+        app:key="profile_category"
+        app:title="Profile">
+        <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_gender_key"
+            android:entryValues="@array/pref_gender_values"
+            android:key="@string/pref_gender_key"
             android:negativeButtonText="@null"
             android:positiveButtonText="@null"
-            android:title="Restore App" />
+            android:title="@string/gender"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_age_key"
+            android:entryValues="@array/pref_age_values"
+            android:key="@string/pref_age_key"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/age"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/pref_vocation_key"
+            android:entryValues="@array/pref_vocation_values"
+            android:key="@string/pref_vocation_key"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/vocation"
+            app:iconSpaceReserved="false"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/restore"
+        app:iconSpaceReserved="false"
+        app:key="@string/pref_restore_key">
+        <Preference
+            android:defaultValue="1"
+            android:key="restore_app"
+            android:summary="@string/restore_warning"
+            android:title="Restore App"
+            app:iconSpaceReserved="false" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/remove_ad"
+        app:iconSpaceReserved="false"
+        app:key="@string/pref_remove_ads">
+        <Preference
+            android:defaultValue="1"
+            android:key="restore_app"
+            android:summary="@string/remove_ads"
+            android:title="Remove Ads - $1.99"
+            app:iconSpaceReserved="false" />
 
     </androidx.preference.PreferenceCategory>
 

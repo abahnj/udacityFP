@@ -10,6 +10,8 @@
     <string name="bless_me">Bless me Father for I have sinned.\n\nIt\'s been %1$s since my last confession</string>
     <string name="here_are">Here are my sins</string>
     <string name="next">Next</string>
+    <string name="restore">Restore</string>
+    <string name="gender">Gender</string>
     <string name="disclaimer">This app is intended to be used during the sacrament of reconciliation with a catholic priest only. This is not a substitute for a valid confession.</string>
 
     <string name="male">Male</string>
@@ -36,12 +38,8 @@
     <string name="prayers">Prayers</string>
     <string name="title_activity_examination">Examination of Conscience</string>
     <string name="action_settings">Settings</string>
-    <string name="user_details_pref">USER_DETAILS</string>
 
-    <string name="pref_user_name" translatable="false">username</string>
-    <string name="pref_user_sex" translatable="false">sex</string>
-    <string name="pref_user_vocation" translatable="false">vocation</string>
-    <string name="pref_user_birthDate" translatable="false">birthDate</string>
+
     <string name="pref_user_actOfContrition" translatable="false">actOfContrition</string>
     <string name="pref_user_lastConfession" translatable="false">lastConfession</string>
     <string name="pref_user_id" translatable="false">id</string>
@@ -56,7 +54,6 @@
     <string name="context_menu_edit">Edit</string>
     <string name="context_menu_delete">Delete</string>
     <string name="context_menu_restore">Restore Default Text</string>
-    <string name="finish_confession">Finish Confession</string>
     <string name="receive_absolution">Receive absolution and respond \"Amen\"</string>
     <string name="response">If the priest says \"Give thanks to the Lord for He is good\" answer \"For His mercy endures forever.\"</string>
     <string name="guide">Guide</string>
@@ -83,7 +80,8 @@
     <string name="adult">Adult</string>
     <string name="teen">Teen</string>
     <string name="child">Child</string>
-
+    <string name="remove_ad">Remove ads</string>
+    <string name="remove_ads">Remove ads and help buy me a cup of coffee</string>
 
     <string name="menu_night_mode">Night mode</string>
     <string name="menu_night_mode_system">Follow system</string>
@@ -200,28 +198,21 @@
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-
+    <string name="pref_gender_key" translatable="false">gender_key</string>
+    <string name="pref_remove_ads">remove_ads</string>
+    <string name="pref_vocation_key" translatable="false">vocation_key</string>
+    <string name="pref_age_key" translatable="false">age_key</string>
+    <string name="pref_restore_key" translatable="false">restore_key</string>
     <!-- Example settings for Data & Sync -->
     <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="biometric_failed">Fingerprint not recognized</string>
+    <string name="biometric_error_sdk_not_supported">Sdk version not supported</string>
+    <string name="biometric_error_hardware_not_supported">Device does not support biometric authentication</string>
+    <string name="biometric_error_fingerprint_not_available">Fingerprint is not registered in device</string>
+    <string name="biometric_error_permission_not_granted">Permission is not granted by user</string>
+    <string name="biometric_failure">Login not successful!</string>
+    <string name="biometric_cancelled">Authentication cancelled by user</string>
+    <string name="biometric_success">Login Successful</string>
 
     <string name="pref_title_sync_frequency">Sync frequency</string>
     <string-array name="pref_sync_frequency_titles">
@@ -274,5 +265,7 @@
     <string name="priest_saying">If the priest says \"Give thanks to the Lord for he is Good\" answer \"For His Mercy endures forever\"</string>
     <string name="cd_background_image">background image</string>
     <string name="finish_confession">Finish Confession</string>
+    <string name="delete">Delete</string>
+    <string name="fingerprint_confirm">Confirm fingerprint to continue</string>
 
 </resources>

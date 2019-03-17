@@ -6,6 +6,7 @@ import android.util.Log;
 import com.norvera.confession.data.dao.CommandmentDao;
 import com.norvera.confession.data.dao.ExaminationDao;
 import com.norvera.confession.data.dao.GuideDao;
+import com.norvera.confession.data.dao.InspirationDao;
 import com.norvera.confession.data.dao.PrayersDao;
 import com.norvera.confession.data.models.CommandmentEntry;
 import com.norvera.confession.data.models.ExaminationActiveEntry;
@@ -15,6 +16,7 @@ import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PersonToSinEntry;
 import com.norvera.confession.data.models.PrayersEntry;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -63,5 +65,6 @@ public abstract class AppDatabase extends RoomDatabase {
         return (b.openHelperFactory(new AssetSQLiteOpenHelperFactory()).build());
     }
 
+    public abstract InspirationDao inspirationDao();
 }
 

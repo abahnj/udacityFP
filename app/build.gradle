@@ -3,28 +3,50 @@ apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
 
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+
 android {
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.norvera.confession"
         minSdkVersion 21
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
         }
     }
-
-
     dataBinding {
         enabled = true
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -32,43 +54,34 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:' + rootProject.appcompat_version
     implementation 'androidx.constraintlayout:constraintlayout:' + rootProject.constraint_layout_version
     implementation 'androidx.lifecycle:lifecycle-extensions:' + rootProject.lifecycle_version
-
-    //stetho
-    implementation 'com.facebook.stetho:stetho:1.5.0'
-
-    implementation "android.arch.navigation:navigation-fragment:" + rootProject.nav_version
-    // use -ktx for Kotlin
-    implementation "android.arch.navigation:navigation-ui:" + rootProject.nav_version
-    // use -ktx for Kotlin
+    implementation 'com.android.billingclient:billing:1.2.2'
+    //Stetho
+    implementation 'com.facebook.stetho:stetho:' + rootProject.stetho_version
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation 'com.google.android.material:material:' + rootProject.material_version
     implementation 'androidx.recyclerview:recyclerview:' + rootProject.recyclerview_version
-
     implementation 'blue.aodev:material-values:1.1.1'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
+    implementation 'androidx.constraintlayout:constraintlayout:' + rootProject.constraint_layout_version
     implementation "androidx.room:room-runtime:$rootProject.room_version"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
-
-    implementation 'androidx.preference:preference:1.1.0-alpha03'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha02'
-    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
+    implementation 'androidx.recyclerview:recyclerview:' + rootProject.recyclerview_version
+    implementation 'androidx.preference:preference:' + rootProject.preference_version
+    implementation 'androidx.legacy:legacy-support-v4:' + rootProject.core_version
+    implementation 'androidx.lifecycle:lifecycle-extensions:' + rootProject.lifecycle_version
+    implementation 'androidx.legacy:legacy-support-v13:' + rootProject.core_version
     // For Kotlin use kapt instead of annotationProcessor
-
-    implementation "com.ibm.icu:icu4j:63.1"
-
     //Firebase Dependencies
-    implementation 'com.google.firebase:firebase-core:16.0.7'
-    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'
-    implementation 'com.google.firebase:firebase-ads:17.1.3'
-
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-
+    implementation 'com.google.firebase:firebase-core:' + rootProject.firebase_version
+    implementation 'com.crashlytics.sdk.android:crashlytics:' + rootProject.crashlytics_version
+    implementation 'com.google.firebase:firebase-ads:' + rootProject.firebase_ads_version
+    implementation 'com.jakewharton.timber:timber:' + rootProject.timber_version
     testImplementation 'junit:junit:' + rootProject.junit_version
     androidTestImplementation 'androidx.test:runner:' + rootProject.runner_version
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espresso_version

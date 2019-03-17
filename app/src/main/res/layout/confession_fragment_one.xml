@@ -12,23 +12,13 @@
             android:layout_height="match_parent"
             android:src="@drawable/confession_page_two"
             android:alpha=".1"
-            android:scaleType="centerCrop"/>
-        <TextView
-            android:id="@+id/fragmentTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:gravity="center"
-            android:text="@string/examination_of_conscience"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cd_background_image" />
 
         <TextView
+            android:gravity="center"
             android:id="@+id/tvInTheName"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
@@ -42,6 +32,8 @@
             app:layout_constraintTop_toBottomOf="@id/guidelineBegin" />
 
         <TextView
+            android:gravity="center"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/amen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,6 +48,8 @@
             app:layout_constraintTop_toBottomOf="@id/tvInTheName" />
 
         <TextView
+            android:gravity="center"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/blessMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,6 +64,8 @@
             app:layout_constraintTop_toBottomOf="@+id/amen" />
 
         <TextView
+            android:gravity="center"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/tv_here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,7 +96,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.Confession.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next"
@@ -111,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".2" />
+            app:layout_constraintGuide_percent="0.1" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineEnd"

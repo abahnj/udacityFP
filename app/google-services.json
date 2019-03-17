@@ -50,6 +50,37 @@
         }
       },
       "admob_app_id": "ca-app-pub-5820676795399080~7872921637"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516795700126:android:61121613c22f5754",
+        "android_client_info": {
+          "package_name": "com.norvera.confession.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516795700126-t4qb40r6e2cbgebjvaee59gkk8emcdso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3Slnro9wZvapMIPJZQYBoaeWEw_xl97Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

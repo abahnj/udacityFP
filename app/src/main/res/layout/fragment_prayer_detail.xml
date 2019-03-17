@@ -17,32 +17,17 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@mipmap/examination_of_conscience"
+            android:src="@drawable/unknown_3"
             android:alpha=".4"
-            android:scaleType="centerCrop"/>
-
-        <TextView
-            android:id="@+id/fragmentTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/material_app_bar_default_height"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="@{prayerEntry.prayerName}"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            tools:text="@tools:sample/cities" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cd_background_image" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_normal"

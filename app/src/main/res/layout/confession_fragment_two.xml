@@ -15,22 +15,6 @@
             android:background="@drawable/confession_page_two"
             android:alpha=".4"/>
 
-        <TextView
-            android:id="@+id/fragmentTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/material_app_bar_default_height"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="@string/examination_of_conscience"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintBottom_toTopOf="@id/rv_commandments"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_confession"
             android:layout_width="match_parent"
@@ -43,12 +27,12 @@
             app:layout_constraintBottom_toTopOf="@id/btnNext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/fragment_examinationentry" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.Confession.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next"
