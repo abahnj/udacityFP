@@ -16,7 +16,7 @@ class Utils {
   private static final String TAG = SQLiteAssetHelper.class.getSimpleName();
 
   public static List<String> splitSqlScript(String script, char delim) {
-    List<String> statements = new ArrayList<>();
+    List<String> statements = new ArrayList<String>();
     StringBuilder sb = new StringBuilder();
     boolean inLiteral = false;
     char[] content = script.toCharArray();

@@ -7,12 +7,12 @@
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/confessionFragmentOne"
         android:icon="@drawable/ic_menu"
-        android:title="@string/confession" />
+        android:title="Confession" />
     <item android:id="@+id/guideFragment"
         android:icon="@drawable/ic_menu"
-        android:title="@string/guides"
+        android:title="Guides"
         app:showAsAction="ifRoom"/>
     <item android:id="@+id/prayerFragmentList"
         android:icon="@drawable/ic_menu"
-        android:title="@string/prayers" />
+        android:title="Prayers" />
 </menu>

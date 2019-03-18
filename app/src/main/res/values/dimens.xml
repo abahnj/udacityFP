@@ -11,10 +11,14 @@
     <dimen name="app_bar_height">200dp</dimen>
 
     <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
 
-    <dimen name="cardview_elevation">4dp</dimen>
-    <dimen name="cardview_radius">4dp</dimen>
+    <dimen name="plant_item_image_height">100dp</dimen>
 
+    <dimen name="navigation_drawer_header_height">192dp</dimen>
+    <dimen name="navigation_drawer_header_padding">16dp</dimen>
+    <dimen name="navigation_drawer_image_width">100dp</dimen>
+    <dimen name="item_width">200dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -44,5 +48,4 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
-    <dimen name="margin_small">8dp</dimen>
 </resources>

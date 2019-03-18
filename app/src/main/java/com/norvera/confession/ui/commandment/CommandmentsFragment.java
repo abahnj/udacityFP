@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.norvera.confession.R;
 import com.norvera.confession.databinding.FragmentCommandmentsListBinding;
+import com.norvera.confession.interfaces.ClickListeners.CommandmentClickListener;
 import com.norvera.confession.ui.main.MainViewModel;
 import com.norvera.confession.ui.main.MainViewModelFactory;
 import com.norvera.confession.utils.InjectorUtils;
@@ -24,13 +25,15 @@ import static androidx.recyclerview.widget.DividerItemDecoration.VERTICAL;
 /**
  * A fragment representing a list of Items.
  * <p/>
+ * Activities containing this fragment MUST implement the {@link CommandmentClickListener}
+ * interface.
  */
 public class CommandmentsFragment extends Fragment {
 
     private static final String KEY_RECYCLER_STATE = "RECYCLER-STATE";
     private CommandmentsAdapter commandmentsAdapter;
     private MainViewModel mViewModel;
-
+    private FragmentCommandmentsListBinding binding;
     private enum Vocation {SINGLE, MARRIED, PRIEST, RELIGIOUS}
 
     /**
@@ -43,7 +46,7 @@ public class CommandmentsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        FragmentCommandmentsListBinding binding = FragmentCommandmentsListBinding.inflate(inflater, container, false);
+        binding = FragmentCommandmentsListBinding.inflate(inflater, container, false);
         Context context = getContext();
 
         // Set the adapter

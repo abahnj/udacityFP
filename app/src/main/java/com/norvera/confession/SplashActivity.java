@@ -1,7 +1,8 @@
 package com.norvera.confession;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
@@ -9,12 +10,9 @@ import android.widget.Toast;
 import com.norvera.confession.utils.BiometricCallback;
 import com.norvera.confession.utils.BiometricManager;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 public class SplashActivity extends AppCompatActivity {
 
-    private Intent intent;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +27,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 
-    private final BiometricCallback biometricCallback = new BiometricCallback() {
+    private BiometricCallback biometricCallback = new BiometricCallback() {
         @Override
         public void onSdkVersionNotSupported() {
             Toast.makeText(SplashActivity.this, getString(R.string.biometric_error_sdk_not_supported), Toast.LENGTH_LONG).show();
@@ -97,7 +95,6 @@ public class SplashActivity extends AppCompatActivity {
     };
 
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void displayBiometricPrompt(final BiometricCallback biometricCallback) {
         new BiometricManager.BiometricBuilder(this)
                 .setTitle(getString(R.string.app_name))

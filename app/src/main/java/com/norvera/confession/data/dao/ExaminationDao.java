@@ -2,6 +2,7 @@ package com.norvera.confession.data.dao;
 
 import com.norvera.confession.data.models.ExaminationActiveEntry;
 import com.norvera.confession.data.models.ExaminationEntry;
+import com.norvera.confession.data.models.User;
 
 import java.util.List;
 

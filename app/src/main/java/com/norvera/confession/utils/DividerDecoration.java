@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DividerDecoration extends RecyclerView.ItemDecoration {
 
     private final Paint mPaint;
-    private final int mHeightDp;
+    private int mHeightDp;
 
     public DividerDecoration(Context context) {
         this(context, Color.argb((int) (255 * 0.2), 255, 255, 255), 1f);
     }
 
-    private DividerDecoration(Context context, int color, float heightDp) {
+    public DividerDecoration(Context context, int color, float heightDp) {
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(color);

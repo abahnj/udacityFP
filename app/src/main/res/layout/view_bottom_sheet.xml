@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg_bottom_sheet"
     android:orientation="vertical"
     android:padding="15dp">
@@ -10,7 +10,6 @@
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="48dp"
-        android:contentDescription="@string/cd_background_image"
         android:layout_height="48dp" />
 
     <LinearLayout
@@ -18,8 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/img_logo"
-        android:layout_marginStart="@dimen/margin_large"
-        android:layout_toEndOf="@+id/img_logo"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_toRightOf="@+id/img_logo"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -28,8 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/dialog_title"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
-            tools:text="@tools:sample/cities" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/item_subtitle"
@@ -37,11 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_xxsmall"
             android:textColor="@color/dialog_subtitle"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
-
-            tools:text="@tools:sample/lorem"
-
-            />
+            android:textSize="13dp" />
     </LinearLayout>
 
     <TextView
@@ -50,9 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title_view"
-        android:layout_marginStart="@dimen/margin_xsmall"
+        android:layout_marginLeft="@dimen/margin_xsmall"
         android:layout_marginTop="@dimen/margin_large"
-        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
         android:textColor="@color/dialog_description" />
 
     <ImageView
@@ -63,7 +57,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_large"
         android:background="@drawable/bg_fingerprint"
-        android:contentDescription="@string/cd_img_fingerprint"
         android:padding="14dp"
         android:src="@drawable/ic_fingerprint" />
 
@@ -78,13 +71,14 @@
         android:textColor="@color/dialog_status" />
 
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/item_status"
         android:layout_marginTop="@dimen/margin_xxlarge"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:paddingTop="@dimen/margin_xxlarge" />
+        android:background="@null"
+        android:paddingTop="@dimen/margin_xxlarge"
+        android:textColor="@color/dialog_cancel_btn" />
 
 </RelativeLayout>

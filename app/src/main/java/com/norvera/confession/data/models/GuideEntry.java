@@ -14,19 +14,19 @@ public class GuideEntry implements Parcelable {
     public final long id;
     
     @ColumnInfo(name="h_id")
-    private final int headerId;
+    public final int headerId;
    
     @ColumnInfo(name="g_id")
-    private final int guideId;
+    public final int guideId;
 
     @ColumnInfo(name="g_title")
     public final String guideTitle;
 
     @ColumnInfo(name="text")
-    private final String guideText;
+    public final String guideText;
 
     @ColumnInfo(name="img_name")
-    private final String imgName;
+    public final String imgName;
 
     public GuideEntry(long id, int headerId, int guideId, String guideTitle, String guideText, String imgName) {
         this.id = id;
@@ -72,32 +72,4 @@ public class GuideEntry implements Parcelable {
             return new GuideEntry[size];
         }
     };
-
-    public static Creator<GuideEntry> getCREATOR() {
-        return CREATOR;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public int getHeaderId() {
-        return headerId;
-    }
-
-    public int getGuideId() {
-        return guideId;
-    }
-
-    public String getGuideTitle() {
-        return guideTitle;
-    }
-
-    public String getGuideText() {
-        return guideText;
-    }
-
-    public String getImgName() {
-        return imgName;
-    }
 }

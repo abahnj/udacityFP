@@ -25,35 +25,13 @@ public class PrayersEntry implements Parcelable {
     public final String prayerName;
 
     @ColumnInfo(name = "PRAYERTEXT")
-    private final String prayerText;
+    public final String prayerText;
+
     @ColumnInfo(name = "GROUPNAME")
-    private final String groupName;
+    public final String groupName;
+
     @ColumnInfo(name = "CUSTOM")
-    private final String custom;
-
-    public static Creator<PrayersEntry> getCREATOR() {
-        return CREATOR;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getPrayerName() {
-        return prayerName;
-    }
-
-    public String getPrayerText() {
-        return prayerText;
-    }
-
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public String getCustom() {
-        return custom;
-    }
+    public final String custom;
 
     protected PrayersEntry(Parcel in) {
         id = in.readLong();

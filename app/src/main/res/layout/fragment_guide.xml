@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha=".1"
-            android:contentDescription="@string/cd_background_image"
             android:scaleType="centerCrop"
             android:src="@drawable/unknown_3" />
 
@@ -34,14 +33,13 @@
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/margin_small"
                 android:layout_weight=".2"
-                android:elevation="@dimen/cardview_elevation"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:onClick="@{clickListener}"
                 app:cardCornerRadius="4dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/cd_background_image"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/faq" />
 
@@ -65,14 +63,13 @@
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/margin_small"
                 android:layout_weight=".2"
-                android:elevation="@dimen/cardview_elevation"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:onClick="@{clickListener}"
                 app:cardCornerRadius="4dp">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/cd_background_image"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/as_said_by_pope1" />
 
@@ -83,6 +80,7 @@
                     android:layout_gravity="bottom"
                     android:alpha=".7"
                     android:background="@color/grey"
+                    android:fontFamily="sans-serif-smallcaps"
                     android:gravity="end|center_vertical"
                     android:padding="8dp"
                     android:text="@string/as_said_by_popes"
@@ -95,14 +93,13 @@
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/margin_small"
                 android:layout_weight=".2"
-                android:elevation="@dimen/cardview_elevation"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:onClick="@{clickListener}"
-                app:cardCornerRadius="@dimen/cardview_radius">
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/cd_background_image"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/fulton_sheen" />
 
@@ -126,14 +123,13 @@
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/margin_small"
                 android:layout_weight=".2"
-                android:elevation="@dimen/cardview_elevation"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:onClick="@{clickListener}"
-                app:cardCornerRadius="@dimen/cardview_radius">
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/cd_background_image"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/ccc2" />
 
@@ -157,14 +153,13 @@
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/margin_small"
                 android:layout_weight=".2"
-                android:elevation="@dimen/cardview_elevation"
+                android:elevation="@dimen/cardview_default_elevation"
                 android:onClick="@{clickListener}"
-                app:cardCornerRadius="@dimen/cardview_radius">
+                app:cardCornerRadius="@dimen/cardview_default_radius">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="@string/cd_background_image"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/confession" />
 

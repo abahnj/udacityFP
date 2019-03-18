@@ -11,10 +11,9 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:alpha=".4"
+            android:scaleType="centerCrop"
             android:background="@drawable/confession_page_two"
-            android:contentDescription="@string/cd_background_image"
-            android:scaleType="centerCrop" />
+            android:alpha=".4"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_confession"

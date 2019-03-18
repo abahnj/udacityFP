@@ -47,7 +47,7 @@ public class ConfessionAdapter extends ListAdapter<ExaminationActiveEntry, Confe
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        private final FragmentConfessionEntryBinding binding;
+        private FragmentConfessionEntryBinding binding;
 
         ViewHolder(@NonNull FragmentConfessionEntryBinding binding) {
             super(binding.getRoot());

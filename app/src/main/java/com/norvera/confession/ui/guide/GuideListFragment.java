@@ -26,8 +26,11 @@ import static androidx.recyclerview.widget.DividerItemDecoration.VERTICAL;
 public class GuideListFragment extends Fragment {
 
 
+    private FragmentGuideListBinding binding;
+    private int guideId;
+    private GuideListFragmentAdapter adapter;
     private MainViewModel mViewModel;
-    private final SparseIntArray intArray = new SparseIntArray();
+    private SparseIntArray intArray = new SparseIntArray();
 
     public GuideListFragment() {
         // Required empty public constructor
@@ -37,8 +40,8 @@ public class GuideListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        int guideId = GuideListFragmentArgs.fromBundle(getArguments()).getGuideId();
-        FragmentGuideListBinding binding = FragmentGuideListBinding.inflate(inflater, container, false);
+        guideId = GuideListFragmentArgs.fromBundle(getArguments()).getGuideId();
+        binding = FragmentGuideListBinding.inflate(inflater, container, false);
 
         intArray.put(R.id.cv_faq, 1);
         intArray.put(R.id.cv_asbp, 2);
@@ -48,7 +51,7 @@ public class GuideListFragment extends Fragment {
 
         setupViewModel(requireActivity());
 
-        GuideListFragmentAdapter adapter = new GuideListFragmentAdapter();
+        adapter = new GuideListFragmentAdapter();
         binding.rvGuide.setAdapter(adapter);
         DividerItemDecoration decoration = new DividerItemDecoration(getContext(), VERTICAL);
         binding.rvGuide.addItemDecoration(decoration);

@@ -44,40 +44,40 @@ public class ExaminationEntry implements Parcelable {
     }
 
     @ColumnInfo(name="COMMANDMENT_ID")
-    private final int commandmentId;
+    public final int commandmentId;
     
     @ColumnInfo(name="ADULT")
-    private final int adult;
+    public final int adult;
 
     @ColumnInfo(name="SINGLE")
-    private final int single;
+    public final int single;
     
     @ColumnInfo(name="MARRIED")
-    private final int married;
+    public final int married;
 
     @ColumnInfo(name="RELIGIOUS")
-    private final int religious;
+    public final int religious;
 
     @ColumnInfo(name="PRIEST")
-    private final int priest;
+    public final int priest;
 
     @ColumnInfo(name="TEEN")
-    private final int teen;
+    public final int teen;
 
     @ColumnInfo(name="FEMALE")
-    private final int female;
+    public final int female;
 
     @ColumnInfo(name="MALE")
-    private final int male;
+    public final int male;
 
     @ColumnInfo(name="CHILD")
-    private final int child;
+    public final int child;
 
     @ColumnInfo(name="CUSTOM_ID")
-    private final int customId;
+    public final int customId;
 
     @ColumnInfo(name="DESCRIPTION")
-    private final String description;
+    public final String description;
 
     @ColumnInfo(name = "COUNT")
     public int count;
@@ -135,70 +135,6 @@ public class ExaminationEntry implements Parcelable {
         dest.writeInt(customId);
         dest.writeString(description);
         dest.writeInt(count);
-    }
-
-    public static Creator<ExaminationEntry> getCREATOR() {
-        return CREATOR;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public int getCommandmentId() {
-        return commandmentId;
-    }
-
-    public int getAdult() {
-        return adult;
-    }
-
-    public int getSingle() {
-        return single;
-    }
-
-    public int getMarried() {
-        return married;
-    }
-
-    public int getReligious() {
-        return religious;
-    }
-
-    public int getPriest() {
-        return priest;
-    }
-
-    public int getTeen() {
-        return teen;
-    }
-
-    public int getFemale() {
-        return female;
-    }
-
-    public int getMale() {
-        return male;
-    }
-
-    public int getChild() {
-        return child;
-    }
-
-    public int getCustomId() {
-        return customId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 
     @Override

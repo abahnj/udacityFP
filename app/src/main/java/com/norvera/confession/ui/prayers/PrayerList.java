@@ -15,6 +15,9 @@ import com.norvera.confession.utils.InjectorUtils;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+
+import static androidx.recyclerview.widget.DividerItemDecoration.VERTICAL;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +25,8 @@ import androidx.lifecycle.ViewModelProviders;
 public class PrayerList extends Fragment {
 
 
+    private FragmentPrayerListBinding binding;
+    private SectionedAdapter adapter;
     private MainViewModel mViewModel;
 
     public PrayerList() {
@@ -33,12 +38,12 @@ public class PrayerList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        FragmentPrayerListBinding binding = FragmentPrayerListBinding.inflate(inflater, container, false);
+        binding = FragmentPrayerListBinding.inflate(inflater, container, false);
 
         // todo refactor
         setupViewModel(requireActivity());
 
-        SectionedAdapter adapter = new SectionedAdapter();
+        adapter = new SectionedAdapter();
         binding.rvPrayers.setAdapter(adapter);
         binding.rvPrayers.addItemDecoration(new DividerDecoration(getContext()));
 

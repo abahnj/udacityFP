@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.norvera.confession.R;
 import com.norvera.confession.data.models.ExaminationEntry;
@@ -75,7 +78,7 @@ public class ExaminationEntryAdapter extends ListAdapter<ExaminationEntry, Exami
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
-        private final FragmentExaminationentryBinding binding;
+        private FragmentExaminationentryBinding binding;
         private ExaminationEntry examinationEntry;
 
 

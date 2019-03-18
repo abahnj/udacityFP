@@ -12,7 +12,7 @@ import com.norvera.confession.R;
 
 import androidx.annotation.NonNull;
 
-class BiometricDialogV23 extends BottomSheetDialog implements View.OnClickListener {
+public class BiometricDialogV23 extends BottomSheetDialog implements View.OnClickListener {
 
     private Context context;
 

@@ -2,11 +2,11 @@ package com.readystatesoftware.sqliteasset;
 
 import android.util.Log;
 
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper.SQLiteAssetException;
-
 import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper.SQLiteAssetException;
 
 /**
  * Compare paths by their upgrade version numbers, instead of using
@@ -24,7 +24,7 @@ class VersionComparator implements Comparator<String> {
 
   private static final String TAG = SQLiteAssetHelper.class.getSimpleName();
 
-    private final Pattern pattern = Pattern
+  private Pattern pattern = Pattern
     .compile(".*_upgrade_([0-9]+)-([0-9]+).*");
 
   /**

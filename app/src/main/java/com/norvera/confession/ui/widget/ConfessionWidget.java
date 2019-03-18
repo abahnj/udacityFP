@@ -17,8 +17,8 @@ import com.norvera.confession.utils.Constants;
  */
 public class ConfessionWidget extends AppWidgetProvider {
 
-    private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                        int appWidgetId) {
+    static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
+                                int appWidgetId) {
 
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.confession_widget);
