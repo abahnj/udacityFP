@@ -35,11 +35,8 @@ import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainViewModel mViewModel;
     private MainActivityBinding mainActivityBinding;
     private NavController navController;
-    private FirebaseAnalytics mFirebaseAnalytics;
-    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        mAdView = mainActivityBinding.adView;
+        AdView mAdView = mainActivityBinding.adView;
         AdRequest adRequest = new AdRequest.Builder().build();
         AdSize adSize = new AdSize(displayWidthInDps(), 50);
 
@@ -159,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewModel() {
         // todo move view model creation to factory method
         MainViewModelFactory factory = InjectorUtils.provideViewModelFactory(this);
-        mViewModel = ViewModelProviders.of(this, factory).get(MainViewModel.class);
+        MainViewModel mViewModel = ViewModelProviders.of(this, factory).get(MainViewModel.class);
 
     }
 

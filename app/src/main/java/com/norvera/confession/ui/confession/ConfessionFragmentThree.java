@@ -85,7 +85,7 @@ public class ConfessionFragmentThree extends Fragment {
             String inspiration = bundle.getString(ConfessionFragmentThree.KEY_INSPIRATION);
 
             builder.setTitle(title).setMessage(inspiration)
-                    .setPositiveButton(R.string.finish_confession, this::goHome);
+                    .setPositiveButton(R.string.finish_confession, (dialog, which) -> goHome());
             // Create the AlertDialog object and return it
             return builder.create();
         }
@@ -93,10 +93,10 @@ public class ConfessionFragmentThree extends Fragment {
         @Override
         public void onDismiss(@NonNull DialogInterface dialog) {
             super.onDismiss(dialog);
-            goHome(dialog, 1);
+            goHome();
         }
 
-        private void goHome(DialogInterface dialog, int which) {
+        private void goHome() {
             NavHostFragment.findNavController(getParentFragment()).navigate(R.id.commandment_fragment);
         }
     }

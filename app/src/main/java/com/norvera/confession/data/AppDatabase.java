@@ -16,7 +16,6 @@ import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PersonToSinEntry;
 import com.norvera.confession.data.models.PrayersEntry;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -57,7 +56,7 @@ public abstract class AppDatabase extends RoomDatabase {
         return (sInstance);
     }
 
-    static AppDatabase create(Context context) {
+    private static AppDatabase create(Context context) {
         RoomDatabase.Builder<AppDatabase> b =
                 Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class,
                         DATABASE_NAME);

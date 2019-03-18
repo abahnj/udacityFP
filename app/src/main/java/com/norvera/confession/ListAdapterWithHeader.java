@@ -35,7 +35,7 @@ public abstract class ListAdapterWithHeader<T, VH extends RecyclerView.ViewHolde
     /**
      * Accounts for header offset
      */
-    public T getItem(int position) {
+    protected T getItem(int position) {
         return mHelper.getCurrentList().get(position - headerOffset);
     }
 
@@ -57,8 +57,8 @@ public abstract class ListAdapterWithHeader<T, VH extends RecyclerView.ViewHolde
      *  @see DiffUtil.DiffResult#dispatchUpdatesTo(RecyclerView.Adapter)
      */
     private class OffsetListUpdateCallback implements ListUpdateCallback {
-        private RecyclerView.Adapter adapter;
-        private int offset;
+        private final RecyclerView.Adapter adapter;
+        private final int offset;
 
         private OffsetListUpdateCallback(RecyclerView.Adapter adapter, int offset) {
             this.adapter = adapter;

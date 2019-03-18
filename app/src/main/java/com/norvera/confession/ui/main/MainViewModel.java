@@ -7,7 +7,6 @@ import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.data.models.GuideEntry;
 import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PrayersEntry;
-import com.norvera.confession.data.models.User;
 
 import java.util.List;
 
@@ -23,8 +22,7 @@ public class MainViewModel extends ViewModel {
     private final AppRepository appRepository;
 
 
-
-    public ObservableField<List<ExaminationEntry>> examinationEntries = new ObservableField<>();
+    public final ObservableField<List<ExaminationEntry>> examinationEntries = new ObservableField<>();
 
     MainViewModel(AppRepository repository) {
         Timber.d("Actively retrieving the movies from the DataBase");
@@ -45,10 +43,6 @@ public class MainViewModel extends ViewModel {
 
     public void updateCountForEntry(ExaminationEntry examinationEntry) {
         appRepository.updateCountForEntry(examinationEntry);
-    }
-
-    public void updateCountForEntryId(long examinationId) {
-        //todo implement and test out
     }
 
     public LiveData<List<GuideEntry>> allGuidesForId(int guideId) {

@@ -2,17 +2,17 @@ package com.norvera.confession.utils;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.hardware.biometrics.BiometricPrompt;
 import android.os.Build;
 import android.os.CancellationSignal;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 
 public class BiometricManager extends BiometricManagerV23 {
 
 
-    protected BiometricManager(final BiometricBuilder biometricBuilder) {
+    private BiometricManager(final BiometricBuilder biometricBuilder) {
         this.context = biometricBuilder.context;
         this.title = biometricBuilder.title;
         this.subtitle = biometricBuilder.subtitle;
@@ -21,6 +21,7 @@ public class BiometricManager extends BiometricManagerV23 {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void authenticate(@NonNull final BiometricCallback biometricCallback) {
 
         if(title == null) {
@@ -79,12 +80,7 @@ public class BiometricManager extends BiometricManagerV23 {
                 .setTitle(title)
                 .setSubtitle(subtitle)
                 .setDescription(description)
-                .setNegativeButton(negativeButtonText, context.getMainExecutor(), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        biometricCallback.onAuthenticationCancelled();
-                    }
-                })
+                .setNegativeButton(negativeButtonText, context.getMainExecutor(), (dialogInterface, i) -> biometricCallback.onAuthenticationCancelled())
                 .build()
                 .authenticate(new CancellationSignal(), context.getMainExecutor(),
                         new BiometricCallbackV28(biometricCallback));
@@ -98,7 +94,7 @@ public class BiometricManager extends BiometricManagerV23 {
         private String description;
         private String negativeButtonText;
 
-        private Context context;
+        private final Context context;
         public BiometricBuilder(Context context) {
             this.context = context;
         }

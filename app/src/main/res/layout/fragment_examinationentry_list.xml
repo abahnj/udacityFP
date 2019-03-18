@@ -16,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="ui.commandment.CommandmentFragment">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/examination"
             android:alpha=".1"
-            android:scaleType="centerCrop"/>
+            android:contentDescription="@string/cd_background_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/examination" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_examination"
@@ -32,10 +34,10 @@
             android:paddingEnd="@dimen/margin_normal"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:context=".ui.examination.ExaminationFragment"
             tools:listitem="@layout/fragment_examinationentry" />
     </androidx.constraintlayout.widget.ConstraintLayout>

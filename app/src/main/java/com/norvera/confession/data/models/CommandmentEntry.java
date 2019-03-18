@@ -1,6 +1,5 @@
 package com.norvera.confession.data.models;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -25,18 +24,40 @@ public class CommandmentEntry {
 
 
     @ColumnInfo(name = "NUMBER")
-    public final int number;
+    private final int number;
+    @ColumnInfo(name = "CATEGORY")
+    private final String category;
+    @ColumnInfo(name = "CUSTOM_ID")
+    private final int customId;
+
+    public long getId() {
+        return id;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getCategory() {
+        return category;
+    }
 
     @ColumnInfo(name = "TEXT")
     public final String text;
 
-    @ColumnInfo(name = "CATEGORY")
-    public final String category;
+    public String getCommandment() {
+        return commandment;
+    }
 
     @ColumnInfo(name = "COMMANDMENT")
     public final String commandment;
 
-    @ColumnInfo(name = "CUSTOM_ID")
-    public final int customId;
+    public int getCustomId() {
+        return customId;
+    }
 
 }

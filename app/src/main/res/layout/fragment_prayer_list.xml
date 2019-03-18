@@ -12,6 +12,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/prayers_list"
             android:alpha=".4"
+            android:contentDescription="@string/cd_background_image"
             android:scaleType="centerCrop"/>
         <!-- TODO: Update blank fragment layout -->
         <androidx.recyclerview.widget.RecyclerView

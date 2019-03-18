@@ -34,8 +34,6 @@
     <string name="login">Login</string>
     <string name="incorrect_password">Password is Incorrect</string>
     <string name="examination">Examination of Conscience</string>
-    <string name="confession">Confession</string>
-    <string name="prayers">Prayers</string>
     <string name="title_activity_examination">Examination of Conscience</string>
     <string name="action_settings">Settings</string>
 
@@ -267,5 +265,11 @@
     <string name="finish_confession">Finish Confession</string>
     <string name="delete">Delete</string>
     <string name="fingerprint_confirm">Confirm fingerprint to continue</string>
+    <string name="guides">Guides</string>
+    <string name="prayers">Prayers</string>
+    <string name="confession">Confession</string>
+    <string name="cd_img_fingerprint">fingerprint image</string>
+    <string name="pref_restore_app">restore_app</string>
+    <string name="date">Monday, March 14 2019</string>
 
 </resources>

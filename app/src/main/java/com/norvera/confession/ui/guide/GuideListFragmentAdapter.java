@@ -57,7 +57,7 @@ public class GuideListFragmentAdapter extends ListAdapter<GuideEntry, GuideListF
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        private FragmentGuideEntryBinding binding;
+        private final FragmentGuideEntryBinding binding;
 
         ViewHolder(@NonNull FragmentGuideEntryBinding binding) {
             super(binding.getRoot());

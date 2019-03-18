@@ -23,7 +23,7 @@ public class ConfessionApplication extends Application {
     }
 
 
-    public static class ReleaseTree extends Timber.Tree {
+    static class ReleaseTree extends Timber.Tree {
         @Override
         protected void log(int priority, String tag, @NotNull String message, Throwable t) {
             //todo Add logging library

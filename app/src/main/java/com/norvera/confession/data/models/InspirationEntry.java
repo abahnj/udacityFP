@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey;
 public class InspirationEntry {
     @PrimaryKey
     @ColumnInfo(name = "_id")
-    public final long id;
+    private final long id;
 
     @ColumnInfo(name="QUOTE")
     public final String text;
@@ -19,5 +19,17 @@ public class InspirationEntry {
         this.id = id;
         this.text = text;
         this.author = author;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getAuthor() {
+        return author;
     }
 }

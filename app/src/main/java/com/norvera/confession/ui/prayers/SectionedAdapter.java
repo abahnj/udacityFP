@@ -1,18 +1,15 @@
 package com.norvera.confession.ui.prayers;
 
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.norvera.confession.ListAdapterWithHeader;
 import com.norvera.confession.R;
 import com.norvera.confession.data.models.PrayersEntry;
 import com.norvera.confession.databinding.FragmentPrayerItemBinding;
 import com.norvera.confession.databinding.ListHeaderBinding;
-import com.norvera.confession.ui.guide.GuideListFragmentDirections;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
@@ -25,16 +22,16 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, RecyclerView.ViewHolder> {
 
     private static final int[] HEADER_POSITION = new int[]{0, 7};
-    private HeaderDataItem headerItem = new HeaderDataItem("Title");
+    private static final int LIST_VIEW_TYPE = R.layout.fragment_prayer_item;
     public static final int HEADER_VIEW_TYPE = R.layout.list_header;
-    public static final int LIST_VIEW_TYPE = R.layout.fragment_prayer_item;
+    private HeaderDataItem headerItem = new HeaderDataItem();
 
     // A class holding header data
     private class HeaderDataItem {
-        private String title;
+        private final String title;
 
-        private HeaderDataItem(String title) {
-            this.title = title;
+        private HeaderDataItem() {
+            this.title = "Title";
         }
     }
 
@@ -114,7 +111,7 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private final FragmentPrayerItemBinding binding;
 
         ViewHolder(FragmentPrayerItemBinding binding) {
@@ -129,7 +126,7 @@ public class SectionedAdapter extends ListAdapterWithHeader<PrayersEntry, Recycl
         }
     }
 
-    public class HeaderViewHolder extends RecyclerView.ViewHolder {
+    class HeaderViewHolder extends RecyclerView.ViewHolder {
         private final ListHeaderBinding binding;
 
         HeaderViewHolder(@NonNull ListHeaderBinding binding) {

@@ -6,7 +6,6 @@ import com.norvera.confession.data.models.ExaminationEntry;
 import com.norvera.confession.data.models.GuideEntry;
 import com.norvera.confession.data.models.InspirationEntry;
 import com.norvera.confession.data.models.PrayersEntry;
-import com.norvera.confession.data.models.User;
 import com.norvera.confession.utils.AppExecutor;
 
 import java.util.List;

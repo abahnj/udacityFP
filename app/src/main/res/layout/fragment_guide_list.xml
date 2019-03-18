@@ -13,6 +13,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/unknown_1"
             android:alpha=".2"
+            android:contentDescription="@string/cd_background_image"
             android:scaleType="centerCrop"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_guide"

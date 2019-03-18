@@ -3,9 +3,6 @@
 /local.properties
 /keystore.properties
 /.idea
-.DS_Store
 /build
-/captures
-.externalNativeBuild
 app/libs/
 app/release/

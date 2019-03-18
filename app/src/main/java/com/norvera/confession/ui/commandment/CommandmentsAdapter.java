@@ -3,11 +3,9 @@ package com.norvera.confession.ui.commandment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.norvera.confession.data.models.CommandmentEntry;
 import com.norvera.confession.databinding.FragmentCommandmentsBinding;
-import com.norvera.confession.interfaces.ClickListeners;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavDirections;
@@ -17,8 +15,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link CommandmentEntry} and makes a call to the
- * specified {@link ClickListeners.CommandmentClickListener}.
+ * {@link RecyclerView.Adapter} that can display a {@link CommandmentEntry}
  */
 public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, CommandmentsAdapter.ViewHolder> {
 
@@ -68,7 +65,7 @@ public class CommandmentsAdapter extends ListAdapter<CommandmentEntry, Commandme
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        FragmentCommandmentsBinding binding;
+        final FragmentCommandmentsBinding binding;
 
         ViewHolder(FragmentCommandmentsBinding binding) {
             super(binding.getRoot());

@@ -3,17 +3,12 @@ package com.norvera.confession.ui.guide;
 
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.norvera.confession.R;
 import com.norvera.confession.databinding.FragmentGuideBinding;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

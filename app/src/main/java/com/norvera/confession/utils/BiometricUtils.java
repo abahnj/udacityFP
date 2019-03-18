@@ -1,19 +1,19 @@
 package com.norvera.confession.utils;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 
 
-public class BiometricUtils {
+class BiometricUtils {
 
 
-    public static boolean isBiometricPromptEnabled() {
+    static boolean isBiometricPromptEnabled() {
         return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P);
     }
 
@@ -26,7 +26,7 @@ public class BiometricUtils {
      * then you won't need to perform this check.
      *
      * */
-    public static boolean isSdkVersionSupported() {
+    static boolean isSdkVersionSupported() {
         return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M);
     }
 
@@ -39,7 +39,7 @@ public class BiometricUtils {
      * to perform this check.
      *
      * */
-    public static boolean isHardwareSupported(Context context) {
+    static boolean isHardwareSupported(Context context) {
         FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.from(context);
         return fingerprintManager.isHardwareDetected();
     }
@@ -52,7 +52,7 @@ public class BiometricUtils {
      * in order to enable fingerprint authentication
      *
      * */
-    public static boolean isFingerprintAvailable(Context context) {
+    static boolean isFingerprintAvailable(Context context) {
         FingerprintManagerCompat fingerprintManager = FingerprintManagerCompat.from(context);
         return fingerprintManager.hasEnrolledFingerprints();
     }
@@ -65,7 +65,8 @@ public class BiometricUtils {
      * installs the app on their device.
      *
      * */
-    public static boolean isPermissionGranted(Context context) {
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    static boolean isPermissionGranted(Context context) {
         return ActivityCompat.checkSelfPermission(context, Manifest.permission.USE_FINGERPRINT) ==
                 PackageManager.PERMISSION_GRANTED;
     }
