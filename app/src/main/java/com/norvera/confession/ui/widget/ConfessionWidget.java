@@ -25,7 +25,7 @@ public class ConfessionWidget extends AppWidgetProvider {
         //views.setTextViewText(R.id.appwidget_text, context.getResources().getString(R.string.date_of_next_confession));
 
         Intent settingIntent = new Intent(context, MainActivity.class);
-        settingIntent.putExtra(Constants.WIDGET_EXTRA_KEY,Constants.WIDGET_SETTING_VALUE);
+        settingIntent.putExtra(Constants.WIDGET_EXTRA_KEY, Constants.WIDGET_SETTING_VALUE);
         settingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         settingIntent.setAction(Constants.WIDGET_EXTRA_KEY);
         settingIntent.setData(Uri.parse(settingIntent.toUri(Intent.URI_INTENT_SCHEME)));

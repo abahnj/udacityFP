@@ -72,6 +72,8 @@
     <string name="slide_input_description">This slide demonstrates how input is saved over orientation and slide changes</string>
     <string name="here_are_my_sins">Here are my sins</string>
     <string name="act_of_contrition">Act of Contrition</string>
+    <string name="traditional_prayers">Traditional Prayers</string>
+
     <string name="faq">FAQ</string>
     <string name="as_said_by_popes">… As said by Popes</string>
     <string name="extracts_fulton_sheen">Extracts from Frequent Confession (Fulton Sheen)</string>
@@ -267,5 +269,8 @@
     <string name="finish_confession">Finish Confession</string>
     <string name="delete">Delete</string>
     <string name="fingerprint_confirm">Confirm fingerprint to continue</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>

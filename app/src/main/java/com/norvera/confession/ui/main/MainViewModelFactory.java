@@ -3,6 +3,7 @@ package com.norvera.confession.ui.main;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import com.norvera.confession.MainViewModel;
 import com.norvera.confession.data.AppRepository;
 import com.norvera.confession.utils.InjectorUtils;
 
@@ -24,7 +25,7 @@ public class MainViewModelFactory extends ViewModelProvider.NewInstanceFactory{
             synchronized (MainViewModelFactory.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new MainViewModelFactory(
-                            InjectorUtils.provideAppRepository( InjectorUtils.provideDatabase(context), InjectorUtils.provideAppExecutor()));
+                            InjectorUtils.INSTANCE.provideAppRepository( InjectorUtils.INSTANCE.provideDatabase(context), InjectorUtils.INSTANCE.provideAppExecutor()));
                 }
             }
         }

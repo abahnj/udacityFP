@@ -2,7 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
         app:iconSpaceReserved="false"
-        app:key="profile_category"
         app:title="Profile">
         <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
         <ListPreference
@@ -59,7 +58,7 @@
         app:key="@string/pref_remove_ads">
         <Preference
             android:defaultValue="1"
-            android:key="restore_app"
+            android:key="remove_ads"
             android:summary="@string/remove_ads"
             android:title="Remove Ads - $1.99"
             app:iconSpaceReserved="false" />
