@@ -21,7 +21,8 @@
             android:layout_height="match_parent"
             android:src="@drawable/examination"
             android:alpha=".1"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_examination"

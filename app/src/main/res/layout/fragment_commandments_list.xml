@@ -8,9 +8,13 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/examination_of_conscience"
         >
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/examination"
+            android:alpha=".1"
+            android:scaleType="centerCrop"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_commandments"
             android:name="com.norvera.confession.ui.main.CommandmentsFragment"
@@ -26,7 +30,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle"
             tools:listitem="@layout/fragment_commandments" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

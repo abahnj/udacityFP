@@ -31,30 +31,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:id="@+id/tv_act_of_contrition"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:gravity="center"
-                    android:paddingStart="@dimen/margin_normal"
-                    android:paddingEnd="@dimen/margin_normal"
-                    tools:text="@string/large_text" />
-
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Headline5"
-                    android:id="@+id/tv_act_tv_absolution"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:gravity="center"
-                    android:paddingStart="@dimen/margin_normal"
-                    android:paddingEnd="@dimen/margin_normal"
-                    android:text="@string/absolution"
-                    tools:text="Receive absolution and say Amen" />
-
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    style="@style/AppTheme.TextStyle"
                     android:id="@+id/tv_act_priest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -64,6 +41,28 @@
                     android:paddingEnd="@dimen/margin_normal"
                     android:text="@string/priest_saying"
                     tools:text="If the priest asks you to say the Act of Contrition, use this or what is it's local equivalent" />
+
+                <TextView
+                    style="@style/AppTheme.TextStyle"
+                    android:id="@+id/tv_act_of_contrition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingEnd="@dimen/margin_normal"
+                    tools:text="@string/large_text" />
+
+                <TextView
+                    style="@style/AppTheme.TextStyle"
+                    android:id="@+id/tv_act_tv_absolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:paddingStart="@dimen/margin_normal"
+                    android:paddingEnd="@dimen/margin_normal"
+                    android:text="@string/absolution"
+                    tools:text="Receive absolution and say Amen" />
+
 
             </LinearLayout>
 

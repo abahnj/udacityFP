@@ -12,8 +12,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/unknown_1"
-            android:alpha=".2"
-            android:scaleType="centerCrop"/>
+            android:alpha=".1"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_guide"
             android:layout_width="match_parent"

@@ -15,20 +15,21 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
         android:background="?attr/selectableItemBackground"
         android:onClick="@{clickListener}">
 
         <TextView
+            style="@style/AppTheme.ListTextStyle"
             android:id="@+id/guide_text"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingStart="@dimen/margin_normal"
             android:paddingEnd="@dimen/margin_normal"
             android:layout_margin="@dimen/text_margin"
             android:gravity="center_vertical"
             android:text="@{prayerEntry.prayerName}"
-            android:textAppearance="?attr/textAppearanceListItem"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

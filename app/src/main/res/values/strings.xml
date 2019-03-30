@@ -34,8 +34,6 @@
     <string name="login">Login</string>
     <string name="incorrect_password">Password is Incorrect</string>
     <string name="examination">Examination of Conscience</string>
-    <string name="confession">Confession</string>
-    <string name="prayers">Prayers</string>
     <string name="title_activity_examination">Examination of Conscience</string>
     <string name="action_settings">Settings</string>
 
@@ -272,5 +270,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="confession">Confession</string>
+    <string name="guides">Guides</string>
+    <string name="prayers">Prayers</string>
 
 </resources>

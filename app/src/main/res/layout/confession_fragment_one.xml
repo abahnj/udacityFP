@@ -18,7 +18,8 @@
         <TextView
             android:gravity="center"
             android:id="@+id/tvInTheName"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/AppTheme.TextStyle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_normal"
@@ -33,7 +34,8 @@
 
         <TextView
             android:gravity="center"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/AppTheme.TextStyle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/amen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -49,7 +51,8 @@
 
         <TextView
             android:gravity="center"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/AppTheme.TextStyle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/blessMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +68,8 @@
 
         <TextView
             android:gravity="center"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/AppTheme.TextStyle"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:id="@+id/tv_here"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -13,46 +13,36 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/guide_detail"
-        >
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/fragmentTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/material_app_bar_default_height"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            tools:text="@tools:sample/cities"
-            android:text="@{guideEntry.guideTitle}"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".1"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/guide_detail" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_normal"
-            app:layout_constraintEnd_toEndOf="parent"
             android:scrollbars="vertical"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitle">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_guide_detail"
+                style="@style/AppTheme.TextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{guideEntry.guideText}"
-                tools:text="@string/large_text"
                 android:paddingStart="@dimen/margin_normal"
                 android:paddingEnd="@dimen/margin_normal"
-                 />
+                android:text="@{guideEntry.guideText}"
+                tools:text="@string/large_text" />
 
         </androidx.core.widget.NestedScrollView>
 

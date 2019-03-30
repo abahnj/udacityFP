@@ -12,19 +12,20 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="wrap_content"
+        android:minHeight="88dp"
         android:background="?attr/selectableItemBackground">
 
         <TextView
             android:id="@+id/examination_text"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:gravity="center_vertical"
             android:paddingStart="@dimen/margin_normal"
             android:paddingEnd="@dimen/margin_normal"
             android:text="@{examinationEntry.description}"
-            android:textAppearance="?attr/textAppearanceListItem"
+            style="@style/AppTheme.ListTextStyle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/examination_count"
             app:layout_constraintStart_toStartOf="parent"

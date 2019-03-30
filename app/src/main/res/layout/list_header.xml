@@ -5,8 +5,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:background="?attr/selectableItemBackground">
+            android:layout_height="wrap_content"
+            android:minHeight="88dp">
 
                 <TextView
                     android:id="@+id/section_header"
@@ -16,8 +16,9 @@
                     android:paddingEnd="@dimen/margin_normal"
                     android:layout_margin="@dimen/text_margin"
                     android:gravity="center"
+                    style="@style/AppTheme.TextStyle"
                     android:textColor="@color/colorAccent"
-                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
