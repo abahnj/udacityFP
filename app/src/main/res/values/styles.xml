@@ -9,6 +9,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="pf_lock_screen">@style/MyLockScreenStyle</item>
+        <item name="pf_next">@style/Widget.Confession.Button</item>
     </style>
 
     <style name="AppTheme" parent="BaseAppTheme" />
@@ -31,11 +33,11 @@
     <style name="AppTheme.ListTextStyle">
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/athelas</item>
-        <item name="android:textAppearance">?attr/textAppearanceHeadline6</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
     </style>
 
     <style name="Widget.Confession.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
         <item name="backgroundTint">?attr/colorPrimaryDark</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/shr_next_button_state_list_anim
@@ -69,5 +71,9 @@
     <!-- set the rounded drawable as background to your bottom sheet -->
     <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="MyLockScreenStyle">
+        <item name="android:background">@drawable/splash_screen_2</item>
     </style>
 </resources>

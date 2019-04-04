@@ -63,7 +63,7 @@ class SectionedAdapter internal constructor() :
         return View.OnClickListener { view ->
             val toPrayerFragmentDetail =
                 PrayerListDirections.actionPrayerFragmentListToPrayerFragmentDetail(
-                    prayerEntry.prayerName,
+                    prayerEntry.prayerName!!,
                     prayerEntry
                 )
 

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#c62828</color>
+    <color name="colorPrimaryDark">#8e0000</color>
+    <color name="colorPrimaryLight">#ff5f52</color>
+    <color name="colorSecondary">#051d21</color>
+    <color name="colorSecondaryLight">#2d4448</color>
+    <color name="colorSecondaryDark">#000000</color>
     <color name="colorAccent">#FF001F</color>
+
     <color name="grey">#B3000000</color>
     <color name="widget_colour">#D8D6D6</color>
     <color name="bg_fingerprint">#1A73E8</color>

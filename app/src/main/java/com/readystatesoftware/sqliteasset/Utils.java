@@ -1,7 +1,5 @@
 package com.readystatesoftware.sqliteasset;
 
-import android.util.Log;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -10,6 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import timber.log.Timber;
 
 class Utils {
 
@@ -54,7 +54,7 @@ class Utils {
     ZipInputStream zis = new ZipInputStream(zipFileStream);
     ZipEntry ze;
     while ((ze = zis.getNextEntry()) != null) {
-      Log.w(TAG, "extracting file: '" + ze.getName() + "'...");
+      Timber.w("extracting file: '" + ze.getName() + "'...");
       return zis;
     }
     return null;

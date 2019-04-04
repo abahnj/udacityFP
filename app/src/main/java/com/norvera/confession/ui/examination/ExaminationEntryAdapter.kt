@@ -30,23 +30,18 @@ internal class ExaminationEntryAdapter internal constructor(private val viewMode
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val examinationEntry = getItem(position)
         holder.onBind(
-            createOnClickListener(examinationEntry.id, examinationEntry),
+            createOnClickListener(examinationEntry),
             examinationEntry
         )
     }
 
     private fun createOnClickListener(
-        examinationId: Long,
         examinationEntry: ExaminationEntry
     ): View.OnClickListener {
 
-        return View.OnClickListener{
+        return View.OnClickListener {
             examinationEntry.count = examinationEntry.count + 1
             viewModel.updateCountForEntry(examinationEntry)
-            /* CommandmentsFragmentDirections.CommandmentFragmentToExaminationFragment commandmentsFragmentDirections =
-                    CommandmentsFragmentDirections.commandmentFragmentToExaminationFragment(commandmentId);
-            Navigation.findNavController(view).navigate(commandmentsFragmentDirections);
-            */
         }
 
     }
@@ -56,30 +51,27 @@ internal class ExaminationEntryAdapter internal constructor(private val viewMode
         private lateinit var examinationEntry: ExaminationEntry
 
         //Add an OnMenuItem Listener to execute commands OnClick of context menu task
-        private val onMenuClick = MenuItem.OnMenuItemClickListener{ item ->
-
+        private val onMenuClick = MenuItem.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 DECREMENT -> if (examinationEntry.count > 0) {
-                    examinationEntry.count = examinationEntry.count - 1
-                    viewModel.decrementCount(examinationEntry)
+                    val new = examinationEntry.copy(count = examinationEntry.count - 1)
+                    viewModel.decrementCount(new)
                 }
                 EDIT -> {
                     examinationEntry.description = ""
                 }
-
                 DELETE -> {
                 }
                 RESET_COUNT -> {
+                    viewModel.decrementCount(examinationEntry.copy(count = 0))
                 }
-            }//Do stuff
-            //Do stuff
+            }
             true
         }
 
 
         init {
             binding.root.setOnCreateContextMenuListener(this) //Register OnCreate Menu Listener
-
         }
 
         fun onBind(clickListener: View.OnClickListener, item: ExaminationEntry) {
@@ -90,16 +82,6 @@ internal class ExaminationEntryAdapter internal constructor(private val viewMode
             binding.examinationEntry = item
             binding.executePendingBindings()
 
-            /*if (commandmentEntry.commandment != null ) {
-                if (commandmentEntry.id < 11)
-                    mTvCommandmentDescription.setText(commandmentEntry.text);
-                else
-                    mTvCommandmentDescription.setText(commandmentEntry.commandment);
-            }
-
-            mTvCommandmentTitle.setText(getNumberOrdinal((commandmentEntry.id)));
-
-*/
         }
 
         override fun onCreateContextMenu(
@@ -108,18 +90,15 @@ internal class ExaminationEntryAdapter internal constructor(private val viewMode
             menuInfo: ContextMenu.ContextMenuInfo?
         ) {
 
-
-                val decrement = menu?.add(Menu.NONE, DECREMENT, Menu.FIRST, R.string.context_menu_count)
-                val edit = menu?.add(Menu.NONE, EDIT, Menu.FIRST, R.string.context_menu_edit)
-                val delete = menu?.add(Menu.NONE, DELETE, Menu.FIRST, R.string.context_menu_delete)
-                val resetCount = menu?.add(Menu.NONE, RESET_COUNT, Menu.FIRST, R.string.context_menu_restore)
-
+            val decrement = menu?.add(Menu.NONE, DECREMENT, Menu.FIRST, R.string.context_menu_count)
+            val edit = menu?.add(Menu.NONE, EDIT, Menu.FIRST, R.string.context_menu_edit)
+            val delete = menu?.add(Menu.NONE, DELETE, Menu.FIRST, R.string.context_menu_delete)
+            val resetCount = menu?.add(Menu.NONE, RESET_COUNT, Menu.FIRST, R.string.context_menu_restore)
 
             edit?.setOnMenuItemClickListener(onMenuClick)
             delete?.setOnMenuItemClickListener(onMenuClick)
-                decrement?.setOnMenuItemClickListener(onMenuClick)
-                resetCount?.setOnMenuItemClickListener(onMenuClick)
-
+            decrement?.setOnMenuItemClickListener(onMenuClick)
+            resetCount?.setOnMenuItemClickListener(onMenuClick)
 
         }
     }

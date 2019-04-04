@@ -64,10 +64,6 @@
     <string name="select_user">Select User</string>
     <string name="dob_button">%1$d/%2$d/%3$d</string>
     <string name="reset_count">Reset Count</string>
-    <string name="slide_input_checkbox">Check Something</string>
-    <string name="slide_input_edittext">Type Something here</string>
-    <string name="slide_input_title">Slide: Input Demo</string>
-    <string name="slide_input_description">This slide demonstrates how input is saved over orientation and slide changes</string>
     <string name="here_are_my_sins">Here are my sins</string>
     <string name="act_of_contrition">Act of Contrition</string>
     <string name="traditional_prayers">Traditional Prayers</string>
@@ -88,6 +84,7 @@
     <string name="menu_night_mode_day">Day (always)</string>
     <string name="menu_night_mode_night">Night (always)</string>
     <string name="menu_night_mode_auto">Auto</string>
+
     <string name="title_activity_settings">Settings</string>
     <string name="age">Age</string>
     <string name="emptyTextView">I seem to be empty.....\n are you sure you have performed an examination of conscience?</string>
@@ -99,9 +96,7 @@
     <string name="prayers_image">Prayers Image</string>
     <string name="share_text">An app that helps you become the best Catholic possible. Designed to be used in the confessional, this app is the perfect aid for every penitent. \nhttps://play.google.com/store/apps/details?id=com.abahnj.confession </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_scrolling">ScrollingActivity</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -193,18 +188,24 @@
     </string>
     <string name="title_activity_test">Test</string>
     <string name="restore_warning">Warning! This will delete all personal application data including added examinations</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="pref_privacy_policy">pref_privacy_policy</string>
+    <string name="privacy_policy_desc">Link to our privacy policy</string>
+
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
     <string name="pref_gender_key" translatable="false">gender_key</string>
-    <string name="pref_remove_ads">remove_ads</string>
+    <string name="pref_remove_ads" translatable="false">remove_ads</string>
+    <string name="pref_cat_remove_ads" translatable="false">cat_remove_ads</string>
+
     <string name="pref_vocation_key" translatable="false">vocation_key</string>
     <string name="pref_age_key" translatable="false">age_key</string>
     <string name="pref_restore_key" translatable="false">restore_key</string>
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
+
     <string name="biometric_failed">Fingerprint not recognized</string>
     <string name="biometric_error_sdk_not_supported">Sdk version not supported</string>
     <string name="biometric_error_hardware_not_supported">Device does not support biometric authentication</string>
@@ -214,52 +215,6 @@
     <string name="biometric_cancelled">Authentication cancelled by user</string>
     <string name="biometric_success">Login Successful</string>
 
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="multi_select_list_preference_default_value" />
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="configure">Configure</string>
-    <string name="add_widget">Add widget</string>
     <string name="date_of_next_confession">Date of next Confession</string>
     <string name="absolution">Receive absolution and say Amen</string>
     <string name="priest_saying">If the priest says \"Give thanks to the Lord for he is Good\" answer \"For His Mercy endures forever\"</string>
@@ -267,11 +222,11 @@
     <string name="finish_confession">Finish Confession</string>
     <string name="delete">Delete</string>
     <string name="fingerprint_confirm">Confirm fingerprint to continue</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
     <string name="confession">Confession</string>
     <string name="guides">Guides</string>
     <string name="prayers">Prayers</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-5820676795399080/6298054857</string>
 
 </resources>

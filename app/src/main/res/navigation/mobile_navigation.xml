@@ -29,6 +29,7 @@
             android:name="commandmentId"
             app:argType="long" />
     </fragment>
+
     <fragment
         android:id="@+id/confessionFragmentOne"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentOne"
@@ -42,6 +43,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
+
     <fragment
         android:id="@+id/confessionFragmentTwo"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentTwo"
@@ -51,6 +53,7 @@
             android:id="@+id/confessionFragmentTwo_to_confessionFragmentThree"
             app:destination="@id/confessionFragmentThree" />
     </fragment>
+
     <fragment
         android:id="@+id/confessionFragmentThree"
         android:name="com.norvera.confession.ui.confession.ConfessionFragmentThree"
@@ -102,7 +105,7 @@
     <fragment
         android:id="@+id/prayerFragmentList"
         android:name="com.norvera.confession.ui.prayers.PrayerList"
-        android:label="Guide Fragment"
+        android:label="Prayers"
         tools:layout="@layout/fragment_prayer_list">
         <action
             android:id="@+id/action_prayerFragmentList_to_prayerFragmentDetail"
@@ -112,9 +115,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.norvera.confession.ui.settings.SettingsFragment"
-        android:label="Settings"
-        >
-    </fragment>
+        android:label="Settings"/>
 
     <fragment
         android:id="@+id/prayerFragmentDetail"

@@ -1,10 +1,13 @@
 package com.norvera.confession.data.models
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "COMMANDMENTS")
+@Parcelize
 data class CommandmentEntry
 // column names commandment table's columns
 
@@ -22,4 +25,4 @@ data class CommandmentEntry
     val commandment: String,
     @field:ColumnInfo(name = "CUSTOM_ID")
     val customId: Int
-)
+) : Parcelable

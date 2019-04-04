@@ -2,7 +2,6 @@ package com.norvera.confession.data.dao;
 
 import com.norvera.confession.data.models.ExaminationActiveEntry;
 import com.norvera.confession.data.models.ExaminationEntry;
-import com.norvera.confession.data.models.User;
 
 import java.util.List;
 
@@ -25,6 +24,7 @@ public abstract class ExaminationDao {
     @Query("SELECT _id, DESCRIPTION FROM SIN_ACTIVE WHERE _id IN (SELECT _id FROM SIN WHERE COUNT > 0)")
     public abstract LiveData<List<ExaminationActiveEntry>> loadAllExaminationsWithCount();
 
+    //todo implement using id and direct edit
     @Update
     public abstract void decrementCount(ExaminationEntry examinationEntry);
 }

@@ -37,6 +37,13 @@
             app:iconSpaceReserved="false"
             app:useSimpleSummaryProvider="true" />
 
+        <Preference
+            android:defaultValue="1"
+            android:key="pref_last_confession"
+            android:summary="14/03/2017"
+            android:title="Date of Last Confession"
+            app:iconSpaceReserved="false" />
+
     </PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
@@ -55,12 +62,25 @@
     <androidx.preference.PreferenceCategory
         android:title="@string/remove_ad"
         app:iconSpaceReserved="false"
-        app:key="@string/pref_remove_ads">
+        app:key="@string/pref_cat_remove_ads">
         <Preference
             android:defaultValue="1"
-            android:key="remove_ads"
+            android:key="@string/pref_remove_ads"
             android:summary="@string/remove_ads"
             android:title="Remove Ads - $1.99"
+            app:iconSpaceReserved="false" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/privacy_policy"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:defaultValue="1"
+            android:key="@string/pref_privacy_policy"
+            android:summary="@string/privacy_policy_desc"
+            android:title="@string/privacy_policy"
+            android:icon="@drawable/ic_info_outline"
             app:iconSpaceReserved="false" />
 
     </androidx.preference.PreferenceCategory>

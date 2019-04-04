@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_cross" />
+        android:src="@drawable/ic_logo"
+        android:contentDescription="@null" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="bottom"
-            android:contentDescription="@string/appwidget_text"
+            android:contentDescription="@null"
             android:text="@string/date_of_next_confession"
             />
 
@@ -40,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="@string/appwidget_text"
+            android:contentDescription="@null"
             android:textColor="@color/widget_colour"
             android:text="Monday, March 14 2019"
              />

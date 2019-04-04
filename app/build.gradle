@@ -32,8 +32,8 @@ android {
         minSdkVersion 23
         targetSdkVersion 28
         multiDexEnabled true
-        versionCode 2
-        versionName "1.0"
+        versionCode 5
+        versionName "PETRUS"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -50,6 +50,10 @@ android {
     dataBinding {
         enabled = true
     }
+    androidExtensions {
+        experimental = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

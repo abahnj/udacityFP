@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var mFirebaseAnalytics: FirebaseAnalytics
     private lateinit var appBarConfiguration: AppBarConfiguration
-
-    private var mAdView: AdView? = null
+    private lateinit var mAdView: AdView
+    private lateinit var mAdContainer: FrameLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,11 +63,14 @@ class MainActivity : AppCompatActivity() {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
-        mAdView = mainActivityBinding.adView
+        mAdContainer = mainActivityBinding.adContainer
         val adRequest = AdRequest.Builder().build()
         val adSize = AdSize(displayWidthInDps(), 50)
-
-        mAdView!!.loadAd(adRequest)
+        mAdView = AdView(this)
+        mAdContainer.addView(mAdView)
+        mAdView.adSize = adSize
+        mAdView.adUnitId = resources.getString(R.string.banner_ad_unit_id)
+        mAdView.loadAd(adRequest)
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -86,16 +90,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun displayWidthInDps(): Int {
-        val displayMetrics = resources.displayMetrics
-        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
-
         val configuration = resources.configuration
-        val screenWidthDp =
-            configuration.screenWidthDp //The current width of the available screen space, in dp units, corresponding to screen width resource qualifier.
-        val smallestScreenWidthDp =
-            configuration.smallestScreenWidthDp //The smallest screen size an application will see in normal operation, corresponding to smallest screen width resource qualifier.
-
-        return screenWidthDp
+        return configuration.screenWidthDp
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
@@ -143,7 +139,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         // todo move view model creation to factory method
         val factory = InjectorUtils.provideViewModelFactory(this)
-        mViewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java!!)
+        mViewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
     }
 

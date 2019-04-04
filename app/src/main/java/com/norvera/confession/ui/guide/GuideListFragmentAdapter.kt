@@ -23,14 +23,14 @@ class GuideListFragmentAdapter internal constructor() :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val guideEntry = getItem(position)
-        holder.onBind(createOnClickListener(guideEntry.id, guideEntry), guideEntry)
+        holder.onBind(createOnClickListener(guideEntry), guideEntry)
 
     }
 
-    private fun createOnClickListener(id: Long, guideEntry: GuideEntry): View.OnClickListener {
+    private fun createOnClickListener(guideEntry: GuideEntry): View.OnClickListener {
         return View.OnClickListener{
             val toGuideFragmentDetail =
-                GuideListFragmentDirections.actionGuideFragmentListToGuideFragmentDetail(guideEntry.guideTitle, guideEntry)
+                GuideListFragmentDirections.actionGuideFragmentListToGuideFragmentDetail(guideEntry.guideTitle!!, guideEntry)
             findNavController(it).navigate(toGuideFragmentDetail)
         }
     }

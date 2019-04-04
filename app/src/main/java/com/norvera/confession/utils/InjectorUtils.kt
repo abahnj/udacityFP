@@ -24,7 +24,7 @@ object InjectorUtils {
 
     // Database
     fun provideDatabase(context: Context): AppDatabase {
-        return AppDatabase.getInstance(context)
+        return AppDatabase.getInstance(context)!!
     }
 
     fun provideExaminationDao(context: Context): ExaminationDao {

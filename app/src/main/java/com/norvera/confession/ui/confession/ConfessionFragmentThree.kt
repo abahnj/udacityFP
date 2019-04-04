@@ -17,7 +17,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.norvera.confession.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.databinding.FragmentConfessionThreeBinding
+import com.norvera.confession.utils.Constants
 import com.norvera.confession.utils.InjectorUtils
+import com.norvera.confession.utils.SharedPreferencesHelper
 import kotlin.random.Random
 
 /**
@@ -73,13 +75,23 @@ class ConfessionFragmentThree : Fragment() {
 
             builder.setTitle(title).setMessage(inspiration)
                 .setPositiveButton(R.string.finish_confession) { _, _ -> goHome() }
+
             // Create the AlertDialog object and return it
             return builder.create()
         }
 
         override fun onDismiss(dialog: DialogInterface) {
             super.onDismiss(dialog)
+            setLastConfession()
             goHome()
+        }
+
+        private fun setLastConfession() {
+            SharedPreferencesHelper.setSharedPreferenceLong(
+                context!!,
+                Constants.LAST_CONFESSION,
+                System.currentTimeMillis()
+            )
         }
 
         private fun goHome() {
@@ -94,4 +106,4 @@ class ConfessionFragmentThree : Fragment() {
     }
 
 
-}// Required empty public constructor
+}

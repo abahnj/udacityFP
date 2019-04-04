@@ -15,10 +15,8 @@ import com.norvera.confession.utils.*
 
 class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener{
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        val hg = sharedPreferences?.getString(key, "")
         if (key == Constants.CODE){
             showLockScreenFragment(true)
-
         }
     }
 
@@ -121,7 +119,7 @@ class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         SharedPreferencesHelper.registerOnSharedPreferenceChangeListener(this, this)
         setupViewModel()
         mIntent = Intent(this@SplashActivity, MainActivity::class.java)
-        mIntent.flags = Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        mIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
 
 
         /*if (BiometricUtils.isFingerprintAvailable(this))
@@ -202,7 +200,6 @@ class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
     }
 
     private val mCodeCreateListener = PFLockScreenFragment.OnPFLockScreenCodeCreateListener { encodedCode ->
-            Toast.makeText(this@SplashActivity, "Code created $encodedCode", Toast.LENGTH_SHORT).show()
             SharedPreferencesHelper.setSharedPreferenceString(this@SplashActivity, Constants.CODE, encodedCode)
         }
 
