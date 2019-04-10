@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory
+import com.norvera.confession.R
 import com.norvera.confession.data.dao.*
 import com.norvera.confession.data.models.*
 import timber.log.Timber
@@ -46,7 +47,7 @@ abstract class AppDatabase : RoomDatabase() {
         internal fun create(context: Context): AppDatabase {
             val b = Room.databaseBuilder(
                 context.applicationContext, AppDatabase::class.java,
-                DATABASE_NAME
+                context.getString(R.string.database_name)
             )
 
             return b.openHelperFactory(AssetSQLiteOpenHelperFactory()).build()

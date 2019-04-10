@@ -37,12 +37,13 @@
             app:iconSpaceReserved="false"
             app:useSimpleSummaryProvider="true" />
 
-        <Preference
-            android:defaultValue="1"
-            android:key="pref_last_confession"
-            android:summary="14/03/2017"
+
+        <com.norvera.confession.DatePreference
+            android:key="last_confession"
             android:title="Date of Last Confession"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false"
+            android:summary="14/03/2017"
+            android:defaultValue="90" />
 
     </PreferenceCategory>
 
@@ -73,15 +74,30 @@
     </androidx.preference.PreferenceCategory>
 
     <androidx.preference.PreferenceCategory
+        android:title="@string/help"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:key="@string/pref_help"
+            android:summary="@string/pref_help_summary"
+            android:title="@string/send_feedback"
+            android:icon="@drawable/ic_live_help"
+            app:iconSpaceReserved="false" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
         android:title="@string/privacy_policy"
         app:iconSpaceReserved="false">
         <Preference
-            android:defaultValue="1"
             android:key="@string/pref_privacy_policy"
             android:summary="@string/privacy_policy_desc"
             android:title="@string/privacy_policy"
             android:icon="@drawable/ic_info_outline"
-            app:iconSpaceReserved="false" />
+            app:iconSpaceReserved="false" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://norvera.com/privacy.html" />
+        </Preference>
 
     </androidx.preference.PreferenceCategory>
 

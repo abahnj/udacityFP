@@ -1,10 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Confession</string>
     <string name="examination_of_conscience">Examination of Conscience</string>
     <string name="commandment_title">Sins against the %1$s commandment.</string>
     <string name="exam">Exam</string>
-    <string name="title_item_list">Items</string>
-    <string name="title_item_detail">Item Detail</string>
     <string name="in_the_name">In the name of the Father and the Son and the Holy Spirit</string>
     <string name="amen">Amen</string>
     <string name="bless_me">Bless me Father for I have sinned.\n\nIt\'s been %1$s since my last confession</string>
@@ -18,9 +17,6 @@
     <string name="female">Female</string>
 
     <!-- Strings related to login -->
-    <string name="name">Name</string>
-    <string name="password">Password</string>
-    <string name="dob">Date of Birth</string>
     <string name="sex">Sex</string>
     <string name="vocation">Vocation</string>
     <string name="single">Single</string>
@@ -28,13 +24,8 @@
     <string name="priest">Priest</string>
     <string name="religious">Religious</string>
     <string name="last_confession">Last Confession</string>
-    <string name="save">Save</string>
-    <string name="person_added">User added successfully</string>
     <string name="cancel">Cancel</string>
-    <string name="login">Login</string>
-    <string name="incorrect_password">Password is Incorrect</string>
     <string name="examination">Examination of Conscience</string>
-    <string name="title_activity_examination">Examination of Conscience</string>
     <string name="action_settings">Settings</string>
 
 
@@ -44,7 +35,6 @@
     <string name="title_activity_prayers">Prayers</string>
     <string name="previous">Previous</string>
     <string name="title_activity_confession">Confession</string>
-    <string name="db_name">confession.db</string>
     <string name="sign_of_the_cross">In the name of the Father, and the Son, and the Holy Spirit. Amen</string>
     <string name="null_time_since_last">Tell the priest how long it has been since your last confession. Next time we will calculate this for you</string>
     <string name="confessionNotice">This app is intended to be used during the Sacrament of Reconciliation with a Catholic priest only. This is not a substitute for a valid confession.</string>
@@ -55,13 +45,6 @@
     <string name="receive_absolution">Receive absolution and respond \"Amen\"</string>
     <string name="response">If the priest says \"Give thanks to the Lord for He is good\" answer \"For His mercy endures forever.\"</string>
     <string name="guide">Guide</string>
-    <string name="title_activity_guide">Confession Guide</string>
-    <string name="title_activity_examination2">ExaminationActivity2</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_activity_examination_activity_switcher">Examination of Conscience</string>
-    <string name="create_user">Create User</string>
-    <string name="select_user">Select User</string>
     <string name="dob_button">%1$d/%2$d/%3$d</string>
     <string name="reset_count">Reset Count</string>
     <string name="here_are_my_sins">Here are my sins</string>
@@ -73,9 +56,6 @@
     <string name="extracts_fulton_sheen">Extracts from Frequent Confession (Fulton Sheen)</string>
     <string name="catechism_of_the_catholic_church">Catechism of the Catholic Church</string>
     <string name="how_to_make_a_good_confession">How to Make a Good Confession</string>
-    <string name="adult">Adult</string>
-    <string name="teen">Teen</string>
-    <string name="child">Child</string>
     <string name="remove_ad">Remove ads</string>
     <string name="remove_ads">Remove ads and help buy me a cup of coffee</string>
 
@@ -92,12 +72,12 @@
     <string name="edit_examination_dialog_title">Edit Examination</string>
     <string name="share">Share</string>
     <string name="send_to">Send With</string>
-    <string name="examination_image">Examination Image</string>
-    <string name="prayers_image">Prayers Image</string>
+    <string name="examination_image" translatable="false">Examination</string>
+    <string name="prayers_image" translatable="false">Prayers</string>
     <string name="share_text">An app that helps you become the best Catholic possible. Designed to be used in the confessional, this app is the perfect aid for every penitent. \nhttps://play.google.com/store/apps/details?id=com.abahnj.confession </string>
 
 
-    <string name="large_text">
+    <string name="large_text" translatable="false">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -186,22 +166,14 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="title_activity_test">Test</string>
     <string name="restore_warning">Warning! This will delete all personal application data including added examinations</string>
     <string name="privacy_policy">Privacy Policy</string>
-    <string name="pref_privacy_policy">pref_privacy_policy</string>
+    <string name="pref_privacy_policy" translatable="false">pref_privacy_policy</string>
     <string name="privacy_policy_desc">Link to our privacy policy</string>
     <string name="send_feedback">Send feedback</string>
     <string name="pref_help_summary">Report technical issues or suggest new features</string>
-    <string name="pref_help">help</string>
+    <string name="pref_help" translatable="false">help</string>
     <string name="help">Help</string>
-
-
-
-    <!-- Strings related to Settings -->
-
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
 
     <string name="pref_gender_key" translatable="false">gender_key</string>
     <string name="pref_remove_ads" translatable="false">remove_ads</string>
@@ -223,7 +195,7 @@
     <string name="date_of_next_confession">Date of next Confession</string>
     <string name="absolution">Receive absolution and say Amen</string>
     <string name="priest_saying">If the priest says \"Give thanks to the Lord for he is Good\" answer \"For His Mercy endures forever\"</string>
-    <string name="cd_background_image">background image</string>
+    <string name="cd_background_image" translatable="false">background image</string>
     <string name="finish_confession">Finish Confession</string>
     <string name="delete">Delete</string>
     <string name="fingerprint_confirm">Confirm fingerprint to continue</string>
@@ -233,7 +205,5 @@
     <string name="guides">Guides</string>
     <string name="prayers">Prayers</string>
 
-    <string name="banner_ad_unit_id">ca-app-pub-5820676795399080/6298054857</string>
-    <string name="database_name">confession.db</string>
-
-</resources>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-5820676795399080/6298054857</string>
+    <string name="database_name" translatable="false">confession.db</string></resources>

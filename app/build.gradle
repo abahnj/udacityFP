@@ -33,7 +33,7 @@ android {
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 5
-        versionName "PETRUS"
+        versionName "1.0 - PETRUS"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -43,7 +43,7 @@ android {
             signingConfig signingConfigs.config
         }
         debug {
-            applicationIdSuffix ".debug"
+            //applicationIdSuffix ".debug"
             debuggable true
         }
     }
@@ -84,6 +84,9 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation 'com.google.android.material:material:' + rootProject.material_version
     implementation 'blue.aodev:material-values:1.1.1'
+
+    // Add Performance Monitoring dependency line
+    implementation 'com.google.firebase:firebase-perf:16.2.4'
 
     implementation "androidx.room:room-runtime:$rootProject.room_version"
 

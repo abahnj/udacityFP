@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/unknown_3"
+            android:src="@drawable/prayers_detail"
             android:alpha=".4"
             android:scaleType="centerCrop"
             android:contentDescription="@string/cd_background_image" />

@@ -69,7 +69,7 @@ open class BiometricManagerV23 {
 
                     override fun onAuthenticationFailed() {
                         super.onAuthenticationFailed()
-                        updateStatus(context!!.getString(R.string.biometric_failed))
+                        updateStatus(context.getString(R.string.biometric_failed))
                         biometricCallback.onAuthenticationFailed()
                     }
                 },
@@ -82,7 +82,7 @@ open class BiometricManagerV23 {
 
 
     private fun displayBiometricDialog(biometricCallback: BiometricCallback) {
-        biometricDialogV23 = BiometricDialogV23(context!!, biometricCallback)
+        biometricDialogV23 = BiometricDialogV23(context, biometricCallback)
         biometricDialogV23!!.setTitle(title!!)
         biometricDialogV23!!.setSubtitle(subtitle!!)
         biometricDialogV23!!.setDescription(description!!)

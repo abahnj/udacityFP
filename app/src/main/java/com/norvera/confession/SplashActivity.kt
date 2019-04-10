@@ -11,9 +11,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.beautycoder.pflockscreen.PFFLockScreenConfiguration
 import com.beautycoder.pflockscreen.fragments.PFLockScreenFragment
+import com.google.firebase.perf.FirebasePerformance
+import com.google.firebase.perf.metrics.Trace
 import com.norvera.confession.utils.*
 
+
 class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener{
+    private lateinit var myTrace: Trace
+
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         if (key == Constants.CODE){
             showLockScreenFragment(true)
@@ -116,6 +121,8 @@ class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)
 
+        myTrace = FirebasePerformance.getInstance().newTrace("test_trace")
+        myTrace.start()
         SharedPreferencesHelper.registerOnSharedPreferenceChangeListener(this, this)
         setupViewModel()
         mIntent = Intent(this@SplashActivity, MainActivity::class.java)
@@ -132,6 +139,7 @@ class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
             ).show()
             startActivity(mIntent)*/
         showLockScreenFragment()
+        myTrace.stop()
 
     }
 
@@ -145,9 +153,16 @@ class SplashActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         mViewModel.isPinCodeEncryptionKeyExist().observe(
             this,
             Observer { result ->
+                if (result != null) {
+                    myTrace.incrementMetric("item_cache_hit", 1)
+                } else {
+                    myTrace.incrementMetric("item_cache_miss", 1)
+                }
+
                 if (result == null) {
                     return@Observer
                 }
+
                 if (result.error != null) {
                     Toast.makeText(
                         this@SplashActivity,

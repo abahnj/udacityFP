@@ -18,11 +18,11 @@ data class CommandmentEntry
     @field:ColumnInfo(name = "NUMBER")
     val number: Int,
     @field:ColumnInfo(name = "TEXT")
-    val text: String,
+    val text: String?,
     @field:ColumnInfo(name = "CATEGORY")
     val category: String,
     @field:ColumnInfo(name = "COMMANDMENT")
     val commandment: String,
     @field:ColumnInfo(name = "CUSTOM_ID")
-    val customId: Int
+    val customId: Int?
 ) : Parcelable

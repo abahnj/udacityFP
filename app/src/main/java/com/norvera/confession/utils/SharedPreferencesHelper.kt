@@ -84,7 +84,7 @@ object SharedPreferencesHelper {
      */
     fun setSharedPreferenceLong(context: Context, key: String, value: Long) {
         val settings = context.getSharedPreferences(PREF_FILE, Context.MODE_PRIVATE)
-        settings.edit{
+        settings.edit(commit = true){
             putLong(key, value)
         }
     }

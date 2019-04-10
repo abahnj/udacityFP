@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/commandment_fragment">
+    app:startDestination="@id/action_gameFragment">
 
     <fragment
         android:id="@+id/commandment_fragment"
@@ -21,6 +21,22 @@
     </fragment>
 
     <fragment
+        android:id="@+id/action_makePurchase"
+        android:name="com.norvera.confession.MakePurchases"
+        android:label="Game fragment"
+        tools:layout="@layout/fragment_examinationentry_list">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/action_gameFragment"
+        android:name="com.norvera.confession.GameFragment"
+        android:label="Game fragment"
+        tools:layout="@layout/fragment_examinationentry_list">
+
+    </fragment>
+
+    <fragment
         android:id="@+id/examination_fragment"
         android:name="com.norvera.confession.ui.examination.ExaminationFragment"
         android:label="Examination of Conscience"
@@ -29,6 +45,7 @@
             android:name="commandmentId"
             app:argType="long" />
     </fragment>
+
 
     <fragment
         android:id="@+id/confessionFragmentOne"

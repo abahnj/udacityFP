@@ -12,6 +12,7 @@ import java.util.concurrent.Executors
 
 object InjectorUtils {
 
+
     //  REPOSITORY
     fun provideAppRepository(appDatabase: AppDatabase, executor: AppExecutor): AppRepository {
         return AppRepository(appDatabase, executor)
@@ -37,6 +38,6 @@ object InjectorUtils {
 
 
     fun provideViewModelFactory(context: Context): MainViewModelFactory {
-        return MainViewModelFactory.getInstance(context)
+        return MainViewModelFactory.getInstance(context)!!
     }
 }

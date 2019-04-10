@@ -33,10 +33,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAdView: AdView
     private lateinit var mAdContainer: FrameLayout
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainActivityBinding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+
 
 
         appBarConfiguration = AppBarConfiguration(
@@ -98,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         val bottomNav = mainActivityBinding.bottomNavBar
         bottomNav.setupWithNavController(navController)
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
