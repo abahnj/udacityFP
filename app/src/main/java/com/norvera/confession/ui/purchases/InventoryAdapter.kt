@@ -1,10 +1,11 @@
-package com.norvera.confession
+package com.norvera.confession.ui.purchases
 
 import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.norvera.confession.R
 
 import com.norvera.confession.data.billingrepo.localdb.AugmentedSkuDetails
 import kotlinx.android.synthetic.main.inventory_item.view.*

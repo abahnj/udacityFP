@@ -18,6 +18,7 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.databinding.MainActivityBinding
 import com.norvera.confession.utils.Constants
 import com.norvera.confession.utils.InjectorUtils

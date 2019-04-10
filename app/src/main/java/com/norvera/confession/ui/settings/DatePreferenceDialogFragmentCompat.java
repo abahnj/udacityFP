@@ -1,4 +1,4 @@
-package com.norvera.confession;
+package com.norvera.confession.ui.settings;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;

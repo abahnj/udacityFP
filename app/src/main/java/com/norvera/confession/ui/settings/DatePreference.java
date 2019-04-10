@@ -1,8 +1,10 @@
-package com.norvera.confession;
+package com.norvera.confession.ui.settings;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+
+import com.norvera.confession.R;
 
 import androidx.preference.DialogPreference;
 

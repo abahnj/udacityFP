@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.NavHostFragment
-import com.norvera.confession.MainViewModel
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.databinding.FragmentConfessionThreeBinding
 import com.norvera.confession.utils.Constants

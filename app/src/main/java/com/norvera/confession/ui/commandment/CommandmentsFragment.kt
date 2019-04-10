@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
-import com.norvera.confession.MainViewModel
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.data.models.CommandmentEntry
 import com.norvera.confession.databinding.FragmentCommandmentsListBinding

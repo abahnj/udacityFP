@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.norvera.confession.viewmodels.BillingViewModel
 import com.norvera.confession.data.billingrepo.localdb.GasTank
 import kotlinx.android.synthetic.main.fragment_game.*
 

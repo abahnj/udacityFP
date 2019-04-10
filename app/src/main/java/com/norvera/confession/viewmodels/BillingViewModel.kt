@@ -1,4 +1,4 @@
-package com.norvera.confession
+package com.norvera.confession.viewmodels
 
 
 import android.app.Activity

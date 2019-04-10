@@ -1,4 +1,4 @@
-package com.norvera.confession
+package com.norvera.confession.ui.prayers
 
 import androidx.recyclerview.widget.*
 

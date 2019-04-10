@@ -1,11 +1,10 @@
-package com.norvera.confession.ui.main
+package com.norvera.confession.viewmodels
 
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.norvera.confession.MainViewModel
 import com.norvera.confession.data.AppRepository
 import com.norvera.confession.utils.InjectorUtils
 
@@ -29,12 +28,13 @@ class MainViewModelFactory private constructor(private val mAppRepository: AppRe
             if (INSTANCE == null) {
                 synchronized(MainViewModelFactory::class.java) {
                     if (INSTANCE == null) {
-                        INSTANCE = MainViewModelFactory(
-                            InjectorUtils.provideAppRepository(
-                                InjectorUtils.provideDatabase(context),
-                                InjectorUtils.provideAppExecutor()
+                        INSTANCE =
+                            MainViewModelFactory(
+                                InjectorUtils.provideAppRepository(
+                                    InjectorUtils.provideDatabase(context),
+                                    InjectorUtils.provideAppExecutor()
+                                )
                             )
-                        )
                     }
                 }
             }

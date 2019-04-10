@@ -11,8 +11,6 @@ import androidx.fragment.app.DialogFragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
-import com.norvera.confession.DatePreference
-import com.norvera.confession.DatePreferenceDialogFragmentCompat
 import com.norvera.confession.R
 import com.norvera.confession.utils.Constants
 import timber.log.Timber
@@ -64,7 +62,7 @@ class SettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceClic
 
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(com.norvera.confession.R.xml.pref_general, rootKey)
+        setPreferencesFromResource(R.xml.pref_general, rootKey)
 
 
 

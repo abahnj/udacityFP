@@ -1,4 +1,4 @@
-package com.norvera.confession
+package com.norvera.confession.ui.purchases
 
 import android.app.Activity
 import android.os.Bundle
@@ -11,7 +11,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.norvera.confession.ViewModels.BillingViewModel
+import com.norvera.confession.R
+import com.norvera.confession.viewmodels.BillingViewModel
 import com.norvera.confession.data.billingrepo.BillingRepository
 import com.norvera.confession.data.billingrepo.localdb.AugmentedSkuDetails
 import kotlinx.android.synthetic.main.fragment_make_purchase.view.*

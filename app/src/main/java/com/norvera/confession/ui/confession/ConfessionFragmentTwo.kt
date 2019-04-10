@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
-import com.norvera.confession.MainViewModel
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.data.models.ExaminationActiveEntry
 import com.norvera.confession.databinding.ConfessionFragmentTwoBinding

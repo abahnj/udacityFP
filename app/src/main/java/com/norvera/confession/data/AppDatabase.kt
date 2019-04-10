@@ -28,7 +28,6 @@ abstract class AppDatabase : RoomDatabase() {
 
         private val LOG_TAG = AppDatabase::class.java.simpleName
         private val LOCK = Any()
-        private const val DATABASE_NAME = "confession.db"
         @Volatile
         private var sInstance: AppDatabase? = null
 

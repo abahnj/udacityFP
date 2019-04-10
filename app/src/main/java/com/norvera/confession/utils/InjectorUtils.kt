@@ -5,7 +5,7 @@ import android.content.Context
 import com.norvera.confession.data.AppDatabase
 import com.norvera.confession.data.AppRepository
 import com.norvera.confession.data.dao.ExaminationDao
-import com.norvera.confession.ui.main.MainViewModelFactory
+import com.norvera.confession.viewmodels.MainViewModelFactory
 
 import java.util.concurrent.Executors
 

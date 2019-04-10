@@ -1,4 +1,4 @@
-package com.norvera.confession
+package com.norvera.confession.viewmodels
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData

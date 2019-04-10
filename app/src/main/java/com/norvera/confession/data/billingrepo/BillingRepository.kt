@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.android.billingclient.api.*
@@ -106,7 +105,7 @@ class BillingRepository private constructor(private val application: Application
     }
 
     private fun connectToPlayBillingService(): Boolean {
-        Timber.d( "connectToPlayBillingService")
+        Timber.d("connectToPlayBillingService")
         if (!playStoreBillingClient.isReady) {
             playStoreBillingClient.startConnection(this)
             return true
@@ -131,19 +130,17 @@ class BillingRepository private constructor(private val application: Application
             }
             BillingResponse.ITEM_ALREADY_OWNED -> {
                 //item already owned? call queryPurchasesAsync to verify and process all such items
-                Timber.d( "already owned items")
+                Timber.d("already owned items")
                 queryPurchasesAsync()
             }
             BillingResponse.DEVELOPER_ERROR -> {
-                Timber.e( "Your app's configuration is incorrect. Review in the Google Play" +
-                        "Console. Possible causes of this error include: APK is not signed with " +
-                        "release key; SKU productId mismatch.")
+                Timber.e("Your app's configuration is incorrect. Review in the Google PlayConsole. Possible causes of this error include: APK is not signed with release key; SKU productId mismatch.")
             }
             BillingResponse.SERVICE_DISCONNECTED -> {
                 connectionRetryPolicy { connectToPlayBillingService() }
             }
             else -> {
-                Timber.i( "BillingClient.BillingResponse error code: $responseCode")
+                Timber.i("BillingClient.BillingResponse error code: $responseCode")
             }
         }
     }
@@ -159,7 +156,7 @@ class BillingRepository private constructor(private val application: Application
      * service is next running and setup is complete.
      */
     override fun onBillingServiceDisconnected() {
-        Timber.d( "onBillingServiceDisconnected")
+        Timber.d("onBillingServiceDisconnected")
         connectionRetryPolicy { connectToPlayBillingService() }
     }
 
@@ -173,7 +170,7 @@ class BillingRepository private constructor(private val application: Application
     override fun onBillingSetupFinished(responseCode: Int) {
         when (responseCode) {
             BillingResponse.OK -> {
-                Timber.d( "onBillingSetupFinished successfully")
+                Timber.d("onBillingSetupFinished successfully")
                 resetConnectionRetryPolicyCounter()//for retry policy
                 querySkuDetailsAsync(SkuType.INAPP, ConfessionSku.INAPP_SKUS)
                 querySkuDetailsAsync(SkuType.SUBS, ConfessionSku.SUBS_SKUS)
@@ -181,12 +178,12 @@ class BillingRepository private constructor(private val application: Application
             }
             BillingResponse.BILLING_UNAVAILABLE -> {
                 //Some apps may choose to make decisions based on this knowledge.
-                Timber.d( "onBillingSetupFinished but billing is not available on this device")
+                Timber.d("onBillingSetupFinished but billing is not available on this device")
             }
             else -> {
                 //do nothing. Someone else will connect it through retry policy.
                 //May choose to send to server though
-                Timber.d( "onBillingSetupFinished with failure response code: $responseCode")
+                Timber.d("onBillingSetupFinished with failure response code: $responseCode")
             }
         }
     }
@@ -196,7 +193,7 @@ class BillingRepository private constructor(private val application: Application
         val params = SkuDetailsParams.newBuilder()
         params.setSkusList(skuList).setType(skuType)
         taskExecutionRetryPolicy(playStoreBillingClient, this) {
-            Timber.d( "querySkuDetailsAsync for $skuType")
+            Timber.d("querySkuDetailsAsync for $skuType")
             playStoreBillingClient.querySkuDetailsAsync(params.build(), this)
         }
     }
@@ -211,67 +208,74 @@ class BillingRepository private constructor(private val application: Application
         if (responseCode != BillingResponse.OK) {
             Timber.w("SkuDetails query failed with response: $responseCode")
         } else {
-            Timber.d( "SkuDetails query responded with success. List: $skuDetailsList")
+            Timber.d("SkuDetails query responded with success. List: $skuDetailsList")
         }
 
         if (skuDetailsList.orEmpty().isNotEmpty()) {
             val scope = CoroutineScope(Job() + Dispatchers.IO)
             scope.launch {
-                skuDetailsList?.forEach { localCacheBillingClient.skuDetailsDao().insertOrUpdate(it) }
+                skuDetailsList?.forEach {
+                    localCacheBillingClient.skuDetailsDao().insertOrUpdate(it)
+                }
             }
         }
     }
 
     fun queryPurchasesAsync() {
         fun task() {
-            Timber.d( "queryPurchasesAsync called")
+            Timber.d("queryPurchasesAsync called")
             val purchasesResult = HashSet<Purchase>()
             var result = playStoreBillingClient.queryPurchases(SkuType.INAPP)
-            Timber.d( "queryPurchasesAsync in app results: ${result?.purchasesList}")
+            Timber.d("queryPurchasesAsync in app results: ${result?.purchasesList}")
             result?.purchasesList?.apply { purchasesResult.addAll(this) }
             if (isSubscriptionSupported()) {
                 result = playStoreBillingClient.queryPurchases(SkuType.SUBS)
                 result?.purchasesList?.apply { purchasesResult.addAll(this) }
-                Log.d(LOG_TAG, "queryPurchasesAsync SUBS results: ${result?.purchasesList}")
+                Timber.d( "queryPurchasesAsync SUBS results: ${result?.purchasesList}")
             }
             processPurchases(purchasesResult)
         }
         taskExecutionRetryPolicy(playStoreBillingClient, this) { task() }
     }
 
-    private fun processPurchases(purchasesResult: Set<Purchase>) = CoroutineScope(Job() + Dispatchers.IO).launch {
-        val cachedPurchases = localCacheBillingClient.purchaseDao().getPurchases()
-        val newBatch = HashSet<Purchase>(purchasesResult.size)
-        purchasesResult.forEach { purchase ->
-            if (isSignatureValid(purchase) && !cachedPurchases.any { it.data == purchase }) {
-                //todo !cachedPurchases.contains(purchase)
-                newBatch.add(purchase)
+    private fun processPurchases(purchasesResult: Set<Purchase>) =
+        CoroutineScope(Job() + Dispatchers.IO).launch {
+            val cachedPurchases = localCacheBillingClient.purchaseDao().getPurchases()
+            val newBatch = HashSet<Purchase>(purchasesResult.size)
+            purchasesResult.forEach { purchase ->
+                if (isSignatureValid(purchase) && !cachedPurchases.any { it.data == purchase }) {
+                    //todo !cachedPurchases.contains(purchase)
+                    newBatch.add(purchase)
+                }
+            }
+
+            if (newBatch.isNotEmpty()) {
+                sendPurchasesToServer(newBatch)
+                // We still care about purchasesResult in case a old purchase has not
+                // yet been consumed.
+                saveToLocalDatabase(newBatch, purchasesResult)
+                //consumeAsync(purchasesResult): do this inside saveToLocalDatabase to
+                // avoid race condition
+            } else if (isLastInvocationTimeStale(application)) {
+                handleConsumablePurchasesAsync(purchasesResult)
+                queryPurchasesFromSecureServer()
             }
         }
-
-        if (newBatch.isNotEmpty()) {
-            sendPurchasesToServer(newBatch)
-            // We still care about purchasesResult in case a old purchase has not
-            // yet been consumed.
-            saveToLocalDatabase(newBatch, purchasesResult)
-            //consumeAsync(purchasesResult): do this inside saveToLocalDatabase to
-            // avoid race condition
-        } else if (isLastInvocationTimeStale(application)) {
-            handleConsumablePurchasesAsync(purchasesResult)
-            queryPurchasesFromSecureServer()
-        }
-    }
 
     private fun isSubscriptionSupported(): Boolean {
         val responseCode = playStoreBillingClient.isFeatureSupported(FeatureType.SUBSCRIPTIONS)
         if (responseCode != BillingResponse.OK) {
-            Timber.w( "isSubscriptionSupported() got an error response: $responseCode")
+            Timber.w("isSubscriptionSupported() got an error response: $responseCode")
         }
         return responseCode == BillingResponse.OK
     }
 
     private fun isSignatureValid(purchase: Purchase): Boolean {
-        return Security.verifyPurchase(Security.BASE_64_ENCODED_PUBLIC_KEY, purchase.originalJson, purchase.signature)
+        return Security.verifyPurchase(
+            Security.BASE_64_ENCODED_PUBLIC_KEY,
+            purchase.originalJson,
+            purchase.signature
+        )
     }
 
     private fun saveToLocalDatabase(newBatch: Set<Purchase>, allPurchases: Set<Purchase>) {
@@ -282,15 +286,18 @@ class BillingRepository private constructor(private val application: Application
                     ConfessionSku.PREMIUM -> {
                         val premiumCar = PremiumCar(true)
                         insert(premiumCar)
-                        localCacheBillingClient.skuDetailsDao().insertOrUpdate(purchase.sku, premiumCar.mayPurchase())
+                        localCacheBillingClient.skuDetailsDao()
+                            .insertOrUpdate(purchase.sku, premiumCar.mayPurchase())
                     }
                     ConfessionSku.GOLD_MONTHLY, ConfessionSku.GOLD_YEARLY -> {
                         val goldStatus = GoldStatus(true)
                         insert(goldStatus)
-                        localCacheBillingClient.skuDetailsDao().insertOrUpdate(purchase.sku, goldStatus.mayPurchase())
+                        localCacheBillingClient.skuDetailsDao()
+                            .insertOrUpdate(purchase.sku, goldStatus.mayPurchase())
                         GOLD_STATUS_SKUS.forEach { otherSku ->
                             if (otherSku != purchase.sku) {
-                                localCacheBillingClient.skuDetailsDao().insertOrUpdate(otherSku, !goldStatus.mayPurchase())
+                                localCacheBillingClient.skuDetailsDao()
+                                    .insertOrUpdate(otherSku, !goldStatus.mayPurchase())
                             }
                         }
                     }
@@ -318,36 +325,38 @@ class BillingRepository private constructor(private val application: Application
             if (ConfessionSku.CONSUMABLE_SKUS.contains(it.sku)) {
                 playStoreBillingClient.consumeAsync(it.purchaseToken, this@BillingRepository)
                 //tell your server:
-                Timber.i( "handleConsumablePurchasesAsync: asked Play Billing to consume sku = ${it.sku}")
+                Timber.i("handleConsumablePurchasesAsync: asked Play Billing to consume sku = ${it.sku}")
             }
         }
     }
 
     @WorkerThread
     suspend fun updateGasTank(gas: GasTank) = withContext(Dispatchers.IO) {
-        Timber.d( "updateGasTank")
+        Timber.d("updateGasTank")
         var update: GasTank = gas
         gasTankLiveData.value?.apply {
             synchronized(this) {
                 if (this != gas) {//new purchase
                     update = GasTank(getLevel() + gas.getLevel())
                 }
-                Timber.d( "New purchase level is ${gas.getLevel()}; existing level is ${getLevel()}; so the final result is ${update.getLevel()}")
+                Timber.d("New purchase level is ${gas.getLevel()}; existing level is ${getLevel()}; so the final result is ${update.getLevel()}")
                 localCacheBillingClient.entitlementsDao().update(update)
             }
         }
         if (gasTankLiveData.value == null) {
             localCacheBillingClient.entitlementsDao().insert(update)
-            Timber.d( "No we just added from null gas with level: ${gas.getLevel()}")
+            Timber.d("No we just added from null gas with level: ${gas.getLevel()}")
         }
-        localCacheBillingClient.skuDetailsDao().insertOrUpdate(ConfessionSku.GAS, update.mayPurchase())
-        Timber.d( "updated AugmentedSkuDetails as well")
+        localCacheBillingClient.skuDetailsDao()
+            .insertOrUpdate(ConfessionSku.GAS, update.mayPurchase())
+        Timber.d("updated AugmentedSkuDetails as well")
     }
 
     @WorkerThread
     private suspend fun insert(entitlement: Entitlement) = withContext(Dispatchers.IO) {
         localCacheBillingClient.entitlementsDao().insert(entitlement)
     }
+
     private fun sendPurchasesToServer(purchases: Set<Purchase>) {
         //not implemented here
     }
@@ -377,7 +386,7 @@ class BillingRepository private constructor(private val application: Application
      */
     @SuppressLint("SwitchIntDef")
     override fun onConsumeResponse(responseCode: Int, purchaseToken: String?) {
-        Log.d(LOG_TAG, "onConsumeResponse")
+        Timber.d("onConsumeResponse")
         when (responseCode) {
             BillingResponse.OK -> {
                 //give user the items s/he just bought by updating the appropriate tables/databases
@@ -385,8 +394,7 @@ class BillingRepository private constructor(private val application: Application
                 secureServerBillingClient.onComsumeResponse(purchaseToken, responseCode)
             }
             else -> {
-                Log.w(LOG_TAG, "Error consuming purchase with token ($purchaseToken). " +
-                        "Response code: $responseCode")
+                Timber.w("Error consuming purchase with token ($purchaseToken). Response code: $responseCode")
             }
         }
     }
@@ -429,6 +437,7 @@ class BillingRepository private constructor(private val application: Application
         }
         return result
     }
+
     /**
      * This private object class shows an example retry policies. You may choose to replace it with
      * your own policies.
@@ -471,7 +480,11 @@ class BillingRepository private constructor(private val application: Application
          * not, request connection, wait x number of seconds and then proceed with
          * the actual task.
          */
-        fun taskExecutionRetryPolicy(billingClient: BillingClient, listener: BillingRepository, task: () -> Unit) {
+        fun taskExecutionRetryPolicy(
+            billingClient: BillingClient,
+            listener: BillingRepository,
+            task: () -> Unit
+        ) {
             val scope = CoroutineScope(Job() + Dispatchers.Main)
             scope.launch {
                 if (!billingClient.isReady) {

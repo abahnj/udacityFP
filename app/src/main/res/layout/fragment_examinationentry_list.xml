@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.norvera.confession.MainViewModel" />
+            type="com.norvera.confession.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -13,6 +13,7 @@ import com.beautycoder.pflockscreen.PFFLockScreenConfiguration
 import com.beautycoder.pflockscreen.fragments.PFLockScreenFragment
 import com.google.firebase.perf.FirebasePerformance
 import com.google.firebase.perf.metrics.Trace
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.utils.*
 
 

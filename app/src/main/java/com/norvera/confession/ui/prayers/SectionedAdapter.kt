@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.norvera.confession.ListAdapterWithHeader
 import com.norvera.confession.R
 import com.norvera.confession.data.models.PrayersEntry
 import com.norvera.confession.databinding.FragmentPrayerItemBinding

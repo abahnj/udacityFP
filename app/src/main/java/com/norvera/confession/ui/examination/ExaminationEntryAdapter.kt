@@ -5,7 +5,7 @@ import android.view.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.norvera.confession.MainViewModel
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.data.models.ExaminationEntry
 import com.norvera.confession.databinding.FragmentExaminationentryBinding

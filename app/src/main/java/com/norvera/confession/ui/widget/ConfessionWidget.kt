@@ -52,7 +52,7 @@ class ConfessionWidget : AppWidgetProvider() {
 
             // Construct the RemoteViews object
             val views = RemoteViews(context.packageName, R.layout.confession_widget)
-            //views.setTextViewText(R.id.appwidget_text, context.getResources().getString(R.string.date_of_next_confession));
+            views.setTextViewText(R.id.content, context.resources.getString(R.string.date_of_next_confession))
 
             val settingIntent = Intent(context, MainActivity::class.java)
             settingIntent.putExtra(Constants.WIDGET_EXTRA_KEY, Constants.WIDGET_SETTING_VALUE)

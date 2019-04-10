@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import com.norvera.confession.MainViewModel
+import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.data.models.PrayersEntry
 import com.norvera.confession.databinding.FragmentPrayerListBinding
 import com.norvera.confession.utils.DividerDecoration

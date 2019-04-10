@@ -38,7 +38,7 @@
             app:useSimpleSummaryProvider="true" />
 
 
-        <com.norvera.confession.DatePreference
+        <com.norvera.confession.ui.settings.DatePreference
             android:key="last_confession"
             android:title="Date of Last Confession"
             app:iconSpaceReserved="false"
