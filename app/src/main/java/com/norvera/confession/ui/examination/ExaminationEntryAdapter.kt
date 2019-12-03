@@ -5,11 +5,11 @@ import android.view.*
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.norvera.confession.viewmodels.MainViewModel
 import com.norvera.confession.R
 import com.norvera.confession.data.models.ExaminationEntry
 import com.norvera.confession.databinding.FragmentExaminationentryBinding
 import com.norvera.confession.ui.examination.ExaminationEntryAdapter.ViewHolder
+import com.norvera.confession.viewmodels.MainViewModel
 
 /**
  * [ListAdapter] that can display a [ExaminationEntry] and makes a call to the
@@ -40,8 +40,8 @@ internal class ExaminationEntryAdapter internal constructor(private val viewMode
     ): View.OnClickListener {
 
         return View.OnClickListener {
-            examinationEntry.count = examinationEntry.count + 1
-            viewModel.updateCountForEntry(examinationEntry)
+            val new = examinationEntry.copy(count = examinationEntry.count + 1)
+            viewModel.updateCountForEntry(new)
         }
 
     }
