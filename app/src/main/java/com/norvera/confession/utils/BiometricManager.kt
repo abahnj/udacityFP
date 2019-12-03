@@ -73,11 +73,11 @@ class BiometricManager constructor(biometricBuilder: BiometricBuilder) :
     @TargetApi(Build.VERSION_CODES.P)
     private fun displayBiometricPrompt(biometricCallback: BiometricCallback) {
         BiometricPrompt.Builder(context)
-            .setTitle(title)
-            .setSubtitle(subtitle)
-            .setDescription(description)
+            .setTitle(title!!)
+            .setSubtitle(subtitle!!)
+            .setDescription(description!!)
             .setNegativeButton(
-                negativeButtonText,
+                negativeButtonText!!,
                 context.mainExecutor,
                 DialogInterface.OnClickListener { _, _ -> biometricCallback.onAuthenticationCancelled() })
             .build()
