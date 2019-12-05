@@ -11,6 +11,7 @@ import kotlinx.android.parcel.Parcelize
 data class ExaminationActiveEntry(
     @field:PrimaryKey
     @field:ColumnInfo(name = "_id")
-    var id: Long, @field:ColumnInfo(name = "DESCRIPTION")
-    var description: String?
+    var id: Long,
+    @field:ColumnInfo(name = "DESCRIPTION")
+    var description: String
 ) : Parcelable

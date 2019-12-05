@@ -13,7 +13,7 @@ data class GuideEntry(
     @ColumnInfo(name = "_id") val id: Long,
     @ColumnInfo(name = "h_id") val headerId: Int,
     @ColumnInfo(name = "g_id") val guideId: Int,
-    @ColumnInfo(name = "g_title") val guideTitle: String?,
-    @ColumnInfo(name = "text") val guideText: String?,
-    @ColumnInfo(name = "img_name") val imgName: String?
+    @ColumnInfo(name = "g_title") val guideTitle: String,
+    @ColumnInfo(name = "text") val guideText: String,
+    @ColumnInfo(name = "img_name") val imgName: String
 ) : Parcelable

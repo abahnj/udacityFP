@@ -4,7 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.sqlite.db.framework.AssetSQLiteOpenHelperFactory
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.norvera.confession.R
 import com.norvera.confession.data.dao.*
 import com.norvera.confession.data.models.*
@@ -12,7 +13,7 @@ import timber.log.Timber
 
 @Database(
     entities = [ExaminationEntry::class, CommandmentEntry::class, GuideEntry::class, InspirationEntry::class, PrayersEntry::class, ExaminationActiveEntry::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -48,8 +49,15 @@ abstract class AppDatabase : RoomDatabase() {
                 context.applicationContext, AppDatabase::class.java,
                 context.getString(R.string.database_name)
             )
+            val MIGRATION_1_2 = object : Migration(1, 2) {
+                override fun migrate(database: SupportSQLiteDatabase) {
+                }
+            }
 
-            return b.openHelperFactory(AssetSQLiteOpenHelperFactory()).build()
+            return b
+                .createFromAsset("databases/confession.db")
+                .addMigrations(MIGRATION_1_2)
+                .build()
         }
     }
 }

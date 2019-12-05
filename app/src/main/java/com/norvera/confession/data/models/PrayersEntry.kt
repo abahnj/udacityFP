@@ -8,11 +8,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "PRAYERS")
 @Parcelize
-class PrayersEntry(
+data class PrayersEntry(
     @PrimaryKey
     @ColumnInfo(name = "_id") val id: Long,
-    @ColumnInfo(name = "PRAYERNAME") var prayerName: String?,
-    @ColumnInfo(name = "PRAYERTEXT") val prayerText: String?,
-    @ColumnInfo(name = "GROUPNAME") val groupName: String?,
-    @ColumnInfo(name = "CUSTOM") val custom: String?
+    @ColumnInfo(name = "PRAYERNAME") val prayerName: String,
+    @ColumnInfo(name = "PRAYERTEXT") val prayerText: String,
+    @ColumnInfo(name = "GROUPNAME") val groupName: String
 ) : Parcelable
