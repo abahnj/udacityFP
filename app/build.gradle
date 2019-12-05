@@ -33,7 +33,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 29
         multiDexEnabled true
-        versionCode 9
+        versionCode 10
         versionName "1.1 - LINVS"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
